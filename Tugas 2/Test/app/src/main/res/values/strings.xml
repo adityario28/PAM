@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">mahesa_rio_s_application</string>
+    <string name="loading">Loading…</string>
+    <string name="no_internet_connection">No internet connection!</string>
+<string name="lbl_brando_bocil">Brando Bocil</string>
+<string name="lbl_hi">Hi,
+</string>
+<string name="lbl_konsultasi">Konsultasi</string>
+<string name="msg_sirkumsisi_sun">Sirkumsisi (Sunat)</string>
+<string name="msg_dr_teuku_adifi">dr. Teuku Adifitrian, Sp.BP-RE.</string>
+<string name="lbl_home">Home</string>
+<string name="msg_13_15_14_45_25">13:15-14:45, 25 Januari 2023 </string>
+<string name="msg_berlian_103_si">Berlian 103, Siloam Hospitals Semarang</string>
+<string name="msg_informasi_peser">Informasi Peserta</string>
+<string name="lbl_daftar_jkn">Daftar JKN</string>
+<string name="lbl_janji_temu">Janji
+Temu</string>
+<string name="msg_cempaka_23_rs">Cempaka 23, RS St. Elisabeth, Semarang</string>
+<string name="msg_10_00_11_15_16">10:00-11:15, 16 September 2022 </string>
+<string name="lbl_ambulance">Ambulance</string>
+<string name="lbl_lokasi">Lokasi</string>
+<string name="msg_dr_h_boyke_di">dr. H. Boyke Dian Nugraha, SpOG MARS</string>
+<string name="lbl_daftar_layanan">Daftar
+Layanan</string>
+<string name="lbl_lokasi_faskes">Lokasi Faskes</string>
+<string name="msg_informasi_klini">Informasi
+Klinik</string>
+<string name="msg_hi_brando_boci">Hi,
+Brando Bocil</string>
+<string name="msg_pasien_jamur_co">Pasien Jamur Cordyceps Makin Bertambah</string>
+<string name="lbl_kartu">Kartu</string>
+<string name="msg_riwayat_aktifit">Riwayat Aktifitas</string>
+<string name="lbl_faq">FAQ</string>
+<string name="lbl_menu_lainnya">Menu Lainnya</string>
+<string name="msg_periksa_rutin_b">Periksa Rutin Bulanan</string>
+</resources>

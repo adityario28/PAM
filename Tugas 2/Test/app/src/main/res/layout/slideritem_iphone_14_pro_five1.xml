@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data/>
+    <FrameLayout android:id="@+id/frameStackunsplashzqemea"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylecornerRadius">
+        <ImageView android:id="@+id/imageUnsplashzQEmEA"
+            android:layout_gravity="start"
+            android:layout_height="@dimen/_179pxh"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY" cornerRadius="@{@dimen/_12pxh}"
+            imageRes="@{@drawable/img_unsplashzqemea}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_unsplashzqemea"/>
+        <TextView android:ellipsize="end" android:gravity="top|start"
+            android:id="@+id/txtPasienJamurCo"
+            android:layout_gravity="bottom|start"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_8pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@string/msg_pasien_jamur_co"
+            style="@style/txtIntersemibold12" tools:text="@string/msg_pasien_jamur_co"/>
+    </FrameLayout>
+</layout>
