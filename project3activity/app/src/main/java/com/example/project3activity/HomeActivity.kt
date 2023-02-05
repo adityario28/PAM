@@ -1,5 +1,6 @@
 package com.example.project3activity
 
+import android.content.Intent.getIntent
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -53,17 +54,23 @@ class HomeActivity : AppCompatActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    Text(text = "Hi, $name!")
 }
 
 @Composable
 fun Hero() {
+//    val username = getIntent().getStringExtra("username") ?: ""
     val ctx = LocalContext.current
+    Column(modifier = Modifier
+        .padding(start = 16.dp, top = 80.dp)) {
+        Text(text = "Hi, Brando Bocil")
+//        Greeting(username)
+    }
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(16.dp)
     ) {
         Box(
             modifier = Modifier
@@ -97,7 +104,7 @@ fun Hero() {
     }
 
     Column(
-        verticalArrangement = Arrangement.spacedBy(4.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
@@ -114,7 +121,7 @@ fun Hero() {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp)
+//                    .padding(8.dp)
 
             ) {
                 Button(
@@ -128,7 +135,7 @@ fun Hero() {
 
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
 
                 {
@@ -179,7 +186,7 @@ fun Hero() {
                     modifier = Modifier
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
 
                 {
@@ -230,7 +237,7 @@ fun Hero() {
                     modifier = Modifier
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
                 {
                     Column(
@@ -279,7 +286,7 @@ fun Hero() {
                     modifier = Modifier
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
                 {
                     Column(
@@ -328,7 +335,7 @@ fun Hero() {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp)
+//                    .padding(8.dp)
 
             ) {
                 Button(
@@ -341,7 +348,7 @@ fun Hero() {
                     modifier = Modifier
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
                 {
                     Column(
@@ -357,25 +364,27 @@ fun Hero() {
                             painter = painterResource(id = R.drawable.info_icon),
                             contentDescription = "Informasi-Peserta-icon",
                             modifier = Modifier
-                                .width(width = 48.dp)
+                                .width(width = 50.dp)
                                 .height(height = 38.dp)
                         )
 
                         Spacer(
                             modifier = Modifier
-                                .height(1.dp)
+                                .height(2.dp)
                         )
 
 
                         Text(
-                            text = "Informasi Peserta",
+                            text = "Informasi  Peserta",
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
                             fontSize = 10.sp,
-                            lineHeight = 10.sp
+                            lineHeight = 11.sp,
+                        modifier = Modifier
+                            .padding(top = 2.dp)
                         )
                     }
 
@@ -391,7 +400,7 @@ fun Hero() {
                     modifier = Modifier
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
 
                 {
@@ -419,7 +428,7 @@ fun Hero() {
 
 
                         Text(
-                            text = "Daftar " +
+                            text = "Daftar" + "      " +
                                     "Layanan",
                             color = Color.Black,
                             style = TextStyle(
@@ -427,7 +436,7 @@ fun Hero() {
                             ),
                             textAlign = TextAlign.Center,
                             fontSize = 10.sp,
-                            lineHeight = 2.sp
+                            lineHeight = 11.sp
                         )
                     }
 
@@ -445,7 +454,7 @@ fun Hero() {
 
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
 
                 {
@@ -473,13 +482,14 @@ fun Hero() {
 
 
                         Text(
-                            text = "Informasi Klinik",
+                            text = "Informasi" + "      " +"Klinik",
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp
+                            fontSize = 10.sp,
+                            lineHeight = 11.sp
                         )
                     }
                 }
@@ -495,7 +505,7 @@ fun Hero() {
 
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
-                        .size(size = 74.dp)
+                        .size(size = 80.dp)
                 )
 
                 {
@@ -518,18 +528,19 @@ fun Hero() {
 
                         Spacer(
                             modifier = Modifier
-                                .height(1.dp)
+                                .height(0.dp)
                         )
 
 
                         Text(
-                            text = "Menu Lainnya",
+                            text = "Menu"  + "         " +  "Lainnya",
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp
+                            fontSize = 10.sp,
+                            lineHeight = 11.sp
                         )
                }
                 }
@@ -547,9 +558,7 @@ fun Hero() {
         Text(text = "Riwayat Aktifitas",
         color = Color.Black,
         style = TextStyle(fontSize = 22.sp,
-        fontWeight = FontWeight.SemiBold),
-        modifier = Modifier
-            .padding(start = 8.dp)
+        fontWeight = FontWeight.SemiBold)
         )
 
         Column(){
