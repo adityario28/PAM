@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 }
 
 internal fun doAuth(username: String, password:String): Boolean {
-    return(username.equals("brando bocil") && password.equals("admin"))
+    return(username.equals("admin") && password.equals("admin"))
 }
 
 @Composable
