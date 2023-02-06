@@ -10,18 +10,24 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.shape.CircleShape
 //import androidx.compose.foundation.layout.BoxScopeInstance.matchParentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -30,13 +36,17 @@ import androidx.compose.ui.semantics.Role.Companion.Image
 //import androidx.compose.ui.semantics.Role.Companion.Image
 //import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
+//import androidx.navigation.NavController
 import com.example.project3activity.ui.theme.Project3activityTheme
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+
 //import android.media.Image as Image1
 
 class HomeActivity : AppCompatActivity() {
@@ -66,15 +76,52 @@ fun Greeting(name: String) {
             fontSize = 18.sp
         ),
     modifier = Modifier
-        .padding(start = 16.dp, top = 83.dp))
+        .padding(start = 19.dp, top = 83.dp))
     Text(text = "$name",
         style = TextStyle(
             fontWeight = FontWeight.Bold,
             fontSize = 18.sp
         ),
         modifier = Modifier
-            .padding(start = 16.dp, top = 104.dp))
+            .padding(start = 18.dp, top = 104.dp))
 }
+
+@Composable
+fun DotsIndicator(
+    totalDots: Int,
+    selectedIndex: Int
+) {
+
+    LazyRow(
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight(), horizontalArrangement = Arrangement.Center
+    ) {
+
+        items(totalDots) { index ->
+            if (index == selectedIndex) {
+                Box(
+                    modifier = Modifier
+                        .size(12.dp)
+                        .clip(CircleShape)
+                        .background(color = Color(0xFF00CBA9))
+                )
+            } else {
+                Box(
+                    modifier = Modifier
+                        .size(10.dp)
+                        .clip(CircleShape)
+                        .background(color = Color(0xFFA1A1A1))
+                )
+            }
+
+            if (index != totalDots - 1) {
+                Spacer(modifier = Modifier.padding(horizontal = 2.dp))
+            }
+        }
+    }
+}
+
 
 @Composable
 fun Hero() {
@@ -135,6 +182,37 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
             )
         }
     }
+
+    //dot indicator
+    Column(modifier = Modifier
+        .padding(top = 325.dp)) {
+        DotsIndicator(totalDots = 5, selectedIndex = 0)
+    }
+
+    
+//    LazyRow(modifier = Modifier
+//        .fillMaxWidth()
+//        .wrapContentHeight(),
+//        horizontalArrangement = Arrangement.Center
+//    ){
+//        if (index == 0) {
+//            Box(
+//                modifier = Modifier
+//                    .size(10.dp)
+//                    .clip(CircleShape)
+//                    .background(color = Color.DarkGray)
+//            )
+//        } else {
+//            Box(
+//                modifier = Modifier
+//                    .size(10.dp)
+//                    .clip(CircleShape)
+//                    .background(color = Color.LightGray)
+//            )
+//        }
+//    }
+
+
 
     Column(
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -630,9 +708,10 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
 //                    .matchParentSize(),
 //                    contentScale = ContentScale.Crop)
                 Row(modifier = Modifier
-                    .padding(end = 79.dp)) {
-
-
+                    .padding(end = 79.dp),
+//                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+                ) {
                     Column(
                     ) {
                         Text(
@@ -721,16 +800,11 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
 
                             )
                         }
+
                     }
-//                    Image(
-//                    painter = painterResource(id = R.drawable.character_1),
-//                    contentDescription = "Character-icon",
-//                    modifier = Modifier
-//                        .padding(start = 4.dp)
-//                        .width(width = 5.dp)
-//                        .height(height = 5.dp)
-//                )
+
                 }
+
 //                Image(
 //                    painter = painterResource(id = R.drawable.character_1),
 //                    contentDescription = "Character-icon",
@@ -738,17 +812,17 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
 //                        .width(width = 12.dp)
 //                        .height(height = 12.dp)
 //                )
-                Row(modifier = Modifier
-                    .padding(start = 2.dp, top = 4.dp, bottom = 2.dp, end = 2.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.character_1),
-                        contentDescription = "Character-icon",
-                        modifier = Modifier
-                            .width(width = 12.dp)
-                            .height(height = 12.dp)
-                    )
-                }
+//                Row(modifier = Modifier
+//                    .padding(start = 2.dp, top = 4.dp, bottom = 2.dp, end = 2.dp)
+//                ) {
+//                    Image(
+//                        painter = painterResource(id = R.drawable.character_1),
+//                        contentDescription = "Character-icon",
+//                        modifier = Modifier
+//                            .width(width = 12.dp)
+//                            .height(height = 12.dp)
+//                    )
+//                }
             }
 
 
@@ -887,48 +961,124 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                 )
             }
         }
-        }
+    }
+
+    Column(modifier = Modifier
+        .padding(start = 16.dp, top = 562.dp)
+        .fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalAlignment = Alignment.End
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.character_1),
+            contentDescription = "Character-icon",
+            modifier = Modifier
+                .padding(end = 8.dp)
+                .size(120.dp)
+        )
+
+        Image(
+            painter = painterResource(id = R.drawable.character_2),
+            contentDescription = "Character-icon-2",
+            modifier = Modifier
+//                .padding(end= 5.dp)
+                .offset(x = 10.dp)
+                .size(120.dp)
+
+        )
+
+
+    }
+
+
+
+}
+
+@Composable
+fun CircleShapeDemo(){
+    ExampleBox(shape = CircleShape)
+}
+
+@Composable
+fun ExampleBox(shape: Shape){
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .wrapContentSize(Alignment.Center)) {
+        Box(
+            modifier = Modifier
+                .size(100.dp)
+                .clip(shape)
+                .background(Color(0xFF4ECB71))
+        )
+    }
 }
 
 @Composable
 fun BottomNavbar(){
-    val backStackEntry = navController.currentBackStackEntryAsState()
+
+    var bottomState by remember {
+        mutableStateOf("Home")
+    }
+
 
     Scaffold(
-        bottomBar = {
-            androidx.compose.material3.NavigationBar(
-                containerColor = MaterialTheme.colors.primary,
-            ) {
-                bottomNavItems.forEach { item ->
-                    val selected = item.route == backStackEntry.value?.destination?.route
-
-                    NavigationBarItem(
-                        selected = selected,
-                        onClick = { navController.navigate(item.route) },
-                        label = {
-                            Text(
-                                text = item.name,
-                                fontWeight = FontWeight.SemiBold,
-                            )
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = item.icon,
-                                contentDescription = "${item.name} Icon",
-                            )
-                        }
-                    )
-                }
-            }
-        },
         content = {
-            //Your UI Content
+            Greeting(name = "admin")
+                  Hero()
+        },
+        bottomBar = {
+            BottomNavigation(
+                backgroundColor = Color.White,
+                contentColor = Color(0xFF868686),
+//                modifier = Modifier
+//                    .padding(horizontal = 20.dp)
+            ) {
+                BottomNavigationItem(
+                    selected = bottomState == "Home",
+                    onClick = { bottomState == "Home"},
+                    label = { Text(text = "Home", color = Color(0xFF4ECB71))},
+                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_home), contentDescription = null, modifier = Modifier.size(22.dp), tint = Color(0xFF4ECB71)) }
+                )
+                BottomNavigationItem(
+                    selected = bottomState == "Lokasi",
+                    onClick = { bottomState == "Lokasi"},
+                    label = { Text(text = "Lokasi")},
+                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_lokasi), contentDescription = null, modifier = Modifier.size(22.dp)) }
+                )
+                FloatingActionButton(
+                    onClick = { bottomState == "Janji Temu"},
+                    backgroundColor = Color(0xFF4ECB71 )
+                ){
+                    Icon(painter = painterResource(id = R.drawable.navbar_janji_temu), contentDescription = null, modifier = Modifier.size(20.dp).offset(y = -13.dp), tint = Color.White)
+                    Text(text = "Janji\nTemu", style = TextStyle(fontSize = 11.sp), lineHeight = 10.sp, color = Color.White, textAlign = TextAlign.Center, modifier = Modifier.offset(y = 8.dp))
+                }
+                BottomNavigationItem(
+                    selected = bottomState == "FAQ",
+                    onClick = { bottomState == "FAQ"},
+                        label = { Text(text = "FAQ")},
+                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_faq), contentDescription = null, modifier = Modifier.size(22.dp)) }
+                )
+                BottomNavigationItem(
+                    selected = bottomState == "Kartu",
+                    onClick = { bottomState == "Kartu"},
+                    label = { Text(text = "Kartu")},
+                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_kartu), contentDescription = null, modifier = Modifier.size(22.dp)) }
+                )
+            }
         }
     )
 }
 
 
 
+@Composable
+fun centerbutton(scope: CoroutineScope,
+scaffoldState: ScaffoldState){
+    FloatingActionButton(onClick = { scope.launch { scaffoldState.snackbarHostState.showSnackbar("Janji Temu", actionLabel = "Janji Temu", duration = SnackbarDuration.Indefinite) } }) {
+
+    }
+
+}
 
 
 
@@ -939,6 +1089,7 @@ fun DefaultPreview() {
     Project3activityTheme {
         Greeting("admin")
         Hero()
+        BottomNavbar()
     }
 }
 
