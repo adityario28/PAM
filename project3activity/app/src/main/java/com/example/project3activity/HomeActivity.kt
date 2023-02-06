@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -34,6 +35,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.project3activity.ui.theme.Project3activityTheme
 //import android.media.Image as Image1
 
@@ -76,42 +78,32 @@ fun Greeting(name: String) {
 
 @Composable
 fun Hero() {
-//    val username = getIntent().getStringExtra("username") ?: ""
-    val ctx = LocalContext.current
-//    Column(modifier = Modifier
-//        .padding(start = 16.dp, top = 80.dp)) {
-//        Text(text = "Hi, Brando Bocil")
-////        Greeting(username)
-//    }
 
+    val ctx = LocalContext.current
+
+//Pattern
     Image(
         painter = painterResource(id = R.drawable.pattern),
         contentDescription = "pattern",
         contentScale = ContentScale.Crop,
         modifier = Modifier
-//                .width(width = 528.dp)
-//            .fillMaxWidth()
-//                    .fillMaxSize()
             .padding(bottom = 80.dp)
             .width(width = 400.dp)
             .height(height = 85.dp)
-//            .clip(shape = RoundedCornerShape(30.dp)
             )
+
+
+    //Avatar
 Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
     Image(painter = painterResource(id = R.drawable.ava), contentDescription = "avatar",
         modifier = Modifier
             .size(58.dp)
-//            .padding(start = 70.dp)
     )
 }
 
-//    Button(onClick = { /*TODO*/ }) {
-//
-//    }
 
 
     Column(
-//        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
@@ -121,19 +113,13 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
             modifier = Modifier
                 .width(width = 400.dp)
                 .height(height = 300.dp)
-//                .padding(
-//                    top = 95.dp
-//                )
         ) {
             Image(
-
                 painter = painterResource(id = R.drawable.hero_news),
                 contentDescription = "Hero-news-img",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-//                .width(width = 528.dp)
                     .fillMaxWidth()
-//                    .fillMaxSize()
                     .height(height = 190.dp)
                     .clip(shape = RoundedCornerShape(30.dp))
             )
@@ -155,11 +141,8 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-//        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-//Baris pertama
         Column(
-
             modifier = Modifier
                 .padding(top = 330.dp)
         )
@@ -168,8 +151,6 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
                     .fillMaxWidth()
-//                    .padding(8.dp)
-
             ) {
                 Button(
                     onClick = {
@@ -179,7 +160,6 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffd0342c)),
                     contentPadding = PaddingValues(),
                     modifier = Modifier
-
                         .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                         .defaultMinSize(1.dp, minHeight = 1.dp)
                         .size(size = 80.dp)
@@ -187,7 +167,6 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
 
                 {
                     Column(
-
                         modifier = Modifier
                             .height(200.dp)
                             .padding(horizontal = 0.dp),
@@ -198,18 +177,14 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                         Image(
                             painter = painterResource(id = R.drawable.ambulancce_icon_1),
                             contentDescription = "Ambulance-icon",
-
                             modifier = Modifier
                                 .width(width = 48.dp)
                                 .height(height = 38.dp)
                         )
-
                         Spacer(
                             modifier = Modifier
                                 .height(3.dp)
                         )
-
-
                         Text(
                             text = "Ambulance",
                             color = Color.White,
@@ -394,8 +369,6 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
                     .fillMaxWidth()
-//                    .padding(8.dp)
-
             ) {
                 Button(
                     onClick = {
@@ -415,7 +388,6 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                 )
                 {
                     Column(
-
                         modifier = Modifier
                             .height(200.dp)
                             .padding(horizontal = 0.dp),
@@ -430,13 +402,10 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                                 .width(width = 50.dp)
                                 .height(height = 38.dp)
                         )
-
                         Spacer(
                             modifier = Modifier
                                 .height(2.dp)
                         )
-
-
                         Text(
                             text = "Informasi  Peserta",
                             color = Color.Black,
@@ -601,8 +570,6 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                             modifier = Modifier
                                 .height(0.dp)
                         )
-
-
                         Text(
                             text = "Menu" + "         " + "Lainnya",
                             color = Color.Black,
@@ -921,7 +888,44 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
             }
         }
         }
-    }
+}
+
+@Composable
+fun BottomNavbar(){
+    val backStackEntry = navController.currentBackStackEntryAsState()
+
+    Scaffold(
+        bottomBar = {
+            androidx.compose.material3.NavigationBar(
+                containerColor = MaterialTheme.colors.primary,
+            ) {
+                bottomNavItems.forEach { item ->
+                    val selected = item.route == backStackEntry.value?.destination?.route
+
+                    NavigationBarItem(
+                        selected = selected,
+                        onClick = { navController.navigate(item.route) },
+                        label = {
+                            Text(
+                                text = item.name,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = item.icon,
+                                contentDescription = "${item.name} Icon",
+                            )
+                        }
+                    )
+                }
+            }
+        },
+        content = {
+            //Your UI Content
+        }
+    )
+}
 
 
 
