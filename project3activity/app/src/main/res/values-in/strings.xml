@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">project3activity</string>
+    <string name ="label_username">Nama Pengguna</string>
+    <string name ="label_password">Kata Sandi</string>
+    <string name ="label_login">Masuk</string>
+    <string name="text_recent_2">10:00-11:15, 16 September 2022</string>
+    <string name="label_first">Nama Depan</string>
+    <string name="label_last">Nama Akhir</string>
+    <string name="label_conf_pass">Konfirmasi Kata Sandi</string>
+    <string name="label_signup">Daftar</string>
+</resources>

@@ -31,6 +31,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.Role.Companion.Image
 //import androidx.compose.ui.semantics.Role.Companion.Image
@@ -63,6 +64,8 @@ class HomeActivity : AppCompatActivity() {
 
 
                     Greeting(username)
+                    Hero()
+                    BottomNavbar()
                 }
             }
         }
@@ -928,7 +931,7 @@ Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
                         )
 
                         Text(
-                            text = "10:00-11:15, 16 September 2022",
+                            text = stringResource(R.string.text_recent_2),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -1049,7 +1052,9 @@ fun BottomNavbar(){
                     onClick = { bottomState == "Janji Temu"},
                     backgroundColor = Color(0xFF4ECB71 )
                 ){
-                    Icon(painter = painterResource(id = R.drawable.navbar_janji_temu), contentDescription = null, modifier = Modifier.size(20.dp).offset(y = -13.dp), tint = Color.White)
+                    Icon(painter = painterResource(id = R.drawable.navbar_janji_temu), contentDescription = null, modifier = Modifier
+                        .size(20.dp)
+                        .offset(y = -13.dp), tint = Color.White)
                     Text(text = "Janji\nTemu", style = TextStyle(fontSize = 11.sp), lineHeight = 10.sp, color = Color.White, textAlign = TextAlign.Center, modifier = Modifier.offset(y = 8.dp))
                 }
                 BottomNavigationItem(
@@ -1087,8 +1092,8 @@ scaffoldState: ScaffoldState){
 @Composable
 fun DefaultPreview() {
     Project3activityTheme {
-        Greeting("admin")
-        Hero()
+//        Greeting("admin")
+//        Hero()
         BottomNavbar()
     }
 }

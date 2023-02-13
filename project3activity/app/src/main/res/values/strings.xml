@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">project3activity</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="label_login">Login</string>
+    <string name="text_recent_2" translatable="false">10:00-11:15, 16 September 2022</string>
+    <string name="title_activity_signup" translatable="false">Signup Activity</string>
+    <string name="label_first">First Name</string>
+    <string name="label_last">Last Name</string>
+    <string name="label_conf_pass">Confirm Password</string>
+    <string name="label_signup">Sign Up</string>
+
 </resources>

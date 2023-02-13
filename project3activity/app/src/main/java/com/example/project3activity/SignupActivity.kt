@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-//import androidx.compose.foundation.gestures.ModifierLocalScrollableContainerProvider.value
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -17,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.project3activity.ui.theme.Project3activityTheme
 
-class MainActivity : ComponentActivity() {
+class SignupActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,27 +26,41 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    SignupActivity()
-                    LoginForm()
+//                    Greeting2("Android")
+                    Signup()
                 }
             }
         }
     }
 }
 
-internal fun doAuth(username: String, password:String): Boolean {
-    return(username.equals("admin") && password.equals("admin"))
+@Composable
+fun Greeting2(name: String) {
+    Text(text = "Hello $name!")
 }
 
 @Composable
-fun LoginForm() {
+fun Signup(){
     val lCOntext = LocalContext.current
 
+    
+    var firstnameInput by remember {
+        mutableStateOf("")
+    }
+    
+    var lastnameInput by remember {
+        mutableStateOf("")
+    }
+    
     var usernameInput by remember {
         mutableStateOf("")
     }
 
     var passwordInput by remember {
+        mutableStateOf("")
+    }
+
+    var confpasswordInput by remember {
         mutableStateOf("")
     }
 
@@ -57,6 +70,30 @@ fun LoginForm() {
             .padding((20.dp)),
         verticalArrangement = Arrangement.spacedBy(8.dp))
     {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+
+        ) {
+            TextField(value = firstnameInput , onValueChange = {firstnameInput = it},
+            label = { Text(text = stringResource(id = R.string.label_first))},
+                modifier = Modifier
+                    .width(180.dp)
+            )
+
+            Spacer(modifier = Modifier.width(8.dp))
+            
+            TextField(value = lastnameInput , onValueChange = {lastnameInput = it},
+            label = { Text(text = stringResource(id = R.string.label_last))},
+                modifier = Modifier
+                    .width(180.dp)
+                    
+            )
+
+
+
+        }
         TextField(
             modifier = Modifier
                 .fillMaxWidth(),
@@ -65,6 +102,7 @@ fun LoginForm() {
             label = {Text(text = stringResource(id = R.string.label_username))}
 
         )
+
         TextField(
             modifier = Modifier
                 .fillMaxWidth(),
@@ -73,60 +111,46 @@ fun LoginForm() {
             label = {Text(text = stringResource(id = R.string.label_password)) },
             visualTransformation = PasswordVisualTransformation()
         )
-        Row(
+
+        TextField(
             modifier = Modifier
-//                .fillMaxWidth()
-                .align(alignment = Alignment.End)
-        ) {
-            
-            Button(
-                modifier = Modifier
-//                    .align(alignment = Alignment.End),
+                .fillMaxWidth(),
+            value = confpasswordInput,
+            onValueChange = {confpasswordInput = it},
+            label = {Text(text = stringResource(id = R.string.label_conf_pass)) },
+            visualTransformation = PasswordVisualTransformation()
+        )
+
+
+        Button(
+            modifier = Modifier
+                .align(alignment = Alignment.End),
 //                .fillMaxWidth(),
 //                .padding(25.dp),
-                ,onClick = {
-                        lCOntext.startActivity(
-                            Intent(lCOntext, SignupActivity::class.java)
-                        )
-                    }
-            ) {
-                Text(text = stringResource(id = R.string.label_signup))
-            }
-            
-            Spacer(modifier = Modifier.width(8.dp))
-            
-            Button(
-                modifier = Modifier
-//                    .fillMaxWidth(),
-//                .padding(25.dp),
-                        ,
-                onClick = {
-                    val isAuthenticated = doAuth(usernameInput, passwordInput)
-                    if (isAuthenticated) {
-                        lCOntext.startActivity(
-                            Intent(lCOntext, HomeActivity::class.java)
-                                .apply {
-                                    putExtra("username", usernameInput)
-                                }
-                        )
-                    }
+            onClick = {
+                val isAuthenticated = doAuth(usernameInput, passwordInput)
+                if (isAuthenticated) {
+                    lCOntext.startActivity(
+                        Intent(lCOntext, HomeActivity::class.java)
+                            .apply {
+                                putExtra("username", usernameInput)
+                            }
+                    )
                 }
-            ) {
-                Text(text = stringResource(id = R.string.label_login))
             }
-
-
-
+        ) {
+            Text(text = stringResource(id = R.string.label_signup))
         }
-
 
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun LoginFormPreview() {
-    Project3activityTheme() {
-        LoginForm()
+fun DefaultPreview2() {
+    Project3activityTheme {
+//        Greeting2("Android")
+        Signup()
     }
+
 }
