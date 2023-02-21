@@ -9,5 +9,6 @@
     <string name="label_last">Last Name</string>
     <string name="label_conf_pass">Confirm Password</string>
     <string name="label_signup">Sign Up</string>
+    <string name="title_activity_sign_up_contract">SignUpContract</string>
 
 </resources>
