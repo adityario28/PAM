@@ -9,6 +9,31 @@
     <string name="label_last">Last Name</string>
     <string name="label_conf_pass">Confirm Password</string>
     <string name="label_signup">Sign Up</string>
-    <string name="title_activity_sign_up_contract">SignUpContract</string>
+    <string name="title_activity_sign_up_contract" translatable="false">SignUpContract</string>
+
+
+    <string name="label_icon1" translatable="false">Ambulance</string>
+    <string name="label_icon2">Consultation</string>
+    <string name="label_icon3">Faskes Location</string>
+    <string name="label_icon4">Register JKN</string>
+    <string name="label_icon5">Patient Information</string>
+    <string name="label_icon6">Service List</string>
+    <string name="label_icon7">Clinic Information</string>
+    <string name="label_icon8">Other Menus</string>
+    <string name="History">Activity History</string>
+    <string name="History_Button_1_title">Monthly Routine Check Up</string>
+    <string name="History_Button_1_dr" translatable="false">dr. H. Boyke Dian Nugraha, SpOG MARS</string>
+    <string name="History_Button_1_loc" translatable="false">Cempaka 23, RS St. Elisabeth, Semarang</string>
+    <string name="History_Button_1_time" translatable="false">13:15-14:45, 25 Januari 2023</string>
+    <string name="History_Button_2_title">Circumcision</string>
+    <string name="History_Button_2_dr" translatable="false">dr. Teuku Adifitrian, Sp.BP-RE.</string>
+    <string name="History_Button_2_loc">Berlian 103, Siloam Hospitals Semarang</string>
+    <string name="History_Button_2_time" translatable="false">10:00-11:15, 16 September 2022</string>
+    <string name="Nav_Home" translatable="false">Home</string>
+    <string name="Nav_Loc">Location</string>
+    <string name="Nav_Res">Reservation</string>
+    <string name="Nav_FAQ" translatable="false">FAQ</string>
+    <string name="Nav_card">Card</string>
+    <string name="News_Headline">Cordyceps\'s Patient is Exploded</string>
 
 </resources>

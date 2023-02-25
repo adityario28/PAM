@@ -4,9 +4,23 @@
     <string name ="label_username">Nama Pengguna</string>
     <string name ="label_password">Kata Sandi</string>
     <string name ="label_login">Masuk</string>
-    <string name="text_recent_2">10:00-11:15, 16 September 2022</string>
     <string name="label_first">Nama Depan</string>
     <string name="label_last">Nama Akhir</string>
     <string name="label_conf_pass">Konfirmasi Kata Sandi</string>
     <string name="label_signup">Daftar</string>
+    <string name="label_icon2">Konsultasi</string>
+    <string name="label_icon3">Lokasi Faskes</string>
+    <string name="label_icon4">Daftar JKN</string>
+    <string name="label_icon5">Informasi Peserta</string>
+    <string name="label_icon6">Daftar Layanan</string>
+    <string name="label_icon7">Informasi Klinik</string>
+    <string name="label_icon8">Menu Lainnya</string>
+    <string name="History">Riwayat Aktifitas</string>
+    <string name="History_Button_1_title">Periksa Rutin Bulanan</string>
+    <string name="History_Button_2_title">Sirkumsisi (Sunat)</string>
+    <string name="History_Button_2_loc">Berlian 103, Rumah Sakit Siloam Semarang</string>
+    <string name="Nav_Loc">Lokasi</string>
+    <string name="Nav_Res">Janji Temu</string>
+    <string name="Nav_card">Kartu</string>
+    <string name="News_Headline">Pasien Jamur Cordyceps Makin Bertambah</string>
 </resources>

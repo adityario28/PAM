@@ -133,7 +133,7 @@ fun Hero() {
                     .clip(shape = RoundedCornerShape(30.dp))
             )
             Text(
-                text = "Pasien Jamur Cordyceps Makin Bertambah",
+                text = stringResource(id = R.string.News_Headline),
                 color = Color.White,
                 style = TextStyle(
                     fontSize = 14.sp,
@@ -226,7 +226,7 @@ fun Hero() {
                                 .height(3.dp)
                         )
                         Text(
-                            text = "Ambulance",
+                            text = stringResource(id = R.string.label_icon1),
                             color = Color.White,
                             style = TextStyle(
                                 fontWeight = FontWeight.Bold
@@ -280,7 +280,7 @@ fun Hero() {
 
 
                         Text(
-                            text = "Konsultasi",
+                            text = stringResource(id = R.string.label_icon2),
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
@@ -334,7 +334,7 @@ fun Hero() {
 
 
                         Text(
-                            text = "Lokasi Faskes",
+                            text = stringResource(id = R.string.label_icon3),
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
@@ -387,7 +387,7 @@ fun Hero() {
 
 
                         Text(
-                            text = "Daftar JKN",
+                            text = stringResource(id = R.string.label_icon4),
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
@@ -447,7 +447,7 @@ fun Hero() {
                                 .height(2.dp)
                         )
                         Text(
-                            text = "Informasi  Peserta",
+                            text = stringResource(id = R.string.label_icon5),
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
@@ -504,8 +504,7 @@ fun Hero() {
 
 
                         Text(
-                            text = "Daftar" + "      " +
-                                    "Layanan",
+                            text = stringResource(id = R.string.label_icon6),
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
@@ -562,7 +561,7 @@ fun Hero() {
 
 
                         Text(
-                            text = "Informasi" + "      " + "Klinik",
+                            text = stringResource(id = R.string.label_icon7),
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
@@ -611,7 +610,7 @@ fun Hero() {
                                 .height(0.dp)
                         )
                         Text(
-                            text = "Menu" + "         " + "Lainnya",
+                            text = stringResource(id = R.string.label_icon8),
                             color = Color.Black,
                             style = TextStyle(
                                 fontWeight = FontWeight.Medium
@@ -636,7 +635,7 @@ fun Hero() {
             .padding(start = 16.dp, top = 535.dp, end = 16.dp)
     ) {
         Text(
-            text = "Riwayat Aktifitas",
+            text = stringResource(id = R.string.History),
             color = Color.Black,
             style = TextStyle(
                 fontSize = 22.sp,
@@ -677,7 +676,7 @@ fun Hero() {
                 Column(
                 ) {
                     Text(
-                        text = "Periksa Rutin Bulanan",
+                        text = stringResource(id = R.string.History_Button_1_title),
                         color = Color.White,
                         textAlign = TextAlign.Left,
 //                        lineHeight = 12.sp,
@@ -702,7 +701,7 @@ fun Hero() {
                         )
 
                         Text(
-                            text = "dr. H. Boyke Dian Nugraha, SpOG MARS",
+                            text = stringResource(id = R.string.History_Button_1_dr),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -727,7 +726,7 @@ fun Hero() {
                         )
 
                         Text(
-                            text = "Cempaka 23, RS St. Elisabeth, Semarang",
+                            text = stringResource(id = R.string.History_Button_1_loc),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -750,7 +749,7 @@ fun Hero() {
                         )
 
                         Text(
-                            text = "13:15-14:45, 25 Januari 2023 ",
+                            text = stringResource(id = R.string.History_Button_1_time),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -817,7 +816,7 @@ fun Hero() {
                 Column(
                 ) {
                     Text(
-                        text = "Sirkumsisi (Sunat)",
+                        text = stringResource(id = R.string.History_Button_2_title),
                         color = Color.White,
                         textAlign = TextAlign.Left,
 //                        lineHeight = 12.sp,
@@ -842,7 +841,7 @@ fun Hero() {
                         )
 
                         Text(
-                            text = "dr. Teuku Adifitrian, Sp.BP-RE.",
+                            text = stringResource(id = R.string.History_Button_2_dr),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -867,7 +866,7 @@ fun Hero() {
                         )
 
                         Text(
-                            text = "Berlian 103, Siloam Hospitals Semarang",
+                            text = stringResource(id = R.string.History_Button_2_loc),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -890,7 +889,7 @@ fun Hero() {
                         )
 
                         Text(
-                            text = stringResource(R.string.text_recent_2),
+                            text = stringResource(id = R.string.History_Button_2_time),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -980,13 +979,13 @@ fun BottomNavbar(){
                 BottomNavigationItem(
                     selected = bottomState == "Home",
                     onClick = { bottomState == "Home"},
-                    label = { Text(text = "Home", color = Color(0xFF4ECB71)) },
+                    label = { Text(text = stringResource(id = R.string.Nav_Home), color = Color(0xFF4ECB71)) },
                     icon = { Icon(painter = painterResource(id = R.drawable.navbar_home), contentDescription = null, modifier = Modifier.size(22.dp), tint = Color(0xFF4ECB71)) }
                 )
                 BottomNavigationItem(
                     selected = bottomState == "Lokasi",
                     onClick = { bottomState == "Lokasi"},
-                    label = { Text(text = "Lokasi") },
+                    label = { Text(text = stringResource(id = R.string.Nav_Loc)) },
                     icon = { Icon(painter = painterResource(id = R.drawable.navbar_lokasi), contentDescription = null, modifier = Modifier.size(22.dp)) }
                 )
                 FloatingActionButton(
@@ -996,18 +995,18 @@ fun BottomNavbar(){
                     Icon(painter = painterResource(id = R.drawable.navbar_janji_temu), contentDescription = null, modifier = Modifier
                         .size(20.dp)
                         .offset(y = -13.dp), tint = Color.White)
-                    Text(text = "Janji\nTemu", style = TextStyle(fontSize = 11.sp), lineHeight = 10.sp, color = Color.White, textAlign = TextAlign.Center, modifier = Modifier.offset(y = 8.dp))
+                    Text(text = stringResource(id = R.string.Nav_Res), style = TextStyle(fontSize = 11.sp), lineHeight = 10.sp, color = Color.White, textAlign = TextAlign.Center, modifier = Modifier.offset(y = 8.dp))
                 }
                 BottomNavigationItem(
                     selected = bottomState == "FAQ",
                     onClick = { bottomState == "FAQ"},
-                    label = { Text(text = "FAQ") },
+                    label = { Text(text = stringResource(id = R.string.Nav_FAQ)) },
                     icon = { Icon(painter = painterResource(id = R.drawable.navbar_faq), contentDescription = null, modifier = Modifier.size(22.dp)) }
                 )
                 BottomNavigationItem(
                     selected = bottomState == "Kartu",
                     onClick = { bottomState == "Kartu"},
-                    label = { Text(text = "Kartu") },
+                    label = { Text(text = stringResource(id = R.string.Nav_card)) },
                     icon = { Icon(painter = painterResource(id = R.drawable.navbar_kartu), contentDescription = null, modifier = Modifier.size(22.dp)) }
                 )
             }
