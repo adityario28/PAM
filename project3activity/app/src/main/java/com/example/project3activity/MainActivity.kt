@@ -32,6 +32,8 @@ class MainActivity : ComponentActivity() {
                 ) {
                     SignupActivity()
                     LoginForm()
+//                    Hero()
+//                    BottomNavbar()
                 }
             }
         }
