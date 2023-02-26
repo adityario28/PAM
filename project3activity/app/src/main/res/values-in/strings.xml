@@ -23,4 +23,8 @@
     <string name="Nav_Res">Janji Temu</string>
     <string name="Nav_card">Kartu</string>
     <string name="News_Headline">Pasien Jamur Cordyceps Makin Bertambah</string>
+    <string name="welcome_login">Selamat Datang, mari sehat bersama!</string>
+    <string name="welcome_signup">Selamat Datang, mari bergabung bersama!</string>
+    <string name="login_prevent">Belum Memiliki Akun?</string>
+    <string name="signup_prevent">Sudah Memiliki Akun?</string>
 </resources>

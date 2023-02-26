@@ -35,5 +35,9 @@
     <string name="Nav_FAQ" translatable="false">FAQ</string>
     <string name="Nav_card">Card</string>
     <string name="News_Headline">Cordyceps\'s Patient is Exploded</string>
+    <string name="welcome_login">Welcome, let\'s be healthy together!</string>
+    <string name="welcome_signup">Welcome, let\'s join us!</string>
+    <string name="login_prevent">Doesn\'t Have an Account?</string>
+    <string name="signup_prevent">Already Have an Account?</string>
 
 </resources>

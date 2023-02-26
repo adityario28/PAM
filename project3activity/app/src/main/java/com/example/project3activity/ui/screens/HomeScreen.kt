@@ -232,7 +232,7 @@ fun Hero() {
                                 fontWeight = FontWeight.Bold
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp
+                            fontSize = 12.sp
                         )
                     }
 
@@ -286,7 +286,7 @@ fun Hero() {
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp
+                            fontSize = 12.sp
                         )
                     }
 
@@ -340,7 +340,7 @@ fun Hero() {
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp
+                            fontSize = 12.sp
                         )
                     }
 
@@ -393,7 +393,7 @@ fun Hero() {
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp
+                            fontSize = 12.sp
                         )
                     }
                 }
@@ -453,10 +453,8 @@ fun Hero() {
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp,
-                            lineHeight = 11.sp,
-                            modifier = Modifier
-                                .padding(top = 2.dp)
+                            fontSize = 12.sp,
+                            lineHeight = 11.sp
                         )
                     }
 
@@ -510,7 +508,7 @@ fun Hero() {
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp,
+                            fontSize = 12.sp,
                             lineHeight = 11.sp
                         )
                     }
@@ -567,7 +565,7 @@ fun Hero() {
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp,
+                            fontSize = 12.sp,
                             lineHeight = 11.sp
                         )
                     }
@@ -607,7 +605,7 @@ fun Hero() {
 
                         Spacer(
                             modifier = Modifier
-                                .height(0.dp)
+                                .height(2.dp)
                         )
                         Text(
                             text = stringResource(id = R.string.label_icon8),
@@ -616,7 +614,7 @@ fun Hero() {
                                 fontWeight = FontWeight.Medium
                             ),
                             textAlign = TextAlign.Center,
-                            fontSize = 10.sp,
+                            fontSize = 12.sp,
                             lineHeight = 11.sp
                         )
                     }
