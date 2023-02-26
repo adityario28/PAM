@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Face
 import androidx.compose.runtime.*
 //import androidx.compose.runtime.R
 import androidx.compose.ui.Alignment
@@ -149,6 +151,7 @@ fun Signup(
                 unfocusedBorderColor = Color.Gray,
 //                disabledIndicatorColor = Color.Transparent
             ),
+            trailingIcon = { Icon(imageVector = Icons.Rounded.Face, contentDescription = "icon username") },
             label = { Text(text = stringResource(id = R.string.label_username),
                 style = TextStyle(
                     color = colorResource(id = R.color.bg_splash),
@@ -162,6 +165,7 @@ fun Signup(
                 .fillMaxWidth(),
             value = passwordInput,
             onValueChange = {passwordInput = it},
+            trailingIcon = { Icon(painter = painterResource(id = R.drawable.key_form), contentDescription = "Key password") },
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 textColor = Color.Black,
                 disabledTextColor = Color.Transparent,
@@ -183,6 +187,7 @@ fun Signup(
                 .fillMaxWidth(),
             value = confpasswordInput,
             onValueChange = {confpasswordInput = it},
+            trailingIcon = { Icon(painter = painterResource(id = R.drawable.key_form), contentDescription = "Key password") },
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 textColor = Color.Black,
                 disabledTextColor = Color.Transparent,
