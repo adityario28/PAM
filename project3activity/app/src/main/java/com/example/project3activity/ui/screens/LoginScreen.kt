@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
 import com.example.project3activity.contracts.SignUpContracts
+import com.example.project3activity.model.UserObject
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 
@@ -42,11 +43,21 @@ internal fun doAuth(username: String, password:String): Boolean {
 fun LoginForm() {
     val lCOntext = LocalContext.current
 
+    val user = UserObject()
+
     var usernameInput by remember {
         mutableStateOf("")
     }
 
     var passwordInput by remember {
+        mutableStateOf("")
+    }
+
+    var firstnameInput by remember {
+        mutableStateOf("")
+    }
+
+    var lastnameInput by remember {
         mutableStateOf("")
     }
 

@@ -50,7 +50,7 @@ fun BottomNavigation(
         BottomNavItems.Profile
     )
     androidx.compose.material.BottomNavigation(
-//        backgroundColor = colorResource(id = R.color.teal_200),
+        backgroundColor =  colorResource(id = R.color.bg_splash),
         contentColor = Color.Black
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -60,11 +60,16 @@ fun BottomNavigation(
             BottomNavigationItem(
                 icon = { Icon(
                     imageVector = item.icon,
-                    contentDescription = "${item.title} icon")
+                    contentDescription = "${item.title} icon",
+                    tint = Color.White
+                )
                 },
                 label = {
-                    Text(text = item.title,
-                        fontSize = 9.sp)
+                    Text(
+                        text = item.title,
+                        fontSize = 9.sp,
+                        color = Color.White
+                        )
                 },
                 selectedContentColor = Color.Black,
                 unselectedContentColor = Color.Black.copy(0.4f),

@@ -23,13 +23,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.ui.theme.Project3activityTheme
 import com.example.project3activity.R
+import com.example.project3activity.model.UserObject
 
 
 @Composable
 fun Signup(
-    btnOnClickAction: (String?) -> Unit
+    btnOnClickAction: (String) -> Unit
 ){
     val lCOntext = LocalContext.current
+
+
+    val user = UserObject()
 
 
     var firstnameInput by remember {
@@ -96,13 +100,16 @@ fun Signup(
             horizontalArrangement = Arrangement.SpaceBetween
 
         ) {
-            OutlinedTextField(value = firstnameInput , onValueChange = {firstnameInput = it},
+            OutlinedTextField(
+                value = firstnameInput ,
+                onValueChange = {firstnameInput = it},
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     textColor = Color.Black,
                     disabledTextColor = Color.Transparent,
                     backgroundColor = Color.Transparent,
                     focusedBorderColor = colorResource(id = R.color.bg_splash),
                     unfocusedBorderColor = Color.Gray,
+
 //                disabledIndicatorColor = Color.Transparent
                 ),
                 label = { Text(text = stringResource(id = R.string.label_first),
@@ -224,7 +231,11 @@ fun Signup(
 //                            }
 //                    )
 //                }
-                btnOnClickAction(passwordInput)
+                user.firstname = firstnameInput
+                user.lastname = lastnameInput
+                user.username = usernameInput
+                user.password = passwordInput
+                btnOnClickAction(usernameInput)
             }
         ) {
             Text(text = stringResource(id = R.string.label_signup),
