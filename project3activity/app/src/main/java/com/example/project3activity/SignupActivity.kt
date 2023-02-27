@@ -30,7 +30,7 @@ class SignupActivity : ComponentActivity() {
                 ) {
 
 //                    Greeting2("Android")
-                    Signup(::sendUsernameBackToLogin    )
+                    Signup(::sendUsernameBackToLogin)
                 }
             }
         }

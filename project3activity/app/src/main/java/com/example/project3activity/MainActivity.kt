@@ -34,20 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-//                    val navController = rememberNavController()
-//                    NavHost(navController = navController, startDestination = Screens.Splash) {
-//                        composable(route  = Screens.Splash) {
-//                            SplashScreen(navController = navController)
-//                        }
-//
-//                        composable(route = Screens.Login) {
-//                            LoginScreen(navController = navController)
-//                        }
-//                    }
-                    SignupActivity()
                     LoginForm()
-//                    Hero()
-//                    BottomNavbar()
                 }
             }
         }

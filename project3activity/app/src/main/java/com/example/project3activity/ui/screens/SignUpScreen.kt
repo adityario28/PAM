@@ -224,7 +224,7 @@ fun Signup(
 //                            }
 //                    )
 //                }
-                btnOnClickAction(usernameInput)
+                btnOnClickAction(passwordInput)
             }
         ) {
             Text(text = stringResource(id = R.string.label_signup),

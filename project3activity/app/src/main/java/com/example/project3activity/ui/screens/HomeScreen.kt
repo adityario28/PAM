@@ -954,85 +954,85 @@ fun Hero() {
 }
 
 
-@Composable
-fun BottomNavbar(){
-
-    var bottomState by remember {
-        mutableStateOf("Home")
-    }
-
-
-    Scaffold(
-        content = {
-            Greeting(name = "admin")
-            Hero()
-        },
-        bottomBar = {
-            BottomNavigation(
-                backgroundColor = Color.White,
-                contentColor = Color(0xFF868686),
-//                modifier = Modifier
-//                    .padding(horizontal = 20.dp)
-            ) {
-                BottomNavigationItem(
-                    selected = bottomState == "Home",
-                    onClick = { bottomState == "Home"},
-                    label = { Text(text = stringResource(id = R.string.Nav_Home), color = Color(0xFF4ECB71)) },
-                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_home), contentDescription = null, modifier = Modifier.size(22.dp), tint = Color(0xFF4ECB71)) }
-                )
-                BottomNavigationItem(
-                    selected = bottomState == "Lokasi",
-                    onClick = { bottomState == "Lokasi"},
-                    label = { Text(text = stringResource(id = R.string.Nav_Loc)) },
-                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_lokasi), contentDescription = null, modifier = Modifier.size(22.dp)) }
-                )
-                FloatingActionButton(
-                    onClick = { bottomState == "Janji Temu"},
-                    backgroundColor = Color(0xFF4ECB71 )
-                ){
-                    Icon(painter = painterResource(id = R.drawable.navbar_janji_temu), contentDescription = null, modifier = Modifier
-                        .size(20.dp)
-                        .offset(y = -13.dp), tint = Color.White)
-                    Text(text = stringResource(id = R.string.Nav_Res), style = TextStyle(fontSize = 11.sp), lineHeight = 10.sp, color = Color.White, textAlign = TextAlign.Center, modifier = Modifier.offset(y = 8.dp))
-                }
-                BottomNavigationItem(
-                    selected = bottomState == "FAQ",
-                    onClick = { bottomState == "FAQ"},
-                    label = { Text(text = stringResource(id = R.string.Nav_FAQ)) },
-                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_faq), contentDescription = null, modifier = Modifier.size(22.dp)) }
-                )
-                BottomNavigationItem(
-                    selected = bottomState == "Kartu",
-                    onClick = { bottomState == "Kartu"},
-                    label = { Text(text = stringResource(id = R.string.Nav_card)) },
-                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_kartu), contentDescription = null, modifier = Modifier.size(22.dp)) }
-                )
-            }
-        }
-    )
-}
-
-
-
-@Composable
-fun centerbutton(scope: CoroutineScope,
-                 scaffoldState: ScaffoldState
-){
-    FloatingActionButton(onClick = { scope.launch { scaffoldState.snackbarHostState.showSnackbar("Janji Temu", actionLabel = "Janji Temu", duration = SnackbarDuration.Indefinite) } }) {
-
-    }
-
-}
-
-
+//@Composable
+//fun BottomNavbar(){
+//
+//    var bottomState by remember {
+//        mutableStateOf("Home")
+//    }
+//
+//
+//    Scaffold(
+//        content = {
+//            Greeting(name = "admin")
+//            Hero()
+//        },
+//        bottomBar = {
+//            BottomNavigation(
+//                backgroundColor = Color.White,
+//                contentColor = Color(0xFF868686),
+////                modifier = Modifier
+////                    .padding(horizontal = 20.dp)
+//            ) {
+//                BottomNavigationItem(
+//                    selected = bottomState == "Home",
+//                    onClick = { bottomState == "Home"},
+//                    label = { Text(text = stringResource(id = R.string.Nav_Home), color = Color(0xFF4ECB71)) },
+//                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_home), contentDescription = null, modifier = Modifier.size(22.dp), tint = Color(0xFF4ECB71)) }
+//                )
+//                BottomNavigationItem(
+//                    selected = bottomState == "Lokasi",
+//                    onClick = { bottomState == "Lokasi"},
+//                    label = { Text(text = stringResource(id = R.string.Nav_Loc)) },
+//                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_lokasi), contentDescription = null, modifier = Modifier.size(22.dp)) }
+//                )
+//                FloatingActionButton(
+//                    onClick = { bottomState == "Janji Temu"},
+//                    backgroundColor = Color(0xFF4ECB71 )
+//                ){
+//                    Icon(painter = painterResource(id = R.drawable.navbar_janji_temu), contentDescription = null, modifier = Modifier
+//                        .size(20.dp)
+//                        .offset(y = -13.dp), tint = Color.White)
+//                    Text(text = stringResource(id = R.string.Nav_Res), style = TextStyle(fontSize = 11.sp), lineHeight = 10.sp, color = Color.White, textAlign = TextAlign.Center, modifier = Modifier.offset(y = 8.dp))
+//                }
+//                BottomNavigationItem(
+//                    selected = bottomState == "FAQ",
+//                    onClick = { bottomState == "FAQ"},
+//                    label = { Text(text = stringResource(id = R.string.Nav_FAQ)) },
+//                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_faq), contentDescription = null, modifier = Modifier.size(22.dp)) }
+//                )
+//                BottomNavigationItem(
+//                    selected = bottomState == "Kartu",
+//                    onClick = { bottomState == "Kartu"},
+//                    label = { Text(text = stringResource(id = R.string.Nav_card)) },
+//                    icon = { Icon(painter = painterResource(id = R.drawable.navbar_kartu), contentDescription = null, modifier = Modifier.size(22.dp)) }
+//                )
+//            }
+//        }
+//    )
+//}
+//
+//
+//
+//@Composable
+//fun centerbutton(scope: CoroutineScope,
+//                 scaffoldState: ScaffoldState
+//){
+//    FloatingActionButton(onClick = { scope.launch { scaffoldState.snackbarHostState.showSnackbar("Janji Temu", actionLabel = "Janji Temu", duration = SnackbarDuration.Indefinite) } }) {
+//
+//    }
+//
+//}
 
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    Project3activityTheme {
-//        Greeting("admin")
-//        Hero()
-        BottomNavbar()
-    }
-}
+
+
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    Project3activityTheme {
+////        Greeting("admin")
+////        Hero()
+//        BottomNavbar()
+//    }
+//}
