@@ -39,5 +39,9 @@
     <string name="welcome_signup">Welcome, let\'s join us!</string>
     <string name="login_prevent">Doesn\'t Have an Account?</string>
     <string name="signup_prevent">Already Have an Account?</string>
+    <string name="Headline">Global Health Emergency Declared by WHO as Cordyceps Outbreak Spreads Rapidly Across Multiple Continents</string>
+    <string name="author" translatable="false">davataya</string>
+    <string name="date">15:59, 27 February 2023</string>
+    <string name="news_text">In recent weeks, the world has been gripped by increasing concern over the rapid spread of the Cordyceps epidemic. This highly contagious virus has spread to multiple countries across several continents at an alarming rate.  Today, the World Health Organization (WHO) has officially declared a global health emergency in response to the rapidly expanding outbreak. According to WHO reports, thousands of confirmed cases and hundreds of deaths have been attributed to Cordyceps, with numbers expected to rise.  Health experts and governments worldwide have expressed concern about the virus\'s ability to spread quickly and be difficult to control. Various efforts have been made to limit the virus\'s spread, including quarantine measures, travel restrictions, and social distancing in affected areas.  However, these efforts have proven insufficient in stopping the spread of the virus, and health experts are calling for increased efforts to address the situation. Some countries have even decided to close their borders as a further preventative measure.  The situation is evolving rapidly, and health experts and governments worldwide are working hard to contain the outbreak. We all must take preventative measures to protect ourselves and others from this virus, including frequent handwashing, avoiding crowds, and wearing face masks.</string>
 
 </resources>
