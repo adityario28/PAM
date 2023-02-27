@@ -110,32 +110,35 @@ fun Hero(username: String) {
         )
 
     }
-    Column {
-        Text(
-            text = "Hello ",
-            color = Color.Black,
-            style = TextStyle(
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Medium
-            ),
-            modifier = Modifier
-                .padding(start = 390.dp, top = 45.dp)
-        )
+
+    Column(modifier = Modifier.padding(start = 16.dp, top = 40.dp)) {
+
+            Text(
+                text = "Hello, ",
+                color = Color.Black,
+                style = TextStyle(
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal
+                ),
+                modifier = Modifier
+                    .padding(top = 45.dp)
+            )
     }
 
-    Column {
+    Column(modifier = Modifier.padding(start = 16.dp, top = 57.dp)) {
+
         Text(
             text = username,
             color = Color.Black,
             style = TextStyle(
-                fontSize = 14.sp,
-                fontWeight = FontWeight.ExtraBold
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
             ),
             modifier = Modifier
-                .padding(start = 427.dp, top = 45.dp)
+                .padding(top = 45.dp)
         )
-    }
 
+    }
 
 
     Column(
