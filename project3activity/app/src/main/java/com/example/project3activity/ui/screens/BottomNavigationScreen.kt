@@ -33,7 +33,7 @@ fun NavigationGraph(
         startDestination = BottomNavItems.Home.screen_route
     ) {
         composable(BottomNavItems.Home.screen_route) {
-            Hero()
+            Hero(username)
         }
         composable(BottomNavItems.Article.screen_route) {
             ArticleScreen()

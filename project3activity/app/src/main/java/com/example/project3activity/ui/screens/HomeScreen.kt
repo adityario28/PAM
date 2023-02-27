@@ -86,7 +86,7 @@ fun DotsIndicator(
 
 
 @Composable
-fun Hero() {
+fun Hero(username: String) {
 
     val ctx = LocalContext.current
 
@@ -107,6 +107,32 @@ fun Hero() {
         Image(painter = painterResource(id = R.drawable.ava), contentDescription = "avatar",
             modifier = Modifier
                 .size(58.dp)
+        )
+
+    }
+    Column {
+        Text(
+            text = "Hello ",
+            color = Color.Black,
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Medium
+            ),
+            modifier = Modifier
+                .padding(start = 390.dp, top = 45.dp)
+        )
+    }
+
+    Column {
+        Text(
+            text = username,
+            color = Color.Black,
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontWeight = FontWeight.ExtraBold
+            ),
+            modifier = Modifier
+                .padding(start = 427.dp, top = 45.dp)
         )
     }
 

@@ -11,9 +11,10 @@ class SignUpContracts : ActivityResultContract<String?, String?>() {
         return Intent(context, SignupActivity::class.java)
     }
 
-    override fun parseResult(resultCode: Int, intent: Intent?): String?  = when {
+    override fun parseResult(resultCode: Int, username: Intent?): String?  = when {
         resultCode != Activity.RESULT_OK -> null
-        else -> intent?.getStringExtra("username")
+        else -> username?.getStringExtra("username")
+
 //        if (resultCode != Activity.RESULT_OK -> null){
 //            null}
 
