@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -84,7 +85,7 @@ fun ProfileScreen(){
                         .align(Alignment.CenterVertically)
                         .padding(start = 8.dp)
                         .weight(1f),
-                    text = "Recent Doctor",
+                    text = stringResource(id = R.string.profile_1),
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 16.sp,
@@ -100,14 +101,14 @@ fun ProfileScreen(){
                 .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
                 .fillMaxWidth())
             {
-                Image(painter = painterResource(id = R.drawable.doctor_icon_1), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
+                Image(painter = painterResource(id = R.drawable.info_icon), contentDescription = "info profile", modifier = Modifier.size(28.dp))
 
                 Text(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .padding(start = 8.dp)
                         .weight(1f),
-                    text = "Recent Doctor",
+                    text = stringResource(id = R.string.profile_2),
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 16.sp,
@@ -123,14 +124,14 @@ fun ProfileScreen(){
                 .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
                 .fillMaxWidth())
             {
-                Image(painter = painterResource(id = R.drawable.doctor_icon_1), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
+                Image(painter = painterResource(id = R.drawable.rumkit_icon), contentDescription = "clinic info profile", modifier = Modifier.size(28.dp))
 
                 Text(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .padding(start = 8.dp)
                         .weight(1f),
-                    text = "Recent Doctor",
+                    text = stringResource(id = R.string.profile_3),
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 16.sp,
@@ -146,14 +147,14 @@ fun ProfileScreen(){
                 .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
                 .fillMaxWidth())
             {
-                Image(painter = painterResource(id = R.drawable.doctor_icon_1), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
+                Image(painter = painterResource(id = R.drawable.loc_icon), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
 
                 Text(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .padding(start = 8.dp)
                         .weight(1f),
-                    text = "Recent Doctor",
+                    text = stringResource(id = R.string.profile_4),
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 16.sp,

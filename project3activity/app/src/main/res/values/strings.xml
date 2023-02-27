@@ -51,5 +51,9 @@
     <string name="toast6">Service\'s List isn\'t Available</string>
     <string name="toast7">Clinic\'s Information isn\'t Available</string>
     <string name="toast8">Other Menus isn\'t Available</string>
+    <string name="profile_1">Doctor History</string>
+    <string name="profile_2">Patient Information</string>
+    <string name="profile_3">Clinic\'s Information</string>
+    <string name="profile_4">Faskes\'s Location</string>
 
 </resources>

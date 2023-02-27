@@ -38,4 +38,8 @@
     <string name="toast6">Daftar Layanan Tidak Tersedia</string>
     <string name="toast7">Informasi Klinik Tidak Tersedia</string>
     <string name="toast8">Menu Lainnya Tidak Tersedia</string>
+    <string name="profile_1">Riwayat Dokter</string>
+    <string name="profile_2">Informasi Peserta</string>
+    <string name="profile_3">Informasi Klinik</string>
+    <string name="profile_4">Lokasi Faskes</string>
 </resources>
