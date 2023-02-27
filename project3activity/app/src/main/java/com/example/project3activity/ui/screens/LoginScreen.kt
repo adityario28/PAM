@@ -27,23 +27,22 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.SignupActivity
 import com.example.project3activity.contracts.SignUpContracts
-import com.example.project3activity.model.UserObject
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 
-internal fun doAuth(username: String, password:String): Boolean {
-    return(username == "admin" && password == "admin")
+internal fun doAuth(username: String, usernameInput: String, password:String, passwordInput: String): Boolean {
+    return(username == usernameInput && password == passwordInput)
 }
 
 
 
 
 @Composable
-fun LoginForm() {
+fun LoginForm(username: String, password: String, firstname: String, lastname: String) {
     val lCOntext = LocalContext.current
 
-    val user = UserObject()
 
     var usernameInput by remember {
         mutableStateOf("")
@@ -52,21 +51,21 @@ fun LoginForm() {
     var passwordInput by remember {
         mutableStateOf("")
     }
+//
+//    var firstnameInput by remember {
+//        mutableStateOf("")
+//    }
+//
+//    var lastnameInput by remember {
+//        mutableStateOf("")
+//    }
 
-    var firstnameInput by remember {
-        mutableStateOf("")
-    }
+    usernameInput = username
 
-    var lastnameInput by remember {
-        mutableStateOf("")
-    }
-
-    val getUsernameFromSignedUpForm = rememberLauncherForActivityResult(
-        contract =  SignUpContracts(),
-        onResult = { usernameInput = it!!})
+//    val getUsernameFromSignedUpForm = rememberLauncherForActivityResult(
+//        contract =  SignUpContracts(),
+//        onResult = { usernameInput = it!!})
     // '!!' digunakan untuk mencari string
-
-
 
     Column(
         modifier = Modifier
@@ -175,12 +174,15 @@ fun LoginForm() {
 //                .padding(25.dp),
 //                    .width(12.dp)
                 onClick = {
-                    val isAuthenticated = doAuth(usernameInput, passwordInput)
+                    val isAuthenticated = doAuth(username, usernameInput, password, passwordInput)
                     if (isAuthenticated) {
                         lCOntext.startActivity(
                             Intent(lCOntext, HomeActivity::class.java)
                                 .apply {
-                                    putExtra("username", usernameInput)
+                                    putExtra("username", username)
+                                    putExtra("password", password)
+                                    putExtra("firstname", firstname)
+                                    putExtra("lastname", lastname)
                                 }
                         )
                     }
@@ -214,10 +216,10 @@ fun LoginForm() {
 //                .fillMaxWidth(),
 //                .padding(25.dp),
                 ,onClick = {
-//                        lCOntext.startActivity(
-//                            Intent(lCOntext, SignupActivity::class.java)
-//                        ) //untuk melempar ke page signup
-                    getUsernameFromSignedUpForm.launch("")
+                        lCOntext.startActivity(
+                            Intent(lCOntext, SignupActivity::class.java)
+                        ) //untuk melempar ke page signup
+//                    getUsernameFromSignedUpForm.launch("")
                 }
             ) {
                 Text(text = stringResource(id = R.string.label_signup),
@@ -241,10 +243,10 @@ fun LoginForm() {
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun LoginFormPreview() {
-    Project3activityTheme() {
-        LoginForm()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun LoginFormPreview() {
+//    Project3activityTheme() {
+//        LoginForm()
+//    }
+//}

@@ -22,7 +22,11 @@ import com.example.project3activity.ui.BottomNavItems
 
 @Composable
 fun NavigationGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    username: String,
+    password: String,
+    firstname: String,
+    lastname: String,
 ) {
     NavHost(
         navController = navController,
@@ -35,7 +39,7 @@ fun NavigationGraph(
             ArticleScreen()
         }
         composable(BottomNavItems.Profile.screen_route) {
-            ProfileScreen()
+            ProfileScreen(username, password, firstname, lastname)
         }
     }
 }
@@ -93,7 +97,7 @@ fun BottomNavigation(
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun BottomNavigationMainScreenView(){
+fun BottomNavigationMainScreenView(username: String, password: String, firstname: String, lastname: String){
     val navController = rememberNavController()
     Scaffold(
         bottomBar = {
@@ -102,6 +106,6 @@ fun BottomNavigationMainScreenView(){
             )
         }
     ) {
-        NavigationGraph(navController = navController)
+        NavigationGraph(navController = navController, username, password, firstname, lastname)
     }
 }

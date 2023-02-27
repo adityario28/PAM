@@ -1,5 +1,6 @@
 package com.example.project3activity.ui.screens
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,19 +22,18 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.project3activity.MainActivity
 import com.example.project3activity.ui.theme.Project3activityTheme
 import com.example.project3activity.R
-import com.example.project3activity.model.UserObject
 
 
 @Composable
 fun Signup(
     btnOnClickAction: (String) -> Unit
 ){
-    val lCOntext = LocalContext.current
+    val lContext = LocalContext.current
 
 
-    val user = UserObject()
 
 
     var firstnameInput by remember {
@@ -231,11 +231,13 @@ fun Signup(
 //                            }
 //                    )
 //                }
-                user.firstname = firstnameInput
-                user.lastname = lastnameInput
-                user.username = usernameInput
-                user.password = passwordInput
-                btnOnClickAction(usernameInput)
+                lContext.startActivity(
+                    Intent(lContext, MainActivity::class.java)
+                        .putExtra("username", usernameInput)
+                        .putExtra("password", passwordInput)
+                        .putExtra("firstname", firstnameInput)
+                        .putExtra("lastname", lastnameInput))
+//                btnOnClickAction(usernameInput)
             }
         ) {
             Text(text = stringResource(id = R.string.label_signup),

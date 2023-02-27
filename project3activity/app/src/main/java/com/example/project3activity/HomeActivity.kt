@@ -26,7 +26,11 @@ class HomeActivity : AppCompatActivity() {
                 ) {
 //                    val username = getIntent().getStringExtra("username") ?: ""
 //                    Greeting(username)
-                    BottomNavigationMainScreenView()
+                    val username = getIntent().getStringExtra("username") ?: ""
+                    val password = getIntent().getStringExtra("password") ?: ""
+                    val firstname = getIntent().getStringExtra("firstname") ?: ""
+                    val lastname = getIntent().getStringExtra("lastname") ?: ""
+                    BottomNavigationMainScreenView(username, password, firstname, lastname)
                 }
             }
         }

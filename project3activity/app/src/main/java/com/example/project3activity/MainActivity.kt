@@ -21,7 +21,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    LoginForm()
+                    val username = getIntent().getStringExtra("username") ?: ""
+                    val password = getIntent().getStringExtra("password") ?: ""
+                    val firstname = getIntent().getStringExtra("firstname") ?: ""
+                    val lastname = getIntent().getStringExtra("lastname") ?: ""
+                    LoginForm(username, password, firstname, lastname)
                 }
             }
         }
