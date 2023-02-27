@@ -33,7 +33,7 @@ import com.example.project3activity.ui.theme.Project3activityTheme
 
 
 internal fun doAuth(username: String, usernameInput: String, password:String, passwordInput: String): Boolean {
-    return(username == usernameInput && password == passwordInput || usernameInput == "admin" && passwordInput == "admin")
+    return(username == usernameInput && password == passwordInput && usernameInput != "" || usernameInput == "admin" && passwordInput == "admin")
 }
 
 
