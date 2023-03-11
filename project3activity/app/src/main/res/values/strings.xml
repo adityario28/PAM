@@ -65,5 +65,6 @@
     <string name="WorkDay_1">Monday - Saturday</string>
     <string name="Loc_1" translatable="false">RS St. Elisabeth, Semarang</string>
     <string name="Spec_1">Sexologist - Pregnancy</string>
+    <string name="title_activity_cons">ConsActivity</string>
 
 </resources>

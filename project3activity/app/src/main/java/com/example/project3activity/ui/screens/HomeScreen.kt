@@ -273,11 +273,9 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
 
                 Button(
                     onClick = {
-                        Toast.makeText(
-                            ctx,
-                            "Menu Konsultasi belum dibuat juga gann",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        lCOntext.startActivity(
+                            Intent(lCOntext, ConsActivity::class.java)
+                        )
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
