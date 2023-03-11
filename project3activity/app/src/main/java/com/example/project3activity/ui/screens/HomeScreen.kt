@@ -97,7 +97,8 @@ fun Hero(username: String) {
         contentScale = ContentScale.Crop,
         modifier = Modifier
             .padding(bottom = 80.dp)
-            .width(width = 400.dp)
+//            .width(width = 400.dp)
+            .fillMaxWidth()
             .height(height = 85.dp)
     )
 
@@ -1056,12 +1057,12 @@ fun Hero(username: String) {
 
 
 
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview() {
-//    Project3activityTheme {
-////        Greeting("admin")
-////        Hero()
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    Project3activityTheme {
+//        Greeting("admin")
+        Hero("cuy")
 //        BottomNavbar()
-//    }
-//}
+    }
+}

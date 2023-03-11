@@ -55,5 +55,10 @@
     <string name="profile_2">Patient Information</string>
     <string name="profile_3">Clinic\'s Information</string>
     <string name="profile_4">Faskes\'s Location</string>
+    <string name="title_activity_splash" translatable="false">SplashActivity</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="ambulancepg_emergency">Emergency Button</string>
+    <string name="SOS" translatable="false">SOS</string>
+    <string name="Amb_loc" translatable="false">FTI UKSW, Blotongan, Salatiga</string>
 
 </resources>

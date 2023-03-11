@@ -1,14 +1,20 @@
 package com.example.project3activity.ui.screens
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -62,16 +68,21 @@ fun BottomNavigation(
 
         items.forEach { item ->
             BottomNavigationItem(
-                icon = { Icon(
-                    imageVector = item.icon,
-                    contentDescription = "${item.title} icon",
+                icon = {
+                    Icon(painter = painterResource(id = item.icon), contentDescription = "${item.title} icon", modifier = Modifier.size(20.dp))
+
+//                    Icon(
+//                    imageVector = item.icon,
+//                    contentDescription = "${item.title} icon")
 //                    tint = colorResource(id = R.color.bg_splash)
-                )
+
+//                    Icon(imageVector = ImageVector.vectorResource(id = item.icon), contentDescription = "${item.title} icon")
+
                 },
                 label = {
                     Text(
                         text = item.title,
-                        fontSize = 9.sp,
+                        fontSize = 11.sp,
 //                        color = colorResource(id = R.color.bg_splash)
                         )
                 },

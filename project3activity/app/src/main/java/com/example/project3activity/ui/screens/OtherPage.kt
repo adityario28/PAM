@@ -28,6 +28,17 @@ import com.example.project3activity.ui.theme.Project3activityTheme
 fun OtherPage(){
     val lCOntext = LocalContext.current
 
+    val button_big = Modifier
+        .size(width = 315.dp, height = 100.dp)
+        .defaultMinSize(1.dp, minHeight = 1.dp)
+        .shadow(4.dp, shape = RoundedCornerShape(8.dp))
+
+    val button = Modifier
+        .size(width = 150.dp, height = 100.dp)
+        .shadow(4.dp, shape = RoundedCornerShape(20.dp))
+        .defaultMinSize(1.dp, minHeight = 1.dp)
+
+
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -45,15 +56,6 @@ fun OtherPage(){
         )
     }
 
-    val button_big = Modifier
-        .size(width = 315.dp, height = 100.dp)
-        .defaultMinSize(1.dp, minHeight = 1.dp)
-        .shadow(4.dp, shape = RoundedCornerShape(8.dp))
-
-    val button = Modifier
-        .size(width = 150.dp, height = 100.dp)
-        .shadow(4.dp, shape = RoundedCornerShape(20.dp))
-        .defaultMinSize(1.dp, minHeight = 1.dp)
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -88,7 +90,7 @@ fun OtherPage(){
 
             ) {
                     Image(
-                        painter = painterResource(id = R.drawable.other_back),
+                        painter = painterResource(id = R.drawable.ava),
                         contentDescription = null,
                         modifier = Modifier
                             .size(50.dp)
@@ -132,7 +134,7 @@ fun OtherPage(){
                                 modifier = Modifier
                                     .fillMaxWidth()) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.ava),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -171,7 +173,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_2),
+                                    painter = painterResource(id = R.drawable.ava),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -208,7 +210,7 @@ fun OtherPage(){
                                 modifier = Modifier
                                     .fillMaxWidth()) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_3),
+                                    painter = painterResource(id = R.drawable.ava),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -244,7 +246,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.ava),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -283,7 +285,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.ava),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -319,7 +321,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.ava),
                                     contentDescription = null,
                                     modifier = a4
                                 )
