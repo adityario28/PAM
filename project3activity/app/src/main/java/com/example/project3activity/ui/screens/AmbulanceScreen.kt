@@ -27,7 +27,7 @@ import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
 
 @Composable
-fun Ambulance(){
+fun Ambulance(username: String){
     val lCOntext = LocalContext.current
 
     Column (
@@ -75,13 +75,14 @@ fun Ambulance(){
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
+                        .putExtra("username", username)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
 
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ava),
+                painter = painterResource(id = R.drawable.other_back),
                 contentDescription = null,
                 modifier = Modifier
                     .size(50.dp)
@@ -127,104 +128,12 @@ fun Ambulance(){
                 }
 
             }
-
-        
-
-
         }
     }
-
-
-
-//    Column (
-//        modifier = Modifier
-//            .fillMaxSize()
-//            .fillMaxHeight()
-//            .fillMaxWidth()
-//    ){
-//        Image(
-//            painter = painterResource(id = R.drawable.pattern),
-//            contentDescription = "pattern",
-//            contentScale = ContentScale.Crop,
-//            modifier = Modifier
-////                .padding(bottom = 80.dp)
-//                .width(width = 400.dp)
-//                .height(height = 85.dp)
-//        )
-//
-//        Spacer(modifier = Modifier.height(18.dp))
-//
-//        Column(
-//            horizontalAlignment = Alignment.CenterHorizontally,
-//            modifier = Modifier
-//                .fillMaxWidth()
-////            .padding(top = 120.dp),
-//        ) {
-//            Box(modifier = Modifier.align(alignment = Alignment.Start)){
-//                /*tombol kembali*/
-//                TextButton(
-//                    onClick = {
-//                        lCOntext.startActivity(
-//                            Intent(lCOntext, HomeActivity::class.java)
-//                        )
-//                    },
-//                    modifier = Modifier.padding(start = 20.dp)
-//
-//                ) {
-//                    Image(
-//                        painter = painterResource(id = R.drawable.ava),
-//                        contentDescription = null,
-//                        modifier = Modifier
-//                            .size(50.dp)
-//
-//                    )
-//                }
-//            }
-//            Text(
-//                text = stringResource(id = R.string.ambulancepg_emergency),
-//                color = Color.Black,
-//                style = TextStyle(
-//                    fontSize = 24.sp,
-//                    fontWeight = FontWeight.Bold,
-//                    textAlign = TextAlign.Center
-//                )
-//            )
-//        }
-//
-//
-//
-//
-//        Spacer(modifier = Modifier.height(.dp))
-//
-//        Column(modifier = Modifier
-//            .align(alignment = Alignment.CenterHorizontally)
-//            .fillMaxHeight(), horizontalAlignment = Alignment.CenterHorizontally) {
-//            Button(onClick = { /*TODO*/ }, shape = CircleShape, modifier = Modifier.size(300.dp), colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(
-//                id = R.color.red_ambulance
-//            ))) {
-//                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-//                    Icon(painter = painterResource(id = R.drawable.ambulancce_icon_1), contentDescription = stringResource(
-//                        id = R.string.ambulance
-//                    ), tint = Color.White, modifier = Modifier.size(96.dp))
-//
-//                    Spacer(modifier = Modifier.height(1.dp))
-//
-//                    Text(text = stringResource(id = R.string.SOS), color = Color.White, fontSize = 42.sp, style = TextStyle(fontWeight = FontWeight.SemiBold))
-//                }
-//
-//            }
-//        }
-//
-//    }
-
-
-
-
-
 }
 
 @Preview(showBackground = true)
 @Composable
 fun AmbulancePreview(){
-    Ambulance()
+    Ambulance("coy")
 }

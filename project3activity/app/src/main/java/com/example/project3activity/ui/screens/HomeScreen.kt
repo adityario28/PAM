@@ -22,11 +22,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.project3activity.InfoActivity
-import com.example.project3activity.OtherActivity
+import com.example.project3activity.*
 import com.example.project3activity.R
+import com.example.project3activity.ui.theme.Project3activityTheme
 
 
 @Composable
@@ -222,7 +223,11 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
             ) {
                 Button(
                     onClick = {
-                        Toast.makeText(ctx, "Belum dibuat gann", Toast.LENGTH_SHORT).show()
+                        lCOntext.startActivity(
+                            Intent(lCOntext, AmbulanceActivity::class.java)
+                                .putExtra("username", username)
+                        )
+//                        Toast.makeText(ctx, "Belum dibuat gann", Toast.LENGTH_SHORT).show()
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffd0342c)),
@@ -1065,7 +1070,7 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
 fun DefaultPreview() {
     Project3activityTheme {
 //        Greeting("admin")
-        Hero("cuy")
+        Hero("cuy","coy", "cey", "cay")
 //        BottomNavbar()
     }
 }

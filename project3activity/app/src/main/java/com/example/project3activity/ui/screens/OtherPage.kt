@@ -18,10 +18,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
 fun OtherPage(username: String){
@@ -355,12 +357,12 @@ fun OtherPage(username: String){
 }
 
 
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewProfile() {
-//    Project3activityTheme {
-////        Greeting2("Android")
-//        OtherPage()
-//    }
-//
-//}
+@Preview(showBackground = true)
+@Composable
+fun PreviewProfile() {
+    Project3activityTheme {
+//        Greeting2("Android")
+        OtherPage("coy")
+    }
+
+}

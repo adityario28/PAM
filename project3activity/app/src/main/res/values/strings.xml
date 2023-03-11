@@ -60,5 +60,6 @@
     <string name="ambulancepg_emergency">Emergency Button</string>
     <string name="SOS" translatable="false">SOS</string>
     <string name="Amb_loc" translatable="false">FTI UKSW, Blotongan, Salatiga</string>
+    <string name="title_activity_ambulance">AmbulanceActivity</string>
 
 </resources>

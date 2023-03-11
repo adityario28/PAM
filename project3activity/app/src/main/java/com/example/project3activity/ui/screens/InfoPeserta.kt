@@ -23,10 +23,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
 fun InfoPeserta(username: String, password: String, firstname: String, lastname: String){
@@ -283,12 +285,13 @@ fun InfoPeserta(username: String, password: String, firstname: String, lastname:
 
 
 
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewProfile() {
-//    Project3activityTheme {
-////        Greeting2("Android")
+@Preview(showBackground = true)
+@Composable
+fun PreviewProfile2() {
+    Project3activityTheme {
+//        Greeting2("Android")
 //        OtherPage()
-//    }
-//
-//}
+        InfoPeserta(username = "so", password = "mad" , firstname = "oh" , lastname = "as")
+    }
+
+}
