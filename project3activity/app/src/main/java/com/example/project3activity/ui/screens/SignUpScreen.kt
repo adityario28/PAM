@@ -232,12 +232,8 @@ fun Signup(
 //                    )
 //                }
                 lContext.startActivity(
-                    Intent(lContext, MainActivity::class.java)
-                        .putExtra("username", usernameInput)
-                        .putExtra("password", passwordInput)
-                        .putExtra("firstname", firstnameInput)
-                        .putExtra("lastname", lastnameInput))
-//                btnOnClickAction(usernameInput)
+                    Intent(lContext, MainActivity::class.java))
+                btnOnClickAction(usernameInput)
             }
         ) {
             Text(text = stringResource(id = R.string.label_signup),
@@ -251,15 +247,15 @@ fun Signup(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview2() {
-    Project3activityTheme {
-//        Greeting2("Android")
-        Signup({})
-    }
-
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview2() {
+//    Project3activityTheme {
+////        Greeting2("Android")
+//        Signup({})
+//    }
+//
+//}
 
 //class SignUpScreen {
 //

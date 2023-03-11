@@ -27,7 +27,7 @@ import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
 
 @Composable
-fun Ambulance(username: String){
+fun Ambulance(){
     val lCOntext = LocalContext.current
 
     Column (
@@ -75,7 +75,6 @@ fun Ambulance(username: String){
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
-                        .putExtra("username", username)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -132,8 +131,8 @@ fun Ambulance(username: String){
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun AmbulancePreview(){
-    Ambulance("coy")
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun AmbulancePreview(){
+//    Ambulance("coy")
+//}

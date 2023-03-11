@@ -85,7 +85,7 @@ fun DotsIndicator(
 
 
 @Composable
-fun Hero(username: String, password: String, firstname: String, lastname: String) {
+fun Hero() {
     val lCOntext = LocalContext.current
     val ctx = LocalContext.current
 
@@ -128,7 +128,7 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
     Column(modifier = Modifier.padding(start = 16.dp, top = 57.dp)) {
 
         Text(
-            text = username,
+            text = "username",
             color = Color.Black,
             style = TextStyle(
                 fontSize = 20.sp,
@@ -225,7 +225,6 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, AmbulanceActivity::class.java)
-                                .putExtra("username", username)
                         )
 //                        Toast.makeText(ctx, "Belum dibuat gann", Toast.LENGTH_SHORT).show()
                     },
@@ -445,10 +444,6 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
                     onClick = {
                             lCOntext.startActivity(
                                 Intent(lCOntext, InfoActivity::class.java)
-                                    .putExtra("username", username)
-                                    .putExtra("password", password)
-                                    .putExtra("firstname", firstname)
-                                    .putExtra("lastname", lastname)
                             )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -497,10 +492,6 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, DaftarLayananActivity::class.java)
-                                .putExtra("username", username)
-                                .putExtra("password", password)
-                                .putExtra("firstname", firstname)
-                                .putExtra("lastname", lastname)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -610,10 +601,6 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, OtherActivity::class.java)
-                                .putExtra("username", username)
-                                .putExtra("password", password)
-                                .putExtra("firstname", firstname)
-                                .putExtra("lastname", lastname)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -1068,12 +1055,12 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    Project3activityTheme {
-//        Greeting("admin")
-        Hero("cuy","coy", "cey", "cay")
-//        BottomNavbar()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    Project3activityTheme {
+////        Greeting("admin")
+//        Hero("cuy","coy", "cey", "cay")
+////        BottomNavbar()
+//    }
+//}

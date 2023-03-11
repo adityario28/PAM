@@ -29,7 +29,7 @@ import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
 
 @Composable
-fun Konsul(username : String){
+fun Konsul(){
     val lCOntext = LocalContext.current
 
     Column (
@@ -78,7 +78,6 @@ fun Konsul(username : String){
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
-                        .putExtra("username", username)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -943,8 +942,8 @@ fun Konsul(username : String){
 
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewKonsul(){
-    Konsul(username = "coy")
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewKonsul(){
+//    Konsul(username = "coy")
+//}

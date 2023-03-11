@@ -19,12 +19,8 @@ class OtherActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    val username = getIntent().getStringExtra("username") ?: ""
-                    val password = getIntent().getStringExtra("password") ?: ""
-                    val firstname = getIntent().getStringExtra("firstname") ?: ""
-                    val lastname = getIntent().getStringExtra("lastname") ?: ""
 //                    Greeting2("Android")
-                    OtherPage(username, password, firstname, lastname)
+                    OtherPage()
                 }
             }
         }

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.screens.LoginForm
 import com.example.project3activity.ui.screens.navigation
 import com.example.project3activity.ui.theme.Project3activityTheme
@@ -15,6 +16,7 @@ import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val vm = UserViewModel()
         super.onCreate(savedInstanceState)
         setContent {
             Project3activityTheme {
@@ -23,12 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
-                    val username = getIntent().getStringExtra("username") ?: ""
-                    val password = getIntent().getStringExtra("password") ?: ""
-                    val firstname = getIntent().getStringExtra("firstname") ?: ""
-                    val lastname = getIntent().getStringExtra("lastname") ?: ""
-                    LoginForm(username, password, firstname, lastname)
+                    LoginForm(vm)
                 }
             }
         }

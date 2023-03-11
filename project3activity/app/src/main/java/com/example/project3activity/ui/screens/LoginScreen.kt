@@ -6,6 +6,7 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -29,19 +30,12 @@ import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
 import com.example.project3activity.SignupActivity
 import com.example.project3activity.contracts.SignUpContracts
+import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
 
-
-internal fun doAuth(username: String, usernameInput: String, password:String, passwordInput: String): Boolean {
-    return(username == usernameInput && password == passwordInput && usernameInput != "" || usernameInput == "admin" && passwordInput == "admin")
-}
-
-
-
-
 @Composable
-fun LoginForm(username: String, password: String, firstname: String, lastname: String) {
-    val lCOntext = LocalContext.current
+fun LoginForm(vm : UserViewModel) {
+    val lContext = LocalContext.current
 
 
     var usernameInput by remember {
@@ -51,24 +45,13 @@ fun LoginForm(username: String, password: String, firstname: String, lastname: S
     var passwordInput by remember {
         mutableStateOf("")
     }
-//
-//    var firstnameInput by remember {
-//        mutableStateOf("")
-//    }
-//
-//    var lastnameInput by remember {
-//        mutableStateOf("")
-//    }
 
-    if (username != "") {
-        usernameInput = username
-    }
-
-
-//    val getUsernameFromSignedUpForm = rememberLauncherForActivityResult(
-//        contract =  SignUpContracts(),
-//        onResult = { usernameInput = it!!})
-    // '!!' digunakan untuk mencari string
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getUserList()
+        }
+    )
 
     Column(
         modifier = Modifier
@@ -184,6 +167,13 @@ fun LoginForm(username: String, password: String, firstname: String, lastname: S
 //                .align(alignment = Alignment.CenterHorizontally)
             ) {
 
+                var auth = false
+                for (index in vm.userList) {
+                    if (index.username == usernameInput && index.password == passwordInput) {
+                        auth = true
+                    }
+                }
+
                 Button(
                     colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.bg_splash)),
                     shape = RoundedCornerShape(8.dp),
@@ -193,17 +183,9 @@ fun LoginForm(username: String, password: String, firstname: String, lastname: S
 //                .padding(25.dp),
 //                    .width(12.dp)
                     onClick = {
-                        val isAuthenticated =
-                            doAuth(username, usernameInput, password, passwordInput)
-                        if (isAuthenticated) {
-                            lCOntext.startActivity(
-                                Intent(lCOntext, HomeActivity::class.java)
-                                    .apply {
-                                        putExtra("username", usernameInput)
-                                        putExtra("password", password)
-                                        putExtra("firstname", firstname)
-                                        putExtra("lastname", lastname)
-                                    }
+                        if (auth) {
+                            lContext.startActivity(
+                                Intent(lContext, HomeActivity::class.java)
                             )
                         }
                     }
@@ -239,14 +221,10 @@ fun LoginForm(username: String, password: String, firstname: String, lastname: S
                     modifier = Modifier
                         .fillMaxWidth()
                         .size(52.dp)
-//                    .align(alignment = Alignment.End),
-//                .fillMaxWidth(),
-//                .padding(25.dp),
                     , onClick = {
-                        lCOntext.startActivity(
-                            Intent(lCOntext, SignupActivity::class.java)
-                        ) //untuk melempar ke page signup
-//                    getUsernameFromSignedUpForm.launch("")
+                        lContext.startActivity(
+                            Intent(lContext, SignupActivity::class.java)
+                        )
                     }
                 ) {
                     Text(

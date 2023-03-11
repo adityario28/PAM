@@ -30,7 +30,7 @@ import com.example.project3activity.R
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun ProfileScreen(username: String, password: String, firstname: String, lastname: String){
+fun ProfileScreen(){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -52,14 +52,14 @@ fun ProfileScreen(username: String, password: String, firstname: String, lastnam
 
                 Column(modifier = Modifier
                     .align(Alignment.CenterVertically)) {
-                    Text(text = username,
+                    Text(text = "username",
                     style = TextStyle(
                         fontSize = 24.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                     )
 
-                    Text(text = firstname+" "+lastname,
+                    Text(text = "lastname",
                     style = TextStyle(
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Thin

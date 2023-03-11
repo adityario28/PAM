@@ -26,10 +26,10 @@ import com.example.project3activity.R
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun OtherPage(username: String, firstname: String, lastname: String, password: String){
-    val lCOntext = LocalContext.current
-    val ctx = LocalContext.current
 
+fun OtherPage(){
+
+    val lContext = LocalContext.current
 
     Column (
         modifier = Modifier
@@ -83,12 +83,8 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
         /*tombol kembali*/
         TextButton(
             onClick = {
-                lCOntext.startActivity(
-                    Intent(lCOntext, HomeActivity::class.java)
-                        .putExtra("username", username)
-                        .putExtra("password", password)
-                        .putExtra("firstname", firstname)
-                        .putExtra("lastname", lastname)
+                lContext.startActivity(
+                    Intent(lContext, HomeActivity::class.java)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -130,7 +126,7 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
                             },
                             modifier = button_big,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -170,7 +166,7 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
                             },
                             modifier = button_big,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -211,7 +207,7 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -247,7 +243,7 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -288,7 +284,7 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -326,7 +322,7 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -360,12 +356,14 @@ fun OtherPage(username: String, firstname: String, lastname: String, password: S
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewProfile() {
-    Project3activityTheme {
-//        Greeting2("Android")
-        OtherPage("coy","coy","coy","coy")
-    }
 
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewProfile() {
+//    Project3activityTheme {
+////        Greeting2("Android")
+//        OtherPage("coy","coy","coy","coy")
+//    }
+//
+//}
+

@@ -24,8 +24,8 @@ class AmbulanceActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    val username = getIntent().getStringExtra("username") ?: ""
-                    Ambulance(username)
+//                    val username = getIntent().getStringExtra("username") ?: ""
+                    Ambulance()
                 }
             }
         }

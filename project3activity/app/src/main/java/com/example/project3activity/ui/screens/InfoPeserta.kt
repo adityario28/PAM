@@ -31,7 +31,7 @@ import com.example.project3activity.R
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun InfoPeserta(username: String, password: String, firstname: String, lastname: String){
+fun InfoPeserta(){
     val lCOntext = LocalContext.current
     val ctx = LocalContext.current
 
@@ -90,7 +90,6 @@ fun InfoPeserta(username: String, password: String, firstname: String, lastname:
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
-                        .putExtra("username", username)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -151,7 +150,7 @@ fun InfoPeserta(username: String, password: String, firstname: String, lastname:
                                             Text(text = "Username", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = username, style = MaterialTheme.typography.h6)
+                                            Text(text = "username", style = MaterialTheme.typography.h6)
                                         }
                                     }
                                 }
@@ -189,7 +188,7 @@ fun InfoPeserta(username: String, password: String, firstname: String, lastname:
                                             Text(text = "Nama Depan", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = firstname, style = MaterialTheme.typography.h6)
+                                            Text(text = "firstname", style = MaterialTheme.typography.h6)
                                         }
                                     }
                                 }
@@ -227,7 +226,7 @@ fun InfoPeserta(username: String, password: String, firstname: String, lastname:
                                             Text(text = "Last Name", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = lastname, style = MaterialTheme.typography.h6)
+                                            Text(text = "lastname", style = MaterialTheme.typography.h6)
                                         }
                                     }
                                 }
@@ -285,13 +284,13 @@ fun InfoPeserta(username: String, password: String, firstname: String, lastname:
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewProfile2() {
-    Project3activityTheme {
-//        Greeting2("Android")
-//        OtherPage()
-        InfoPeserta(username = "so", password = "mad" , firstname = "oh" , lastname = "as")
-    }
-
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewProfile2() {
+//    Project3activityTheme {
+////        Greeting2("Android")
+////        OtherPage()
+//        InfoPeserta(username = "so", password = "mad" , firstname = "oh" , lastname = "as")
+//    }
+//
+//}

@@ -29,7 +29,7 @@ import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
 
 @Composable
-fun DaftarScreen(username: String, password: String, firstname: String, lastname: String){
+fun DaftarScreen(){
 
     val lCOntext = LocalContext.current
     val ctx = LocalContext.current
@@ -89,10 +89,6 @@ fun DaftarScreen(username: String, password: String, firstname: String, lastname
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
-                        .putExtra("username", username)
-                        .putExtra("password", password)
-                        .putExtra("firstname", firstname)
-                        .putExtra("lastname", lastname)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)

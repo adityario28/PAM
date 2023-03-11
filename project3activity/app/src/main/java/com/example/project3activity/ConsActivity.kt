@@ -25,7 +25,7 @@ class ConsActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val username = getIntent().getStringExtra("username") ?: ""
-                    Konsul(username)
+                    Konsul()
                 }
             }
         }
