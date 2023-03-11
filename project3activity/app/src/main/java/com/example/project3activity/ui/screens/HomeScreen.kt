@@ -1,5 +1,6 @@
 package com.example.project3activity.ui.screens
 
+import android.content.Intent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -14,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -22,12 +22,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.project3activity.ui.theme.Project3activityTheme
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import com.example.project3activity.InfoActivity
+import com.example.project3activity.OtherActivity
 import com.example.project3activity.R
 
 
@@ -86,8 +84,8 @@ fun DotsIndicator(
 
 
 @Composable
-fun Hero(username: String) {
-
+fun Hero(username: String, password: String, firstname: String, lastname: String) {
+    val lCOntext = LocalContext.current
     val ctx = LocalContext.current
 
 //Pattern
@@ -442,11 +440,13 @@ fun Hero(username: String) {
             ) {
                 Button(
                     onClick = {
-                        Toast.makeText(
-                            ctx,
-                            "Menu Informasi Peserta belum dibuat juga gann",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                            lCOntext.startActivity(
+                                Intent(lCOntext, InfoActivity::class.java)
+                                    .putExtra("username", username)
+                                    .putExtra("password", password)
+                                    .putExtra("firstname", firstname)
+                                    .putExtra("lastname", lastname)
+                            )
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
@@ -603,7 +603,10 @@ fun Hero(username: String) {
 
                 Button(
                     onClick = {
-                        Toast.makeText(ctx, "Menu Lainnya apalagi", Toast.LENGTH_SHORT).show()
+                        lCOntext.startActivity(
+                            Intent(lCOntext, OtherActivity::class.java)
+                                .putExtra("username", username)
+                        )
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),

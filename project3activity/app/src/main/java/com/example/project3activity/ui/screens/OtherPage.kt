@@ -2,6 +2,7 @@ package com.example.project3activity.ui.screens
 
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,26 +18,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
-import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun OtherPage(){
+fun OtherPage(username: String){
     val lCOntext = LocalContext.current
-
-    val button_big = Modifier
-        .size(width = 315.dp, height = 100.dp)
-        .defaultMinSize(1.dp, minHeight = 1.dp)
-        .shadow(4.dp, shape = RoundedCornerShape(8.dp))
-
-    val button = Modifier
-        .size(width = 150.dp, height = 100.dp)
-        .shadow(4.dp, shape = RoundedCornerShape(20.dp))
-        .defaultMinSize(1.dp, minHeight = 1.dp)
+    val ctx = LocalContext.current
 
 
     Column (
@@ -44,7 +34,7 @@ fun OtherPage(){
             .fillMaxSize()
             .fillMaxHeight()
             .fillMaxWidth()
-            ){
+    ){
         Image(
             painter = painterResource(id = R.drawable.pattern),
             contentDescription = "pattern",
@@ -56,6 +46,15 @@ fun OtherPage(){
         )
     }
 
+    val button_big = Modifier
+        .size(width = 370.dp, height = 100.dp)
+        .defaultMinSize(1.dp, minHeight = 1.dp)
+        .shadow(4.dp, shape = RoundedCornerShape(20.dp))
+
+    val button = Modifier
+        .size(width = 178.dp, height = 100.dp)
+        .shadow(4.dp, shape = RoundedCornerShape(20.dp))
+        .defaultMinSize(1.dp, minHeight = 1.dp)
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -74,29 +73,30 @@ fun OtherPage(){
         )
     }
 
-        Column(modifier = Modifier
-            .padding(top = 100.dp)
-            .fillMaxSize()
-            .fillMaxHeight()) {
+    Column(modifier = Modifier
+        .padding(top = 100.dp)
+        .fillMaxSize()
+        .fillMaxHeight()) {
 
-            /*tombol kembali*/
-            TextButton(
-                onClick = {
-                    lCOntext.startActivity(
-                        Intent(lCOntext, HomeActivity::class.java)
-                    )
-                          },
-                modifier = Modifier.padding(start = 20.dp)
+        /*tombol kembali*/
+        TextButton(
+            onClick = {
+                lCOntext.startActivity(
+                    Intent(lCOntext, HomeActivity::class.java)
+                        .putExtra("username", username)
+                )
+            },
+            modifier = Modifier.padding(start = 20.dp)
 
-            ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.ava),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(50.dp)
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.other_back),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(50.dp)
 
-                    )
-            }
+            )
+        }
 
 
 
@@ -124,17 +124,19 @@ fun OtherPage(){
                         val a4 = Modifier
                             .size(50.dp)
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = {
+                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                            },
                             modifier = button_big,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
-                        ) {
+                            ) {
                             Column(
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 modifier = Modifier
                                     .fillMaxWidth()) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.ava),
+                                    painter = painterResource(id = R.drawable.other_bed),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -162,7 +164,9 @@ fun OtherPage(){
                         val a4 = Modifier
                             .size(50.dp)
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = {
+                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                            },
                             modifier = button_big,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
@@ -173,7 +177,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.ava),
+                                    painter = painterResource(id = R.drawable.other_2),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -201,7 +205,9 @@ fun OtherPage(){
                         val a4 = Modifier
                             .size(50.dp)
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = {
+                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                            },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
@@ -210,7 +216,7 @@ fun OtherPage(){
                                 modifier = Modifier
                                     .fillMaxWidth()) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.ava),
+                                    painter = painterResource(id = R.drawable.other_3),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -227,7 +233,7 @@ fun OtherPage(){
 
                     Column(
                         modifier = Modifier
-                            .padding(top = 20.dp, start = 15.dp),
+                            .padding(top = 20.dp, start = 14.dp),
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
@@ -235,7 +241,9 @@ fun OtherPage(){
                         val a4 = Modifier
                             .size(50.dp)
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = {
+                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                            },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
@@ -246,7 +254,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.ava),
+                                    painter = painterResource(id = R.drawable.other_4),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -274,7 +282,9 @@ fun OtherPage(){
                         val a4 = Modifier
                             .size(50.dp)
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = {
+                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                            },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
@@ -285,7 +295,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.ava),
+                                    painter = painterResource(id = R.drawable.other_5),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -302,7 +312,7 @@ fun OtherPage(){
 
                     Column(
                         modifier = Modifier
-                            .padding(top = 20.dp, start = 15.dp),
+                            .padding(top = 20.dp, start = 14.dp),
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
@@ -310,7 +320,9 @@ fun OtherPage(){
                         val a4 = Modifier
                             .size(50.dp)
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = {
+                                Toast.makeText(ctx, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                            },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
@@ -321,7 +333,7 @@ fun OtherPage(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.ava),
+                                    painter = painterResource(id = R.drawable.other_6),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -339,16 +351,16 @@ fun OtherPage(){
                 }
             }
         }
-        }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewProfile() {
-    Project3activityTheme {
-//        Greeting2("Android")
-        OtherPage()
     }
-
 }
+
+
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewProfile() {
+//    Project3activityTheme {
+////        Greeting2("Android")
+//        OtherPage()
+//    }
+//
+//}
