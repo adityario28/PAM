@@ -72,6 +72,24 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".OtherActivity"
+            android:exported="false"
+            android:label="otheractivity"
+            android:theme="@style/Theme.Project3activity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".InfoActivity"
+            android:exported="false"
+            android:label="bottommenu"
+            android:theme="@style/Theme.Project3activity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>
