@@ -497,11 +497,13 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
 
                 Button(
                     onClick = {
-                        Toast.makeText(
-                            ctx,
-                            "Menu Daftar Layanan belum dibuat juga gann",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        lCOntext.startActivity(
+                            Intent(lCOntext, DaftarLayananActivity::class.java)
+                                .putExtra("username", username)
+                                .putExtra("password", password)
+                                .putExtra("firstname", firstname)
+                                .putExtra("lastname", lastname)
+                        )
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
@@ -611,6 +613,9 @@ fun Hero(username: String, password: String, firstname: String, lastname: String
                         lCOntext.startActivity(
                             Intent(lCOntext, OtherActivity::class.java)
                                 .putExtra("username", username)
+                                .putExtra("password", password)
+                                .putExtra("firstname", firstname)
+                                .putExtra("lastname", lastname)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),

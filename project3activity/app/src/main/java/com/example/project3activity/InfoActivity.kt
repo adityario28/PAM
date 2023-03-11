@@ -19,10 +19,10 @@ class InfoActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    val username = getIntent().getStringExtra("username") ?: ""
-                    val password = getIntent().getStringExtra("password") ?: ""
-                    val firstname = getIntent().getStringExtra("firstname") ?: ""
-                    val lastname = getIntent().getStringExtra("lastname") ?: ""
+                    var username = getIntent().getStringExtra("username") ?: ""
+                    var password = getIntent().getStringExtra("password") ?: ""
+                    var firstname = getIntent().getStringExtra("firstname") ?: ""
+                    var lastname = getIntent().getStringExtra("lastname") ?: ""
 //                    Greeting2("Android")
                     InfoPeserta(username, password, firstname, lastname)
                 }

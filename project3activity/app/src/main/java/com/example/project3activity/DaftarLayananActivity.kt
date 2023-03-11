@@ -6,10 +6,11 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.ui.Modifier
+import com.example.project3activity.ui.screens.DaftarScreen
 import com.example.project3activity.ui.screens.OtherPage
 import com.example.project3activity.ui.theme.Project3activityTheme
 
-class OtherActivity : ComponentActivity() {
+class DaftarLayananActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -24,7 +25,7 @@ class OtherActivity : ComponentActivity() {
                     val firstname = getIntent().getStringExtra("firstname") ?: ""
                     val lastname = getIntent().getStringExtra("lastname") ?: ""
 //                    Greeting2("Android")
-                    OtherPage(username, password, firstname, lastname)
+                    DaftarScreen(username, password, firstname, lastname)
                 }
             }
         }

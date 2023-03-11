@@ -26,7 +26,7 @@ import com.example.project3activity.R
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun OtherPage(username: String){
+fun OtherPage(username: String, firstname: String, lastname: String, password: String){
     val lCOntext = LocalContext.current
     val ctx = LocalContext.current
 
@@ -86,6 +86,9 @@ fun OtherPage(username: String){
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
                         .putExtra("username", username)
+                        .putExtra("password", password)
+                        .putExtra("firstname", firstname)
+                        .putExtra("lastname", lastname)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -362,7 +365,7 @@ fun OtherPage(username: String){
 fun PreviewProfile() {
     Project3activityTheme {
 //        Greeting2("Android")
-        OtherPage("coy")
+        OtherPage("coy","coy","coy","coy")
     }
 
 }

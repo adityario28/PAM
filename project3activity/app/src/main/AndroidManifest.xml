@@ -97,6 +97,15 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".DaftarLayananActivity"
+            android:exported="false"
+            android:label="daftarlayanan"
+            android:theme="@style/Theme.Project3activity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>
