@@ -44,4 +44,7 @@
     <string name="profile_4">Lokasi Faskes</string>
     <string name="ambulance">Ambulans</string>
     <string name="ambulancepg_emergency">Tombol Darurat</string>
+    <string name="under_developing">FItur Ini Sedang Dalam Tahap Pengembangan</string>
+    <string name="WorkDay_1">Senin - Sabtu</string>
+    <string name="Spec_1">Seksolog - Kandungan</string>
 </resources>

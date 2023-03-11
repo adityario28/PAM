@@ -60,6 +60,10 @@
     <string name="ambulancepg_emergency">Emergency Button</string>
     <string name="SOS" translatable="false">SOS</string>
     <string name="Amb_loc" translatable="false">FTI UKSW, Blotongan, Salatiga</string>
-    <string name="title_activity_ambulance">AmbulanceActivity</string>
+    <string name="title_activity_ambulance" translatable="false">AmbulanceActivity</string>
+    <string name="under_developing">This Feature Is Currently Under Development</string>
+    <string name="WorkDay_1">Monday - Saturday</string>
+    <string name="Loc_1" translatable="false">RS St. Elisabeth, Semarang</string>
+    <string name="Spec_1">Sexologist - Pregnancy</string>
 
 </resources>
