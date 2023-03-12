@@ -2,6 +2,7 @@ package com.example.project3activity.ui.screens
 
 
 import android.content.Intent
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -25,12 +26,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
+import com.example.project3activity.MainActivity
 import com.example.project3activity.R
-import com.example.project3activity.models.JknUserViewModel
+import com.example.project3activity.models.*
 import com.example.project3activity.ui.theme.Project3activityTheme
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 @Composable
-fun RegJKN(vm : JknUserViewModel, userId : String) {
+fun RegJKN(vj : JknUserViewModel, userId : String) {
+    val lCOntext = LocalContext.current
+
+    var id : Int = userId.toInt()
 
     var firstname by remember {
         mutableStateOf("")
@@ -55,31 +63,9 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
     LaunchedEffect(
         Unit,
         block = {
-            vm.getJknUserList()
+            vj.getJknUserList()
         }
     )
-
-    for (index in vm.jknUserList) {
-        if (index.id.toString() == userId) {
-            firstname = index.firstname
-            lastname = index.lastname
-            nik = index.nik
-            lahir = index.lahir
-            alamat = index.alamat
-        }
-    }
-
-    val lCOntext = LocalContext.current
-
-
-    var usernameInput by remember {
-        mutableStateOf("")
-    }
-
-    var passwordInput by remember {
-        mutableStateOf("")
-    }
-
 
     Column(
         modifier = Modifier
@@ -129,7 +115,6 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
-                        .putExtra("userId", userId)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -173,8 +158,8 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
                 },
                 modifier = Modifier
                     .fillMaxWidth(),
-                value = usernameInput,
-                onValueChange = { usernameInput = it },
+                value = firstname,
+                onValueChange = { firstname = it },
                 label = {
                     Text(
                         text = stringResource(id = R.string.label_reg1),
@@ -204,8 +189,8 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
                 },
                 modifier = Modifier
                     .fillMaxWidth(),
-                value = passwordInput,
-                onValueChange = { passwordInput = it },
+                value = lastname,
+                onValueChange = { lastname = it },
                 label = {
                     Text(
                         text = stringResource(id = R.string.label_reg2),
@@ -239,8 +224,8 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
                 },
                 modifier = Modifier
                     .fillMaxWidth(),
-                value = passwordInput,
-                onValueChange = { passwordInput = it },
+                value = nik,
+                onValueChange = { nik = it },
                 label = {
                     Text(
                         text = stringResource(id = R.string.label_reg3),
@@ -273,8 +258,8 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
                 },
                 modifier = Modifier
                     .fillMaxWidth(),
-                value = passwordInput,
-                onValueChange = { passwordInput = it },
+                value = lahir,
+                onValueChange = { lahir = it },
                 label = {
                     Text(
                         text = stringResource(id = R.string.label_reg5),
@@ -307,8 +292,8 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
                 },
                 modifier = Modifier
                     .fillMaxWidth(),
-                value = passwordInput,
-                onValueChange = { passwordInput = it },
+                value = alamat,
+                onValueChange = { alamat = it },
                 label = {
                     Text(
                         text = stringResource(id = R.string.label_reg6),
@@ -338,6 +323,9 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
 //                    }
 //                }
 
+                val newJknUser = JknUserModel(id, firstname, lastname, nik, lahir, alamat)
+
+
                 Button(
                     colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.bg_splash)),
                     shape = RoundedCornerShape(8.dp),
@@ -347,15 +335,24 @@ fun RegJKN(vm : JknUserViewModel, userId : String) {
 //                .padding(25.dp),
 //                    .width(12.dp)
                     onClick = {
-//                        if (auth) {
-//                            lContext.startActivity(
-//                                Intent(lContext, HomeActivity::class.java)
-//                                    .putExtra("userId", userId)
-//                            )
-//                        }
-//                        else {
-//                            Toast.makeText(lContext, "Password atau Username salah", Toast.LENGTH_SHORT).show()
-//                        }
+                        JknUserServiceBuilder.api.addJknUser(newJknUser).enqueue(object :
+                            Callback<JknUserModel> {
+                            override fun onResponse(
+                                call: Call<JknUserModel>,
+                                response: Response<JknUserModel>
+                            ) {
+                                val addedJknUser = response.body()
+                                Log.d("POST_SUCCESS", "User ${addedJknUser?.firstname} has been posted.")
+                                lCOntext.startActivity(
+                                    Intent(lCOntext, HomeActivity::class.java)
+                                        .putExtra("userId", userId)
+                                )
+                            }
+
+                            override fun onFailure(call: Call<JknUserModel>, t: Throwable) {
+                                Log.e("POST_FAILURE", "Error add user: ${t.message}")
+                            }
+                        })
                     }
                 ) {
                     Text(
