@@ -544,11 +544,9 @@ fun Hero() {
 
                 Button(
                     onClick = {
-                        Toast.makeText(
-                            ctx,
-                            "Menu Informasi Klinik belum dibuat juga gann",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        lCOntext.startActivity(
+                            Intent(lCOntext, InformasiKlinikActivity::class.java)
+                        )
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),

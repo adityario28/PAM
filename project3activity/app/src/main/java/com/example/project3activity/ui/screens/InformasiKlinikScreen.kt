@@ -2,11 +2,10 @@ package com.example.project3activity.ui.screens
 
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -33,8 +32,8 @@ import com.example.project3activity.R
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun InfoPeserta(){
-    val lCOntext = LocalContext.current
+fun InformasiKlinikScreen(){
+    val lContext = LocalContext.current
 
 
     Column (
@@ -55,12 +54,12 @@ fun InfoPeserta(){
     }
 
     val button_big = Modifier
-        .size(width = 315.dp, height = 100.dp)
+        .size(width = 150.dp, height = 120.dp)
         .defaultMinSize(1.dp, minHeight = 1.dp)
-        .shadow(4.dp, shape = RoundedCornerShape(8.dp))
+        .shadow(4.dp, shape = RoundedCornerShape(20.dp))
 
-    val button = Modifier
-        .size(width = 150.dp, height = 100.dp)
+    val button_xl = Modifier
+        .size(width = 314.dp, height = 120.dp)
         .shadow(4.dp, shape = RoundedCornerShape(20.dp))
         .defaultMinSize(1.dp, minHeight = 1.dp)
 
@@ -71,7 +70,7 @@ fun InfoPeserta(){
             .padding(top = 120.dp),
     ) {
         Text(
-            text = "Informasi Peserta",
+            text = "Informasi Klinik",
             color = Color.Black,
             style = TextStyle(
                 fontSize = 22.sp,
@@ -89,8 +88,8 @@ fun InfoPeserta(){
         /*tombol kembali*/
         TextButton(
             onClick = {
-                lCOntext.startActivity(
-                    Intent(lCOntext, HomeActivity::class.java)
+                lContext.startActivity(
+                    Intent(lContext, HomeActivity::class.java)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -109,7 +108,7 @@ fun InfoPeserta(){
 
         Column(
             modifier = Modifier
-                .padding(top = 35.dp)
+                .padding(top = 5.dp)
                 .fillMaxSize()
                 .fillMaxHeight()
         ) {
@@ -117,23 +116,22 @@ fun InfoPeserta(){
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 15.dp)
             ) {
 
-//                image
+//                Konten
                 Image(
-                    painter = painterResource(R.drawable.other_2),
-                    contentDescription = "avatar",
-                    contentScale = ContentScale.Fit,            // crop the image if it's not a square
+                    painter = painterResource(id = R.drawable.informasi_klinik),
+                    contentDescription = null,
                     modifier = Modifier
-                        .size(150.dp)
-                        .clip(CircleShape)                       // clip to the circle shape
-                        .border(5.dp, Color.Gray, CircleShape)   // add a border (optional)
+                        .size(width = 370.dp, height = 185.dp)
+                        .shadow(4.dp, shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.Crop,
                 )
 
-//                Konten
                 Column() {
-
                     Column(modifier = Modifier
                         .padding(top = 15.dp)
                         .shadow(
@@ -160,10 +158,10 @@ fun InfoPeserta(){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Nama Depan", style = MaterialTheme.typography.overline)
+                                            Text(text = "Nama Klinik", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "firstname", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = "Klinik Pratama UINSA Surabaya", style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -198,10 +196,48 @@ fun InfoPeserta(){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Last Name", style = MaterialTheme.typography.overline)
+                                            Text(text = "Jumlah Dokter", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "lastname", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = "3", style = MaterialTheme.typography.subtitle2)
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
+                    Column(modifier = Modifier
+                        .padding(top = 15.dp)
+                        .shadow(
+                            elevation = 2.dp,
+                            shape = RoundedCornerShape(20.dp)
+                        )
+                    ) {
+                        Column {
+                            Box(
+                                modifier = Modifier
+                                    .size(height = 80.dp, width = 370.dp)
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .background(color = Color.White)
+                                    .padding(start = 20.dp)
+                            ) {
+                                Row (modifier = Modifier.align(Alignment.CenterStart)) {
+                                    Icon(
+                                        imageVector = Icons.Rounded.Face,
+                                        contentDescription = "icon email"
+                                    )
+                                }
+                                Row (modifier = Modifier
+                                    .padding(start = 40.dp)
+                                    .align(Alignment.CenterStart)) {
+                                    Column () {
+                                        Column {
+                                            Text(text = "Jam Buka", style = MaterialTheme.typography.overline)
+                                        }
+                                        Column {
+                                            Text(text = "09.00-18.00", style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -236,48 +272,10 @@ fun InfoPeserta(){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "NIK", style = MaterialTheme.typography.overline)
+                                            Text(text = "Nomor Telepon", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "2340050420109623", style = MaterialTheme.typography.subtitle2,)
-                                        }
-                                    }
-                                }
-
-                            }
-                        }
-                    }
-
-                    Column(modifier = Modifier
-                        .padding(top = 15.dp)
-                        .shadow(
-                            elevation = 2.dp,
-                            shape = RoundedCornerShape(20.dp)
-                        )
-                    ) {
-                        Column {
-                            Box(
-                                modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
-                                    .clip(RoundedCornerShape(10.dp))
-                                    .background(color = Color.White)
-                                    .padding(start = 20.dp)
-                            ) {
-                                Row (modifier = Modifier.align(Alignment.CenterStart)) {
-                                    Icon(
-                                        imageVector = Icons.Rounded.Face,
-                                        contentDescription = "icon email"
-                                    )
-                                }
-                                Row (modifier = Modifier
-                                    .padding(start = 40.dp)
-                                    .align(Alignment.CenterStart)) {
-                                    Column () {
-                                        Column {
-                                            Text(text = "Tanggal Lahir", style = MaterialTheme.typography.overline)
-                                        }
-                                        Column {
-                                            Text(text = "18 September 2001", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = "06969696969", style = MaterialTheme.typography.subtitle2,)
                                         }
                                     }
                                 }
@@ -303,8 +301,8 @@ fun InfoPeserta(){
                             ) {
                                 Row (modifier = Modifier.align(Alignment.CenterStart)) {
                                     Icon(
-                                        imageVector = Icons.Rounded.Face,
-                                        contentDescription = "icon email"
+                                        painter = painterResource(id = R.drawable.key_form),
+                                        contentDescription = "Key password"
                                     )
                                 }
                                 Row (modifier = Modifier
@@ -312,10 +310,10 @@ fun InfoPeserta(){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Alamat Rumah", style = MaterialTheme.typography.overline)
+                                            Text(text = "Alamat", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "Jalan Mana Saja, Surabaya", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = "Jl. A. Yani no. 117 Surabaya", style = MaterialTheme.typography.subtitle2,)
                                         }
                                     }
                                 }
@@ -333,15 +331,14 @@ fun InfoPeserta(){
 }
 
 
-
-
+//
+//
 //@Preview(showBackground = true)
 //@Composable
-//fun PreviewProfile2() {
+//fun PreviewInformasiKlinik() {
 //    Project3activityTheme {
 ////        Greeting2("Android")
-////        OtherPage()
-//        InfoPeserta(username = "so", password = "mad" , firstname = "oh" , lastname = "as")
+//        InformasiKlinikScreen()
 //    }
 //
 //}
