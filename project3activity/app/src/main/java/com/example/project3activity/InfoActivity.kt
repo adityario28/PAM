@@ -6,12 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.ui.Modifier
+import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.ui.screens.InfoPeserta
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 class InfoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        val vm = JknUserViewModel()
         super.onCreate(savedInstanceState)
         setContent {
             Project3activityTheme {
@@ -20,8 +21,9 @@ class InfoActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-//                    Greeting2("Android")
-                    InfoPeserta()
+                    val userId = getIntent().getStringExtra("userId") ?: ""
+
+                    InfoPeserta(vm, userId)
                 }
             }
         }

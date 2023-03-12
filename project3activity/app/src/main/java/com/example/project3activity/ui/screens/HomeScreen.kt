@@ -462,6 +462,7 @@ fun Hero(vm :UserViewModel, userId : String) {
                     onClick = {
                             lCOntext.startActivity(
                                 Intent(lCOntext, InfoActivity::class.java)
+                                    .putExtra("userId", userId)
                             )
                     },
                     shape = RoundedCornerShape(8.dp),

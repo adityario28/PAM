@@ -11,7 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Face
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,12 +30,51 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun InfoPeserta(){
+fun InfoPeserta(
+    vm : JknUserViewModel, userId : String
+){
     val lCOntext = LocalContext.current
 
+    var firstname by remember {
+        mutableStateOf("")
+    }
+
+    var lastname by remember {
+        mutableStateOf("")
+    }
+
+    var nik by remember {
+        mutableStateOf("")
+    }
+
+    var lahir by remember {
+        mutableStateOf("")
+    }
+
+    var alamat by remember {
+        mutableStateOf("")
+    }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getJknUserList()
+        }
+    )
+
+    for (index in vm.jknUserList) {
+        if (index.id.toString() == userId) {
+            firstname = index.firstname
+            lastname = index.lastname
+            nik = index.nik
+            lahir = index.lahir
+            alamat = index.alamat
+        }
+    }
 
     Column (
         modifier = Modifier
@@ -163,7 +202,7 @@ fun InfoPeserta(){
                                             Text(text = "Nama Depan", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "firstname", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = firstname, style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -201,7 +240,7 @@ fun InfoPeserta(){
                                             Text(text = "Last Name", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "lastname", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = lastname, style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -240,7 +279,7 @@ fun InfoPeserta(){
                                             Text(text = "NIK", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "2340050420109623", style = MaterialTheme.typography.subtitle2,)
+                                            Text(text = nik, style = MaterialTheme.typography.subtitle2,)
                                         }
                                     }
                                 }
@@ -279,7 +318,7 @@ fun InfoPeserta(){
                                             Text(text = "Tanggal Lahir", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "18 September 2001", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = lahir, style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -318,7 +357,7 @@ fun InfoPeserta(){
                                             Text(text = "Alamat Rumah", style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "Jalan Mana Saja, Surabaya", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = alamat, style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
