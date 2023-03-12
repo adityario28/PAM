@@ -85,5 +85,13 @@
     <string name="Loc_6" translatable="false">Siloam Hospitals Yogyakarta</string>
     <string name="Spec_6">Eye Health</string>
     <string name="WorkDay_6">Thursday - Saturday</string>
+    <string name="title_activity_faskes_loc" translatable="false">FaskesLocActivity</string>
+    <string name="label_reg1">First Name</string>
+    <string name="label_reg2">Last Name</string>
+    <string name="label_reg3" translatable="false">NIK</string>
+    <string name="label_reg4">Kartu Keluarga\'s Number</string>
+    <string name="label_reg5">Date Birth</string>
+    <string name="label_reg6">Address</string>
+    <string name="title_activity_reg_jknactivity">RegJKNActivity</string>
 
 </resources>

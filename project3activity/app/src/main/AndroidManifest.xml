@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +13,18 @@
         android:roundIcon="@drawable/logo_form"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project3activity"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".RegJKNActivity"
+            android:exported="false"
+            android:label="@string/title_activity_reg_jknactivity"
+            android:theme="@style/Theme.Project3activity" />
+        <activity
+            android:name=".FaskesLocActivity"
+            android:exported="false"
+            android:label="@string/title_activity_faskes_loc"
+            android:theme="@style/Theme.Project3activity" />
         <activity
             android:name=".ConsActivity"
             android:exported="false"
@@ -60,8 +70,6 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 

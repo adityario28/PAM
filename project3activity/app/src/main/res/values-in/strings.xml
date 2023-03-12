@@ -57,4 +57,9 @@
     <string name="WorkDay_5">Selasa - Kamis</string>
     <string name="Spec_6">Kesehatan Mata</string>
     <string name="WorkDay_6">Kamis - Sabtu</string>
+    <string name="label_reg1">Nama Depan</string>
+    <string name="label_reg2">Nama Belakang</string>
+    <string name="label_reg4">Nomor Kartu Keluarga</string>
+    <string name="label_reg5">Tanggal Lahir</string>
+    <string name="label_reg6">Alamat</string>
 </resources>

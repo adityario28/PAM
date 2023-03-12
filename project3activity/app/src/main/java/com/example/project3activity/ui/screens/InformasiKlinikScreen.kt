@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Face
@@ -131,7 +133,7 @@ fun InformasiKlinikScreen(){
                     contentScale = ContentScale.Crop,
                 )
 
-                Column() {
+                Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
                     Column(modifier = Modifier
                         .padding(top = 15.dp)
                         .shadow(
@@ -325,6 +327,9 @@ fun InformasiKlinikScreen(){
                         }
                     }
 
+                    Spacer(modifier = Modifier.height(28.dp))
+
+
                 }
 
 
@@ -334,14 +339,14 @@ fun InformasiKlinikScreen(){
 }
 
 
-//
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewInformasiKlinik() {
-//    Project3activityTheme {
-////        Greeting2("Android")
-//        InformasiKlinikScreen()
-//    }
-//
-//}
+
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewInformasiKlinik() {
+    Project3activityTheme {
+//        Greeting2("Android")
+        InformasiKlinikScreen()
+    }
+
+}
