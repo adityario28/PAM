@@ -56,7 +56,7 @@ fun ArticleScreen(va : ArticleViewModel){
         }
     )
 
-    if(lang == "id") {
+    if(lang == "in") {
         for (index in va.articleList) {
             if (index.id.toString() == "1") {
                 title = index.title
