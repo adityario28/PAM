@@ -10,11 +10,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.ui.screens.FaskesLoc
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 class FaskesLocActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val vm = JknUserViewModel()
         super.onCreate(savedInstanceState)
         setContent {
             Project3activityTheme {
@@ -23,7 +25,8 @@ class FaskesLocActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    FaskesLoc()
+                    val userId = getIntent().getStringExtra("userId") ?: ""
+                    FaskesLoc(vm, userId)
                 }
             }
         }

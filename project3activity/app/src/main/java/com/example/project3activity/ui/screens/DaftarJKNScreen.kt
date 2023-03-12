@@ -26,15 +26,51 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-fun RegJKN() {
-    val lCOntext = LocalContext.current
+fun RegJKN(vm : JknUserViewModel, userId : String) {
 
-    var userId by remember {
+    var firstname by remember {
         mutableStateOf("")
     }
+
+    var lastname by remember {
+        mutableStateOf("")
+    }
+
+    var nik by remember {
+        mutableStateOf("")
+    }
+
+    var lahir by remember {
+        mutableStateOf("")
+    }
+
+    var alamat by remember {
+        mutableStateOf("")
+    }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getJknUserList()
+        }
+    )
+
+    for (index in vm.jknUserList) {
+        if (index.id.toString() == userId) {
+            firstname = index.firstname
+            lastname = index.lastname
+            nik = index.nik
+            lahir = index.lahir
+            alamat = index.alamat
+        }
+    }
+
+    val lCOntext = LocalContext.current
+
 
     var usernameInput by remember {
         mutableStateOf("")
@@ -44,12 +80,6 @@ fun RegJKN() {
         mutableStateOf("")
     }
 
-    LaunchedEffect(
-        Unit,
-        block = {
-//            vm.getUserList()
-        }
-    )
 
     Column(
         modifier = Modifier
@@ -99,6 +129,7 @@ fun RegJKN() {
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
+                        .putExtra("userId", userId)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -351,10 +382,10 @@ fun RegJKN() {
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun LoginFormPreview() {
-    Project3activityTheme {
-        RegJKN()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun LoginFormPreview() {
+//    Project3activityTheme {
+//        RegJKN()
+//    }
+//}

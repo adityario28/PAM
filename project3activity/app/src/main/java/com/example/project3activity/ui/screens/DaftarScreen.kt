@@ -10,7 +10,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Face
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -28,9 +28,48 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.models.JknUserViewModel
 
 @Composable
-fun DaftarScreen(){
+fun DaftarScreen(vm : JknUserViewModel, userId : String){
+
+    var firstname by remember {
+        mutableStateOf("")
+    }
+
+    var lastname by remember {
+        mutableStateOf("")
+    }
+
+    var nik by remember {
+        mutableStateOf("")
+    }
+
+    var lahir by remember {
+        mutableStateOf("")
+    }
+
+    var alamat by remember {
+        mutableStateOf("")
+    }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getJknUserList()
+        }
+    )
+
+    for (index in vm.jknUserList) {
+        if (index.id.toString() == userId) {
+            firstname = index.firstname
+            lastname = index.lastname
+            nik = index.nik
+            lahir = index.lahir
+            alamat = index.alamat
+        }
+    }
+
     val lContext = LocalContext.current
 
 
@@ -89,6 +128,7 @@ fun DaftarScreen(){
             onClick = {
                 lContext.startActivity(
                     Intent(lContext, HomeActivity::class.java)
+                        .putExtra("userId", userId)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)

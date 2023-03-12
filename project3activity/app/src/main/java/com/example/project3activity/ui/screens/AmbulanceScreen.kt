@@ -8,7 +8,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.LocationOn
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,9 +26,48 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.models.JknUserViewModel
 
 @Composable
-fun Ambulance(){
+fun Ambulance(vm : JknUserViewModel, userId : String){
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getJknUserList()
+        }
+    )
+
+    var firstname by remember {
+        mutableStateOf("")
+    }
+
+    var lastname by remember {
+        mutableStateOf("")
+    }
+
+    var nik by remember {
+        mutableStateOf("")
+    }
+
+    var lahir by remember {
+        mutableStateOf("")
+    }
+
+    var alamat by remember {
+        mutableStateOf("")
+    }
+
+    for (index in vm.jknUserList) {
+        if (index.id.toString() == userId) {
+            firstname = index.firstname
+            lastname = index.lastname
+            nik = index.nik
+            lahir = index.lahir
+            alamat = index.alamat
+        }
+    }
+
     val lCOntext = LocalContext.current
 
     Column (
@@ -76,6 +115,7 @@ fun Ambulance(){
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
+                        .putExtra("userId", userId)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)

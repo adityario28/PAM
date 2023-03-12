@@ -260,6 +260,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, AmbulanceActivity::class.java)
+                                .putExtra("userId", userId)
                         )
 //                        Toast.makeText(ctx, "Belum dibuat gann", Toast.LENGTH_SHORT).show()
                     },
@@ -309,6 +310,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, ConsActivity::class.java)
+                                .putExtra("userId", userId)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -362,6 +364,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, FaskesLocActivity::class.java)
+                                .putExtra("userId", userId)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -413,6 +416,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, RegJKNActivity::class.java)
+                                .putExtra("userId", userId)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -529,6 +533,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, DaftarLayananActivity::class.java)
+                                .putExtra("userId", userId)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -583,6 +588,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, InformasiKlinikActivity::class.java)
+                                .putExtra("userId", userId)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
@@ -636,6 +642,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     onClick = {
                         lCOntext.startActivity(
                             Intent(lCOntext, OtherActivity::class.java)
+                                .putExtra("userId", userId)
                         )
                     },
                     shape = RoundedCornerShape(8.dp),
