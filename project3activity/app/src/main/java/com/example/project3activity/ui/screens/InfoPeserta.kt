@@ -110,7 +110,7 @@ fun InfoPeserta(
             .padding(top = 120.dp),
     ) {
         Text(
-            text = "Informasi Peserta",
+            text = stringResource(id = R.string.label_icon5),
             color = Color.Black,
             style = TextStyle(
                 fontSize = 22.sp,
@@ -200,7 +200,7 @@ fun InfoPeserta(
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Nama Depan", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.label_reg1), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
                                             Text(text = firstname, style = MaterialTheme.typography.subtitle2)
@@ -238,7 +238,7 @@ fun InfoPeserta(
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Last Name", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.label_reg2), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
                                             Text(text = lastname, style = MaterialTheme.typography.subtitle2)
@@ -277,7 +277,7 @@ fun InfoPeserta(
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "NIK", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.label_reg3), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
                                             Text(text = nik, style = MaterialTheme.typography.subtitle2,)
@@ -316,7 +316,7 @@ fun InfoPeserta(
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Tanggal Lahir", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.label_reg5), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
                                             Text(text = lahir, style = MaterialTheme.typography.subtitle2)
@@ -355,7 +355,7 @@ fun InfoPeserta(
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Alamat Rumah", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.label_reg6), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
                                             Text(text = alamat, style = MaterialTheme.typography.subtitle2)
