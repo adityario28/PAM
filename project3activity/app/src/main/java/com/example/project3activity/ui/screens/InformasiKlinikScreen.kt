@@ -87,7 +87,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .padding(bottom = 80.dp)
-                .width(width = 400.dp)
+                .width(width = 314.dp)
                 .height(height = 85.dp)
         )
     }
@@ -166,7 +166,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                     painter = painterResource(id = R.drawable.informasi_klinik),
                     contentDescription = null,
                     modifier = Modifier
-                        .size(width = 370.dp, height = 185.dp)
+                        .size(width = 314.dp, height = 185.dp)
                         .shadow(4.dp, shape = RoundedCornerShape(10.dp)),
                     contentScale = ContentScale.Crop,
                 )
@@ -182,7 +182,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 80.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -221,7 +221,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 80.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -259,7 +259,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 80.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -298,7 +298,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 80.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -337,7 +337,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 80.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)

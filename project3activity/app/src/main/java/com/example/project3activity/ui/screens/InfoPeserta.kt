@@ -2,9 +2,7 @@ package com.example.project3activity.ui.screens
 
 
 import android.content.Intent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -149,7 +147,7 @@ fun InfoPeserta(
 
         Column(
             modifier = Modifier
-                .padding(top = 35.dp)
+                .padding(top = 15.dp)
                 .fillMaxSize()
                 .fillMaxHeight()
         ) {
@@ -181,10 +179,14 @@ fun InfoPeserta(
                             shape = RoundedCornerShape(20.dp)
                         )
                     ) {
-                        Column {
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(10.dp),
+                            modifier = Modifier
+                                .verticalScroll(rememberScrollState())
+                        ) {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 60.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -222,7 +224,7 @@ fun InfoPeserta(
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 60.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -260,7 +262,7 @@ fun InfoPeserta(
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 60.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -299,7 +301,7 @@ fun InfoPeserta(
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 60.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)
@@ -338,7 +340,7 @@ fun InfoPeserta(
                         Column {
                             Box(
                                 modifier = Modifier
-                                    .size(height = 80.dp, width = 370.dp)
+                                    .size(height = 60.dp, width = 314.dp)
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(color = Color.White)
                                     .padding(start = 20.dp)

@@ -86,12 +86,12 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
     }
 
     val button_big = Modifier
-        .size(width = 370.dp, height = 120.dp)
+        .size(width = 314.dp, height = 120.dp)
         .defaultMinSize(1.dp, minHeight = 1.dp)
         .shadow(4.dp, shape = RoundedCornerShape(20.dp))
 
     val button = Modifier
-        .size(width = 178.dp, height = 100.dp)
+        .size(width = 150.dp, height = 100.dp)
         .shadow(4.dp, shape = RoundedCornerShape(20.dp))
         .defaultMinSize(1.dp, minHeight = 1.dp)
 
