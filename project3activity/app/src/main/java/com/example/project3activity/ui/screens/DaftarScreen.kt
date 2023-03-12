@@ -2,6 +2,7 @@ package com.example.project3activity.ui.screens
 
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -30,8 +31,7 @@ import com.example.project3activity.R
 
 @Composable
 fun DaftarScreen(){
-
-    val lCOntext = LocalContext.current
+    val lContext = LocalContext.current
     val ctx = LocalContext.current
 
 
@@ -53,12 +53,12 @@ fun DaftarScreen(){
     }
 
     val button_big = Modifier
-        .size(width = 315.dp, height = 100.dp)
+        .size(width = 150.dp, height = 120.dp)
         .defaultMinSize(1.dp, minHeight = 1.dp)
-        .shadow(4.dp, shape = RoundedCornerShape(8.dp))
+        .shadow(4.dp, shape = RoundedCornerShape(20.dp))
 
-    val button = Modifier
-        .size(width = 150.dp, height = 100.dp)
+    val button_xl = Modifier
+        .size(width = 314.dp, height = 120.dp)
         .shadow(4.dp, shape = RoundedCornerShape(20.dp))
         .defaultMinSize(1.dp, minHeight = 1.dp)
 
@@ -87,8 +87,8 @@ fun DaftarScreen(){
         /*tombol kembali*/
         TextButton(
             onClick = {
-                lCOntext.startActivity(
-                    Intent(lCOntext, HomeActivity::class.java)
+                lContext.startActivity(
+                    Intent(lContext, HomeActivity::class.java)
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
@@ -119,11 +119,286 @@ fun DaftarScreen(){
             ) {
 
 //                Konten
+
+                Row() {
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 20.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+
+                        val a4 = Modifier
+                            .size(50.dp)
+                        Button(
+                            onClick = {
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = button_big,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
+
+                            ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.other_bed),
+                                    contentDescription = null,
+                                    modifier = a4
+                                )
+                                Text(
+                                    text = "Pendaftaran Dokter Umum",
+                                    style = MaterialTheme.typography.caption,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
+                            }
+                        }
+
+                    }
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 20.dp, start = 14.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+
+                        val a4 = Modifier
+                            .size(50.dp)
+                        Button(
+                            onClick = {
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = button_big,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
+
+                            ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.other_2),
+                                    contentDescription = null,
+                                    modifier = a4
+                                )
+                                Text(
+                                    text = "Pendaftaran Dokter Spesialis Operasi",
+                                    style = MaterialTheme.typography.caption,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
+                            }
+                        }
+
+                    }
+
                 }
 
+                Row() {
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 20.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+
+                        val a4 = Modifier
+                            .size(50.dp)
+                        Button(
+                            onClick = {
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = button_big,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
+
+                            ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.other_bed),
+                                    contentDescription = null,
+                                    modifier = a4
+                                )
+                                Text(
+                                    text = "Pendaftaran Dokter Spesialis THT",
+                                    style = MaterialTheme.typography.caption,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
+                            }
+                        }
+
+                    }
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 20.dp, start = 14.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+
+                        val a4 = Modifier
+                            .size(50.dp)
+                        Button(
+                            onClick = {
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = button_big,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
+
+                            ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.other_2),
+                                    contentDescription = null,
+                                    modifier = a4
+                                )
+                                Text(
+                                    text = "Pendaftaran Dokter Spesialis Gigi",
+                                    style = MaterialTheme.typography.caption,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
+                            }
+                        }
+
+                    }
+
+                }
+
+                Row() {
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 20.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+
+                        val a4 = Modifier
+                            .size(50.dp)
+                        Button(
+                            onClick = {
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = button_big,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
+
+                            ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.other_bed),
+                                    contentDescription = null,
+                                    modifier = a4
+                                )
+                                Text(
+                                    text = "Daftar Obat Yang Ditanggung JKN",
+                                    style = MaterialTheme.typography.caption,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
+                            }
+                        }
+
+                    }
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 20.dp, start = 14.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+
+                        val a4 = Modifier
+                            .size(50.dp)
+                        Button(
+                            onClick = {
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = button_big,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
+
+                            ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.other_2),
+                                    contentDescription = null,
+                                    modifier = a4
+                                )
+                                Text(
+                                    text = "Syarat Dan Ketentuan JKN",
+                                    style = MaterialTheme.typography.caption,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
+                            }
+                        }
+
+                    }
+
+                }
+
+                Row() {
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 20.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+
+                        val a4 = Modifier
+                            .size(50.dp)
+                        Button(
+                            onClick = {
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = button_xl,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
+
+                            ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.other_bed),
+                                    contentDescription = null,
+                                    modifier = a4
+                                )
+                                Text(
+                                    text = "Skrining Mandiri Covid-19",
+                                    style = MaterialTheme.typography.caption,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 2.dp)
+                                )
+                            }
+                        }
+
+                    }
+
+
+                }
 
             }
         }
+    }
 }
 
 

@@ -26,10 +26,10 @@ import com.example.project3activity.R
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
-
 fun OtherPage(){
-
+    val ctx = LocalContext.current
     val lContext = LocalContext.current
+
 
     Column (
         modifier = Modifier
@@ -49,7 +49,7 @@ fun OtherPage(){
     }
 
     val button_big = Modifier
-        .size(width = 370.dp, height = 100.dp)
+        .size(width = 370.dp, height = 120.dp)
         .defaultMinSize(1.dp, minHeight = 1.dp)
         .shadow(4.dp, shape = RoundedCornerShape(20.dp))
 
@@ -123,7 +123,7 @@ fun OtherPage(){
                     ) {
 
                         val a4 = Modifier
-                            .size(50.dp)
+                            .size(60.dp)
                         Button(
                             onClick = {
                                 Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
@@ -142,7 +142,7 @@ fun OtherPage(){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Info Ketersediaan Tempat Tidur",
+                                    text = "Cek Akun Virtual",
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -163,7 +163,7 @@ fun OtherPage(){
                     ) {
 
                         val a4 = Modifier
-                            .size(50.dp)
+                            .size(60.dp)
                         Button(
                             onClick = {
                                 Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
@@ -183,7 +183,7 @@ fun OtherPage(){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Info Jadwal Tindakan Operasi",
+                                    text = "Program Relaksasi Tunggakan",
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -208,6 +208,7 @@ fun OtherPage(){
                         Button(
                             onClick = {
                                 Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -222,7 +223,7 @@ fun OtherPage(){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Info Riwayat Pelayanan",
+                                    text = "Premi JKN",
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -260,7 +261,7 @@ fun OtherPage(){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Skrining Mandiri Covid-19",
+                                    text = "Pengaduan Keluhan",
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -301,7 +302,7 @@ fun OtherPage(){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Pentaftaran Auto Debit",
+                                    text = "Pendtaftaran Auto Debit",
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -356,14 +357,12 @@ fun OtherPage(){
 }
 
 
+@Preview(showBackground = true)
+@Composable
+fun PreviewProfile() {
+    Project3activityTheme {
+//        Greeting2("Android")
+        OtherPage()
+    }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewProfile() {
-//    Project3activityTheme {
-////        Greeting2("Android")
-//        OtherPage("coy","coy","coy","coy")
-//    }
-//
-//}
-
+}
