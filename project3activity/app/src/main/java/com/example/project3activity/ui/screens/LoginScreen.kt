@@ -190,7 +190,7 @@ fun LoginForm(vm : UserViewModel) {
                         if (auth) {
                             lContext.startActivity(
                                 Intent(lContext, HomeActivity::class.java)
-                                    .putExtra("userId", userId.toString())
+                                    .putExtra("userId", userId)
                             )
                         }
                         else {

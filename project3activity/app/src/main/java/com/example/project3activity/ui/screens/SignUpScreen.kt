@@ -38,6 +38,7 @@ internal fun checkPass(pass : String, confPass : String) : Boolean {
     return(pass == confPass)
 }
 
+
 @Composable
 fun Signup(
     btnOnClickAction: (String) -> Unit, vm : UserViewModel
@@ -240,6 +241,22 @@ fun Signup(
         )
 
 
+        var checkUser : Boolean = true
+
+        LaunchedEffect(
+            Unit,
+            block = {
+                vm.getUserList()
+            }
+        )
+
+        for (index in vm.userList) {
+            if (index.username == usernameInput) {
+                checkUser = false
+            }
+        }
+
+
         Button(
             modifier = Modifier
                 .fillMaxWidth()
@@ -252,24 +269,29 @@ fun Signup(
             onClick = {
                 val confPass = checkPass(passwordInput, confpasswordInput)
                 if (confPass) {
-                    val newUser = UserModel(id, userId, usernameInput, passwordInput, firstnameInput, lastnameInput)
+                    if (checkUser) {
+                        val newUser = UserModel(id, userId, usernameInput, passwordInput, firstnameInput, lastnameInput)
 
-                    ServiceBuilder.api.addUser(newUser).enqueue(object : Callback<UserModel> {
-                        override fun onResponse(
-                            call: Call<UserModel>,
-                            response: Response<UserModel>
-                        ) {
-                            val addedUser = response.body()
-                            Log.d("POST_SUCCESS", "User ${addedUser?.username} has been posted.")
-                            lContext.startActivity(
-                                Intent(lContext, MainActivity::class.java)
-                            )
-                        }
+                        ServiceBuilder.api.addUser(newUser).enqueue(object : Callback<UserModel> {
+                            override fun onResponse(
+                                call: Call<UserModel>,
+                                response: Response<UserModel>
+                            ) {
+                                val addedUser = response.body()
+                                Log.d("POST_SUCCESS", "User ${addedUser?.username} has been posted.")
+                                lContext.startActivity(
+                                    Intent(lContext, MainActivity::class.java)
+                                )
+                            }
 
-                        override fun onFailure(call: Call<UserModel>, t: Throwable) {
-                            Log.e("POST_FAILURE", "Error add user: ${t.message}")
-                        }
-                    })
+                            override fun onFailure(call: Call<UserModel>, t: Throwable) {
+                                Log.e("POST_FAILURE", "Error add user: ${t.message}")
+                            }
+                        })
+                    }
+                    else {
+                        Toast.makeText(lContext, "Username telah digunakan", Toast.LENGTH_SHORT).show()
+                    }
                 }
                 else {
                     Toast.makeText(lContext, "Password yang anda masukan tidak sama", Toast.LENGTH_SHORT).show()

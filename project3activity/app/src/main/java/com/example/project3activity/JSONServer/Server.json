@@ -1,0 +1,44 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "userId": 1,
+      "username": "Cool",
+      "password": "123",
+      "firstname": "Cool",
+      "lastname": "Mek"
+    },
+    {
+      "firstname": "Finda",
+      "id": 2,
+      "lastname": "Affandi",
+      "password": "123",
+      "userId": 2,
+      "username": "fann"
+    },
+    {
+      "firstname": "Bima",
+      "id": 3,
+      "lastname": "Krisnawan",
+      "password": "1",
+      "userId": 3,
+      "username": "Bima"
+    },
+    {
+      "firstname": "a",
+      "id": 7,
+      "lastname": "b",
+      "password": "ab",
+      "userId": 7,
+      "username": "ab"
+    },
+    {
+      "firstname": "coba",
+      "id": 5,
+      "lastname": "cobi",
+      "password": "tis",
+      "userId": 5,
+      "username": "tes"
+    }
+  ]
+}
