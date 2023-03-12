@@ -16,11 +16,7 @@ import com.example.project3activity.ui.theme.Project3activityTheme
 
 class RegJKNActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-<<<<<<< Updated upstream
         val vm = JknUserViewModel()
-=======
-        val vj = JknUserViewModel()
->>>>>>> Stashed changes
         super.onCreate(savedInstanceState)
         setContent {
             Project3activityTheme {
@@ -30,12 +26,7 @@ class RegJKNActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val userId = getIntent().getStringExtra("userId") ?: ""
-<<<<<<< Updated upstream
                     RegJKN(vm, userId)
-=======
-
-                    RegJKN(vj, userId)
->>>>>>> Stashed changes
                 }
             }
         }
