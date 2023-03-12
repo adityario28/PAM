@@ -3,7 +3,9 @@ package com.example.project3activity.ui.screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -134,8 +136,13 @@ fun ArticleScreen(va : ArticleViewModel){
 
         }
 
-        Column(modifier = Modifier
-            .padding(start = 16.dp, end = 16.dp, top = 12.dp)) {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier
+//            .fillMaxWidth()
+                .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 68.dp)
+                .verticalScroll(rememberScrollState())
+        ) {
             Text(text = content, style = TextStyle(
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Normal,
@@ -145,6 +152,9 @@ fun ArticleScreen(va : ArticleViewModel){
             )
 
         }
+
+
+
 
 
 
