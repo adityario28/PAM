@@ -92,6 +92,33 @@
     <string name="label_reg4">Kartu Keluarga\'s Number</string>
     <string name="label_reg5">Date Birth</string>
     <string name="label_reg6">Address</string>
-    <string name="title_activity_reg_jknactivity">RegJKNActivity</string>
+    <string name="title_activity_reg_jknactivity" translatable="false">RegJKNActivity</string>
+    <string name="Daftar_1">General Practitioners Registration</string>
+    <string name="Daftar_2">Surgery Doctor Registration</string>
+    <string name="Daftar_3">ENT Doctor Registration</string>
+    <string name="Daftar_4">Dental Doctor Registration</string>
+    <string name="Daftar_5">Medicines That Are Covered by JKN</string>
+    <string name="Daftar_6">JKN\'s Terms and Conditions</string>
+    <string name="Daftar_7">COVID-19 Independent Screening</string>
+    <string name="FaskesName1" translatable="false">Puskesmas Sidorejo Lor</string>
+    <string name="FaskesLoc1" translatable="false">Jl. Diponegoro No.100, Sidorejo Lor, Kec. Sidorejo, Kota Salatiga, Jawa Tengah 50714</string>
+    <string name="FaskesKontak" translatable="false">Kontak Klinik</string>
+    <string name="FaskesName2" translatable="false">Puskesmas Kalicacing</string>
+    <string name="FaskesLoc2" translatable="false">Jl. Brigjen Sudiarto No.49, Kalicacing, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50724</string>
+    <string name="FaskesName3" translatable="false">Puskesmas Mangunsari</string>
+    <string name="FaskesLoc3" translatable="false">Jl. Bangau No.16, Mangunsari, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50721</string>
+    <string name="FaskesName4" translatable="false">Klinik UKSW Salatiga</string>
+    <string name="FaskesLoc4" translatable="false">Jl. Kartini No.11A, Salatiga, Kec. Sidorejo, Kota Salatiga, Jawa Tengah 50711</string>
+    <string name="FaskesName5" translatable="false">Puskesmas Tegalrejo</string>
+    <string name="FaskesLoc5" translatable="false">Tegalrejo, Kec. Argomulyo, Kota Salatiga, Jawa Tengah 50733</string>
+    <string name="InformasiKlinik1">Clinic\'s Name</string>
+    <string name="InformasiKlinik2" translatable="false">Klinik Pratama UINSA Surabaya</string>
+    <string name="InformasiKlinik3">Total Doctor</string>
+    <string name="InformasiKlinik4" translatable="false">3</string>
+    <string name="InformasiKlinik5">Opened At</string>
+    <string name="InformasiKlinik6" translatable="false">09.00-18.00</string>
+    <string name="InformasiKlinik7">Telephone Number</string>
+    <string name="InformasiKlinik8" translatable="false">06969696969</string>
+    <string name="InformasiKlinik9" translatable="false">Jl. A. Yani no. 117 Surabaya</string>
 
 </resources>

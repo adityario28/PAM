@@ -107,7 +107,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
             .padding(top = 120.dp),
     ) {
         Text(
-            text = "Daftar Layanan",
+            text = stringResource(id = R.string.label_icon6),
             color = Color.Black,
             style = TextStyle(
                 fontSize = 22.sp,
@@ -189,7 +189,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Pendaftaran Dokter Umum",
+                                    text = stringResource(id = R.string.Daftar_1),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -226,7 +226,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Pendaftaran Dokter Spesialis Operasi",
+                                    text = stringResource(id = R.string.Daftar_2),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -267,7 +267,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Pendaftaran Dokter Spesialis THT",
+                                    text = stringResource(id = R.string.Daftar_3),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -304,7 +304,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Pendaftaran Dokter Spesialis Gigi",
+                                    text = stringResource(id = R.string.Daftar_4),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -345,7 +345,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Daftar Obat Yang Ditanggung JKN",
+                                    text = stringResource(id = R.string.Daftar_5),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -382,7 +382,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Syarat Dan Ketentuan JKN",
+                                    text = stringResource(id = R.string.Daftar_6),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -423,7 +423,7 @@ fun DaftarScreen(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Skrining Mandiri Covid-19",
+                                    text = stringResource(id = R.string.Daftar_7),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)

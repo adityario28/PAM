@@ -109,7 +109,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
             .padding(top = 120.dp),
     ) {
         Text(
-            text = "Informasi Klinik",
+            text = stringResource(id = R.string.label_icon7),
             color = Color.Black,
             style = TextStyle(
                 fontSize = 22.sp,
@@ -199,10 +199,10 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Nama Klinik", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.InformasiKlinik1), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "Klinik Pratama UINSA Surabaya", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = stringResource(id = R.string.InformasiKlinik2), style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -237,10 +237,10 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Jumlah Dokter", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.InformasiKlinik3), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "3", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = stringResource(id = R.string.InformasiKlinik4), style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -276,10 +276,10 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Jam Buka", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.InformasiKlinik5), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "09.00-18.00", style = MaterialTheme.typography.subtitle2)
+                                            Text(text = stringResource(id = R.string.InformasiKlinik6), style = MaterialTheme.typography.subtitle2)
                                         }
                                     }
                                 }
@@ -315,10 +315,13 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Nomor Telepon", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.InformasiKlinik7), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "06969696969", style = MaterialTheme.typography.subtitle2,)
+                                            Text(
+                                                text = stringResource(id = R.string.InformasiKlinik8),
+                                                style = MaterialTheme.typography.subtitle2
+                                            )
                                         }
                                     }
                                 }
@@ -353,10 +356,13 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
                                     .align(Alignment.CenterStart)) {
                                     Column () {
                                         Column {
-                                            Text(text = "Alamat", style = MaterialTheme.typography.overline)
+                                            Text(text = stringResource(id = R.string.label_reg6), style = MaterialTheme.typography.overline)
                                         }
                                         Column {
-                                            Text(text = "Jl. A. Yani no. 117 Surabaya", style = MaterialTheme.typography.subtitle2,)
+                                            Text(
+                                                text = stringResource(id = R.string.InformasiKlinik9),
+                                                style = MaterialTheme.typography.subtitle2
+                                            )
                                         }
                                     }
                                 }

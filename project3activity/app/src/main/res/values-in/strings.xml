@@ -62,4 +62,15 @@
     <string name="label_reg4">Nomor Kartu Keluarga</string>
     <string name="label_reg5">Tanggal Lahir</string>
     <string name="label_reg6">Alamat</string>
+    <string name="Daftar_1">Pendaftaran Dokter Umum</string>
+    <string name="Daftar_2">Pendaftaran Dokter Bedah</string>
+    <string name="Daftar_3">Pendaftaran Dokter THT</string>
+    <string name="Daftar_4">Pendaftaran Dokter Gigi</string>
+    <string name="Daftar_5">Daftar Obat Yang Ditanggung JKN</string>
+    <string name="Daftar_6">Syarat Dan Ketentuan JKN</string>
+    <string name="Daftar_7">Skrining Mandiri COVID-19</string>
+    <string name="InformasiKlinik1">Nama Klinik</string>
+    <string name="InformasiKlinik3">Jumlah Dokter</string>
+    <string name="InformasiKlinik5">Jam Buka</string>
+    <string name="InformasiKlinik7">Nomor Telepon</string>
 </resources>

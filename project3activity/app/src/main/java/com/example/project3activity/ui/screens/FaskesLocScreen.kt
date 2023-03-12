@@ -165,8 +165,8 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
                                 .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = "Puskesmas Sidorejo Lor", style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = "Jl. Diponegoro No.100, Sidorejo Lor, Kec. Sidorejo, Kota Salatiga, Jawa Tengah 50714", style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName1), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc1), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -185,7 +185,7 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = "Kontak Klinik", fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -220,8 +220,8 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = "Puskesmas Kalicacing", style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = "Jl. Brigjen Sudiarto No.49, Kalicacing, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50724", style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName2), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc2), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -240,7 +240,7 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = "Kontak Klinik", fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -275,8 +275,8 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = "Puskesmas Mangunsari", style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = "Jl. Bangau No.16, Mangunsari, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50721", style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName3), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc3), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -295,7 +295,7 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = "Kontak Klinik", fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -330,8 +330,8 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = "Klinik UKSW Salatiga", style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = "Jl. Kartini No.11A, Salatiga, Kec. Sidorejo, Kota Salatiga, Jawa Tengah 50711", style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName4), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc4), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -350,7 +350,7 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = "Kontak Klinik", fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -385,8 +385,8 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = "Puskesmas Tegalrejo", style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = "Tegalrejo, Kec. Argomulyo, Kota Salatiga, Jawa Tengah 50733`", style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName5), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc5), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -405,7 +405,7 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = "Kontak Klinik", fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
                                     }
                                 }
                             }
