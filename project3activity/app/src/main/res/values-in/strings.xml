@@ -47,4 +47,14 @@
     <string name="under_developing">FItur Ini Sedang Dalam Tahap Pengembangan</string>
     <string name="WorkDay_1">Senin - Sabtu</string>
     <string name="Spec_1">Seksolog - Kandungan</string>
+    <string name="WorkDay_2">Senin - Jumat</string>
+    <string name="Spec_2">Bedah Plastik Rekonstruksi dan Estetik</string>
+    <string name="Spec_3">Kebidanan dan Kandungan</string>
+    <string name="WorkDay_3">Senin - Jumat</string>
+    <string name="Spec_4">Kulit dan Kelamin</string>
+    <string name="WorkDay_4">Rabu - Minggu</string>
+    <string name="Spec_5">Kejiwaan</string>
+    <string name="WorkDay_5">Selasa - Kamis</string>
+    <string name="Spec_6">Kesehatan Mata</string>
+    <string name="WorkDay_6">Kamis - Sabtu</string>
 </resources>

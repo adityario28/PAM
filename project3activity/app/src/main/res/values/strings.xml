@@ -65,6 +65,25 @@
     <string name="WorkDay_1">Monday - Saturday</string>
     <string name="Loc_1" translatable="false">RS St. Elisabeth, Semarang</string>
     <string name="Spec_1">Sexologist - Pregnancy</string>
-    <string name="title_activity_cons">ConsActivity</string>
+    <string name="title_activity_cons" translatable="false">ConsActivity</string>
+    <string name="WorkDay_2">Monday - Friday</string>
+    <string name="Spec_2">Plastic Reconstructive and Estetic Surgeons</string>
+    <string name="Loc_2" translatable="false">Siloam Hospitals Semarang</string>
+    <string name="dr_3" translatable="false">dr. Indah Tri Haryuni, Sp.OG</string>
+    <string name="Spec_3">Obstetrics and Gynecology</string>
+    <string name="WorkDay_3">Monday - Friday</string>
+    <string name="Loc_3" translatable="false">RSIA Hermina Mutiara Bunda Salatiga</string>
+    <string name="dr_4" translatable="false">dr. Yeni Suyono, Sp.KK</string>
+    <string name="Spec_4">Skin and Venereal</string>
+    <string name="WorkDay_4">Wednesday - Sunday</string>
+    <string name="Loc_4" translatable="false">RS Kasih Ibu Surakarta</string>
+    <string name="dr_5" translatable="false">Prof. Dr. dr. Aris Sudiyanto, Sp.KJ</string>
+    <string name="Spec_5">Mental Health</string>
+    <string name="Loc_5" translatable="false">RS Hermina Solo</string>
+    <string name="WorkDay_5">Tuesday - Saturday</string>
+    <string name="dr_6" translatable="false">dr. Indra Trimahayana, Sp.M</string>
+    <string name="Loc_6" translatable="false">Siloam Hospitals Yogyakarta</string>
+    <string name="Spec_6">Eye Health</string>
+    <string name="WorkDay_6">Thursday - Saturday</string>
 
 </resources>

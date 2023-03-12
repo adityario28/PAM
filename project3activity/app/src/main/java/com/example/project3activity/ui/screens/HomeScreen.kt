@@ -1055,12 +1055,12 @@ fun Hero() {
 
 
 
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview() {
-//    Project3activityTheme {
-////        Greeting("admin")
-//        Hero("cuy","coy", "cey", "cay")
-////        BottomNavbar()
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    Project3activityTheme {
+//        Greeting("admin")
+        Hero()
+//        BottomNavbar()
+    }
+}

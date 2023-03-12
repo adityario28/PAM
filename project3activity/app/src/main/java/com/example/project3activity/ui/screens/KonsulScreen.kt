@@ -243,7 +243,7 @@ fun Konsul(){
                 ) {
                     Column(horizontalAlignment = Alignment.Start) {
                         Text(
-                            text = stringResource(id = R.string.History_Button_1_dr),
+                            text = stringResource(id = R.string.History_Button_2_dr),
                             color = Color.White,
                             textAlign = TextAlign.Left,
                             style = TextStyle(
@@ -266,7 +266,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Spec_1),
+                                text = stringResource(id = R.string.Spec_2),
                                 color = Color.White,
                                 style = TextStyle(
                                     fontSize = 12.sp
@@ -289,7 +289,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Loc_1),
+                                text = stringResource(id = R.string.Loc_2),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -312,126 +312,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.WorkDay_1),
-                                color = Color.White,
-//                    lineHeight = 95.sp,
-                                style = TextStyle(
-                                    fontSize = 12.sp
-                                ),
-                                modifier = Modifier
-                                    .padding(start = 5.dp)
-//                            .fillMaxWidth()
-
-                            )
-                        }
-
-                    }
-                }
-
-                Image(
-                    painter = painterResource(id = R.drawable.character_2),
-                    contentDescription = "Character-icon",
-                    modifier = Modifier
-                        .size(250.dp)
-                )
-            }
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            Button(
-                onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
-                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF4ECB71)),
-                shape = RoundedCornerShape(8.dp),
-                modifier = Modifier
-                    .shadow(4.dp, shape = RoundedCornerShape(8.dp))
-                    .fillMaxWidth()
-                    .height(108.dp),
-                elevation = ButtonDefaults.elevation(
-                    defaultElevation = 20.dp,
-                    pressedElevation = 15.dp,
-                    disabledElevation = 0.dp,
-                    hoveredElevation = 15.dp,
-                    focusedElevation = 10.dp
-                )
-            )
-            {
-
-                Row(
-                    modifier = Modifier
-                        .width(275.dp)
-                ) {
-                    Column(horizontalAlignment = Alignment.Start) {
-                        Text(
-                            text = stringResource(id = R.string.History_Button_1_dr),
-                            color = Color.White,
-                            textAlign = TextAlign.Left,
-                            style = TextStyle(
-                                fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold
-                            ),
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(start = 2.dp)
-                        )
-
-                        Spacer(modifier = Modifier.height(3.dp))
-                        Row(
-                            modifier = Modifier
-                                .padding(top = 2.dp)
-                        ) {
-                            Icon(
-                                painter = painterResource(id = R.drawable.dr_icon_recent),
-                                contentDescription = "Vector", tint = Color.White
-                            )
-
-                            Text(
-                                text = stringResource(id = R.string.Spec_1),
-                                color = Color.White,
-                                style = TextStyle(
-                                    fontSize = 12.sp
-                                ),
-                                modifier = Modifier
-                                    .padding(start = 6.dp, top = 3.dp)
-
-                            )
-                        }
-
-                        Spacer(modifier = Modifier.height(2.dp))
-
-                        Row(
-                            modifier = Modifier
-                                .padding(top = 2.dp, start = 3.dp)
-                        ) {
-                            Icon(
-                                painter = painterResource(id = R.drawable.location_icon_recent),
-                                contentDescription = "Location", tint = Color.White
-                            )
-
-                            Text(
-                                text = stringResource(id = R.string.Loc_1),
-                                color = Color.White,
-//                    lineHeight = 95.sp,
-                                style = TextStyle(
-                                    fontSize = 12.sp
-                                ),
-                                modifier = Modifier
-                                    .padding(start = 6.dp)
-//                            .fillMaxWidth()
-
-                            )
-                        }
-                        Spacer(modifier = Modifier.height(3.dp))
-                        Row(
-                            modifier = Modifier
-                                .padding(top = 2.dp, start = 2.dp)
-                        ) {
-                            Icon(
-                                painter = painterResource(id = R.drawable.time_icon_recent),
-                                contentDescription = "Time", tint = Color.White
-                            )
-
-                            Text(
-                                text = stringResource(id = R.string.WorkDay_1),
+                                text = stringResource(id = R.string.WorkDay_2),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -481,7 +362,7 @@ fun Konsul(){
                 ) {
                     Column(horizontalAlignment = Alignment.Start) {
                         Text(
-                            text = stringResource(id = R.string.History_Button_1_dr),
+                            text = stringResource(id = R.string.dr_3),
                             color = Color.White,
                             textAlign = TextAlign.Left,
                             style = TextStyle(
@@ -504,7 +385,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Spec_1),
+                                text = stringResource(id = R.string.Spec_3),
                                 color = Color.White,
                                 style = TextStyle(
                                     fontSize = 12.sp
@@ -527,7 +408,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Loc_1),
+                                text = stringResource(id = R.string.Loc_3),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -550,7 +431,126 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.WorkDay_1),
+                                text = stringResource(id = R.string.WorkDay_3),
+                                color = Color.White,
+//                    lineHeight = 95.sp,
+                                style = TextStyle(
+                                    fontSize = 12.sp
+                                ),
+                                modifier = Modifier
+                                    .padding(start = 5.dp)
+//                            .fillMaxWidth()
+
+                            )
+                        }
+
+                    }
+                }
+
+                Image(
+                    painter = painterResource(id = R.drawable.character_2),
+                    contentDescription = "Character-icon",
+                    modifier = Modifier
+                        .size(250.dp)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Button(
+                onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF4ECB71)),
+                shape = RoundedCornerShape(8.dp),
+                modifier = Modifier
+                    .shadow(4.dp, shape = RoundedCornerShape(8.dp))
+                    .fillMaxWidth()
+                    .height(108.dp),
+                elevation = ButtonDefaults.elevation(
+                    defaultElevation = 20.dp,
+                    pressedElevation = 15.dp,
+                    disabledElevation = 0.dp,
+                    hoveredElevation = 15.dp,
+                    focusedElevation = 10.dp
+                )
+            )
+            {
+
+                Row(
+                    modifier = Modifier
+                        .width(275.dp)
+                ) {
+                    Column(horizontalAlignment = Alignment.Start) {
+                        Text(
+                            text = stringResource(id = R.string.dr_4),
+                            color = Color.White,
+                            textAlign = TextAlign.Left,
+                            style = TextStyle(
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(start = 2.dp)
+                        )
+
+                        Spacer(modifier = Modifier.height(3.dp))
+                        Row(
+                            modifier = Modifier
+                                .padding(top = 2.dp)
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.dr_icon_recent),
+                                contentDescription = "Vector", tint = Color.White
+                            )
+
+                            Text(
+                                text = stringResource(id = R.string.Spec_4),
+                                color = Color.White,
+                                style = TextStyle(
+                                    fontSize = 12.sp
+                                ),
+                                modifier = Modifier
+                                    .padding(start = 6.dp, top = 3.dp)
+
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(2.dp))
+
+                        Row(
+                            modifier = Modifier
+                                .padding(top = 2.dp, start = 3.dp)
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.location_icon_recent),
+                                contentDescription = "Location", tint = Color.White
+                            )
+
+                            Text(
+                                text = stringResource(id = R.string.Loc_4),
+                                color = Color.White,
+//                    lineHeight = 95.sp,
+                                style = TextStyle(
+                                    fontSize = 12.sp
+                                ),
+                                modifier = Modifier
+                                    .padding(start = 6.dp)
+//                            .fillMaxWidth()
+
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(3.dp))
+                        Row(
+                            modifier = Modifier
+                                .padding(top = 2.dp, start = 2.dp)
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.time_icon_recent),
+                                contentDescription = "Time", tint = Color.White
+                            )
+
+                            Text(
+                                text = stringResource(id = R.string.WorkDay_4),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -600,7 +600,7 @@ fun Konsul(){
                 ) {
                     Column(horizontalAlignment = Alignment.Start) {
                         Text(
-                            text = stringResource(id = R.string.History_Button_1_dr),
+                            text = stringResource(id = R.string.dr_5),
                             color = Color.White,
                             textAlign = TextAlign.Left,
                             style = TextStyle(
@@ -623,7 +623,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Spec_1),
+                                text = stringResource(id = R.string.Spec_5),
                                 color = Color.White,
                                 style = TextStyle(
                                     fontSize = 12.sp
@@ -646,7 +646,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Loc_1),
+                                text = stringResource(id = R.string.Loc_5),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -669,7 +669,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.WorkDay_1),
+                                text = stringResource(id = R.string.WorkDay_5),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -838,7 +838,7 @@ fun Konsul(){
                 ) {
                     Column(horizontalAlignment = Alignment.Start) {
                         Text(
-                            text = stringResource(id = R.string.History_Button_1_dr),
+                            text = stringResource(id = R.string.dr_6),
                             color = Color.White,
                             textAlign = TextAlign.Left,
                             style = TextStyle(
@@ -861,7 +861,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Spec_1),
+                                text = stringResource(id = R.string.Spec_6),
                                 color = Color.White,
                                 style = TextStyle(
                                     fontSize = 12.sp
@@ -884,7 +884,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.Loc_1),
+                                text = stringResource(id = R.string.Loc_6),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -907,7 +907,7 @@ fun Konsul(){
                             )
 
                             Text(
-                                text = stringResource(id = R.string.WorkDay_1),
+                                text = stringResource(id = R.string.WorkDay_6),
                                 color = Color.White,
 //                    lineHeight = 95.sp,
                                 style = TextStyle(
@@ -942,8 +942,8 @@ fun Konsul(){
 
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewKonsul(){
-//    Konsul(username = "coy")
-//}
+@Preview(showBackground = true)
+@Composable
+fun PreviewKonsul(){
+    Konsul()
+}
