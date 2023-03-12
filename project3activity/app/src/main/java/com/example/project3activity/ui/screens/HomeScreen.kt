@@ -414,10 +414,17 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
                 Button(
                     onClick = {
-                        lCOntext.startActivity(
-                            Intent(lCOntext, RegJKNActivity::class.java)
-                                .putExtra("userId", userId)
-                        )
+
+
+                        if (hasJkn) {
+                            Toast.makeText(lCOntext, "Anda telah terdaftar", Toast.LENGTH_SHORT).show()
+                        }
+                        else {
+                            lCOntext.startActivity(
+                                Intent(lCOntext, RegJKNActivity::class.java)
+                                    .putExtra("userId", userId)
+                            )
+                        }
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
