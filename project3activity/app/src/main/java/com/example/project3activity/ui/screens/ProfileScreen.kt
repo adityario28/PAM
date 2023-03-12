@@ -1,23 +1,23 @@
 package com.example.project3activity.ui.screens
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Paint.Align
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Divider
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowForward
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -28,14 +28,23 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.project3activity.FaskesLocActivity
+import com.example.project3activity.InfoActivity
+import com.example.project3activity.InformasiKlinikActivity
 import com.example.project3activity.R
+import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.models.UserModel
 import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 @SuppressLint("UnrememberedMutableState")
 @Composable
-fun ProfileScreen(vm : UserViewModel, userId : String){
+fun ProfileScreen(vm : UserViewModel, vj : JknUserViewModel, userId : String, ){
+
+    var hasJkn : Boolean = false
+
+    val lContext = LocalContext.current
+    val lCOntext = LocalContext.current
 
     var username by remember {
         mutableStateOf("")
@@ -61,6 +70,32 @@ fun ProfileScreen(vm : UserViewModel, userId : String){
             username = index.username
             firstname = index.firstname
             lastname = index.lastname
+        }
+    }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getUserList()
+        }
+    )
+
+    for (index in vm.userList) {
+        if (index.userId.toString() == userId) {
+            username = index.username
+        }
+    }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vj.getJknUserList()
+        }
+    )
+
+    for (index in vj.jknUserList) {
+        if (index.id.toString() == userId) {
+            hasJkn = true
         }
     }
 
@@ -108,95 +143,141 @@ fun ProfileScreen(vm : UserViewModel, userId : String){
 
             Divider(modifier = Modifier.height(1.dp), color = Color.Gray)
 
-            Row(modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
-                .fillMaxWidth())
-            {
-                Image(painter = painterResource(id = R.drawable.doctor_icon_1), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
-                
-                Text(
-                    modifier = Modifier
-                        .align(Alignment.CenterVertically)
-                        .padding(start = 8.dp)
-                        .weight(1f),
-                    text = stringResource(id = R.string.profile_1),
-                    style = TextStyle(
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp,
-                        color = Color.Black
-                    ))
+            Button(
+                onClick = {
+                    Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+                },
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
-                Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                ) {
+                Row(modifier = Modifier
+                    .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
+                    .fillMaxWidth())
+                {
+                    Image(painter = painterResource(id = R.drawable.doctor_icon_1), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
+
+                    Text(
+                        modifier = Modifier
+                            .align(Alignment.CenterVertically)
+                            .padding(start = 8.dp)
+                            .weight(1f),
+                        text = stringResource(id = R.string.profile_1),
+                        style = TextStyle(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp,
+                            color = Color.Black
+                        ))
+
+                    Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                }
             }
 
             Divider(modifier = Modifier.height(1.dp), color = Color.Gray)
 
-            Row(modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
-                .fillMaxWidth())
-            {
-                Image(painter = painterResource(id = R.drawable.info_icon), contentDescription = "info profile", modifier = Modifier.size(28.dp))
+            Button(
+                onClick = {
+                    if (hasJkn) {
+                        lCOntext.startActivity(
+                            Intent(lCOntext, InfoActivity::class.java)
+                                .putExtra("userId", userId)
+                        )
+                    }
+                    else {
+                        Toast.makeText(lCOntext, "Akun anda belum terdaftar", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
-                Text(
-                    modifier = Modifier
-                        .align(Alignment.CenterVertically)
-                        .padding(start = 8.dp)
-                        .weight(1f),
-                    text = stringResource(id = R.string.profile_2),
-                    style = TextStyle(
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp,
-                        color = Color.Black
-                    ))
+                ) {
+                Row(modifier = Modifier
+                    .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
+                    .fillMaxWidth())
+                {
+                    Image(painter = painterResource(id = R.drawable.info_icon), contentDescription = "info profile", modifier = Modifier.size(28.dp))
 
-                Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                    Text(
+                        modifier = Modifier
+                            .align(Alignment.CenterVertically)
+                            .padding(start = 8.dp)
+                            .weight(1f),
+                        text = stringResource(id = R.string.profile_2),
+                        style = TextStyle(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp,
+                            color = Color.Black
+                        ))
+
+                    Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                }
             }
 
             Divider(modifier = Modifier.height(1.dp), color = Color.Gray)
 
-            Row(modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
-                .fillMaxWidth())
-            {
-                Image(painter = painterResource(id = R.drawable.rumkit_icon), contentDescription = "clinic info profile", modifier = Modifier.size(28.dp))
+            Button(
+                onClick = {
+                    Intent(lCOntext, InformasiKlinikActivity::class.java)
+                        .putExtra("userId", userId)
+                },
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
-                Text(
-                    modifier = Modifier
-                        .align(Alignment.CenterVertically)
-                        .padding(start = 8.dp)
-                        .weight(1f),
-                    text = stringResource(id = R.string.profile_3),
-                    style = TextStyle(
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp,
-                        color = Color.Black
-                    ))
+                ) {
+                Row(modifier = Modifier
+                    .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
+                    .fillMaxWidth())
+                {
+                    Image(painter = painterResource(id = R.drawable.rumkit_icon), contentDescription = "clinic info profile", modifier = Modifier.size(28.dp))
 
-                Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                    Text(
+                        modifier = Modifier
+                            .align(Alignment.CenterVertically)
+                            .padding(start = 8.dp)
+                            .weight(1f),
+                        text = stringResource(id = R.string.profile_3),
+                        style = TextStyle(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp,
+                            color = Color.Black
+                        ))
+
+                    Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                }
             }
 
             Divider(modifier = Modifier.height(1.dp), color = Color.Gray)
 
-            Row(modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
-                .fillMaxWidth())
-            {
-                Image(painter = painterResource(id = R.drawable.loc_icon), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
+            Button(
+                onClick = {
+                    lCOntext.startActivity(
+                        Intent(lCOntext, FaskesLocActivity::class.java)
+                            .putExtra("userId", userId)
+                    )
+                },
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
-                Text(
-                    modifier = Modifier
-                        .align(Alignment.CenterVertically)
-                        .padding(start = 8.dp)
-                        .weight(1f),
-                    text = stringResource(id = R.string.profile_4),
-                    style = TextStyle(
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp,
-                        color = Color.Black
-                    ))
+                ) {
+                Row(modifier = Modifier
+                    .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
+                    .fillMaxWidth())
+                {
+                    Image(painter = painterResource(id = R.drawable.loc_icon), contentDescription = "doctor profile", modifier = Modifier.size(28.dp))
 
-                Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                    Text(
+                        modifier = Modifier
+                            .align(Alignment.CenterVertically)
+                            .padding(start = 8.dp)
+                            .weight(1f),
+                        text = stringResource(id = R.string.profile_4),
+                        style = TextStyle(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp,
+                            color = Color.Black
+                        ))
+
+                    Icon(imageVector = Icons.Rounded.ArrowForward, contentDescription = "Arrow Right", modifier = Modifier.align(Alignment.CenterVertically) )
+                }
             }
+
+
 
             Divider(modifier = Modifier.height(1.dp), color = Color.Gray)
 
