@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -102,7 +103,7 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
             .padding(top = 120.dp),
     ) {
         Text(
-            text = "Menu Lainya",
+            text = stringResource(id = R.string.label_icon8),
             color = Color.Black,
             style = TextStyle(
                 fontSize = 22.sp,
@@ -180,7 +181,7 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Cek Akun Virtual",
+                                    text = stringResource(id = R.string.Other1),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -221,7 +222,7 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Program Relaksasi Tunggakan",
+                                    text = stringResource(id = R.string.Other2),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -261,7 +262,7 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Premi JKN",
+                                    text = stringResource(id = R.string.Other3),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -299,7 +300,7 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Pengaduan Keluhan",
+                                    text = stringResource(id = R.string.Other4),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -340,7 +341,7 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Pendtaftaran Auto Debit",
+                                    text = stringResource(id = R.string.Other5),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)
@@ -378,7 +379,7 @@ fun OtherPage(vm : JknUserViewModel, userId : String){
                                     modifier = a4
                                 )
                                 Text(
-                                    text = "Info Riwayat Pembayaran",
+                                    text = stringResource(id = R.string.Other6),
                                     style = MaterialTheme.typography.caption,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 2.dp)

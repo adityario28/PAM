@@ -73,4 +73,10 @@
     <string name="InformasiKlinik3">Jumlah Dokter</string>
     <string name="InformasiKlinik5">Jam Buka</string>
     <string name="InformasiKlinik7">Nomor Telepon</string>
+    <string name="Other1">Cek Akun Virtual</string>
+    <string name="Other2">Program Relaksasi Tunggakan</string>
+    <string name="Other3">Premi JKN</string>
+    <string name="Other4">Pengaduan Keluhan</string>
+    <string name="Other5">Pendtaftaran Auto Debit</string>
+    <string name="Other6">Info Riwayat Pembayaran</string>
 </resources>

@@ -14,7 +14,7 @@ import coil.compose.SubcomposeAsyncImageContent
 fun PagerItemScreen(imageUrl:String) {
 
     Box(modifier = Modifier.fillMaxSize())
-    SubcomposeAsyncImage(model = imageUrl, contentDescription = "iamge", modifier = Modifier
+    SubcomposeAsyncImage(model = imageUrl, contentDescription = "image", modifier = Modifier
         .fillMaxSize()) {
         val state = painter.state
 
