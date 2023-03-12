@@ -7,7 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,11 +23,60 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.R
+import com.example.project3activity.models.ArticleViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
 import com.example.project3activity.ui.theme.Shapes
+import java.util.*
 
 @Composable
-fun ArticleScreen(){
+fun ArticleScreen(va : ArticleViewModel){
+
+    var title by remember {
+        mutableStateOf("")
+    }
+
+    var authors by remember {
+        mutableStateOf("")
+    }
+
+    var time by remember {
+        mutableStateOf("")
+    }
+
+    var content by remember {
+        mutableStateOf("")
+    }
+
+    var lang = Locale.getDefault().getLanguage()
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            va.getArticleList()
+        }
+    )
+
+    if(lang == "id") {
+        for (index in va.articleList) {
+            if (index.id.toString() == "1") {
+                title = index.title
+                authors = index.authors
+                time = index.time
+                content = index.content
+            }
+        }
+    }
+    else{
+        for (index in va.articleList) {
+            if (index.id.toString() == "2") {
+                title = index.title
+                authors = index.authors
+                time = index.time
+                content = index.content
+            }
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -48,7 +97,7 @@ fun ArticleScreen(){
             .padding(start = 16.dp, end = 16.dp)
         ) {
             Text(
-                text = stringResource(id = R.string.Headline), style = TextStyle(
+                text = title, style = TextStyle(
                 fontWeight = FontWeight.Bold,
                 fontSize = 22.sp
             ))
@@ -60,7 +109,7 @@ fun ArticleScreen(){
             Row {
                 Icon(painter = painterResource(id = R.drawable.person), contentDescription = "Author", modifier = Modifier.size(16.dp))
 
-                Text(text = stringResource(id = R.string.author),
+                Text(text = authors,
                     modifier = Modifier
                         .padding(start = 2.dp)
                     ,style = TextStyle(
@@ -72,7 +121,7 @@ fun ArticleScreen(){
                     .size(20.dp)
                     .padding(start = 8.dp))
                 
-                Text(text = stringResource(id = R.string.date),
+                Text(text = time,
                 modifier = Modifier
                     .padding(start = 2.dp),
                 style = TextStyle(
@@ -87,7 +136,7 @@ fun ArticleScreen(){
 
         Column(modifier = Modifier
             .padding(start = 16.dp, end = 16.dp, top = 12.dp)) {
-            Text(text = stringResource(id = R.string.news_text), style = TextStyle(
+            Text(text = content, style = TextStyle(
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Normal,
                 textAlign = TextAlign.Justify,
@@ -112,12 +161,12 @@ fun ArticleScreen(){
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewArticle() {
-    Project3activityTheme {
-//        Greeting2("Android")
-        ArticleScreen()
-    }
-
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewArticle() {
+//    Project3activityTheme {
+////        Greeting2("Android")
+//        ArticleScreen()
+//    }
+//
+//}

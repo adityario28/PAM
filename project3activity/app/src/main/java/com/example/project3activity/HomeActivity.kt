@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import com.example.project3activity.models.ArticleViewModel
 import com.example.project3activity.models.JknUserServiceBuilder
 import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.models.UserViewModel
@@ -21,6 +22,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val vm = UserViewModel()
         val vj = JknUserViewModel()
+        val va = ArticleViewModel()
         super.onCreate(savedInstanceState)
         this.setContent {
             Project3activityTheme {
@@ -33,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
 //                    Greeting(username)
                     val userId = getIntent().getStringExtra("userId") ?: ""
 
-                    BottomNavigationMainScreenView(vm, vj, userId)
+                    BottomNavigationMainScreenView(vm, vj, va, userId)
                 }
             }
         }
