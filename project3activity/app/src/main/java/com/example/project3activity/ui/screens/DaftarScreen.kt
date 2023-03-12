@@ -78,6 +78,7 @@ fun DaftarScreen(){
         )
     }
 
+
     Column(modifier = Modifier
         .padding(top = 100.dp)
         .fillMaxSize()
@@ -143,7 +144,7 @@ fun DaftarScreen(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.dr_2),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -180,7 +181,7 @@ fun DaftarScreen(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_2),
+                                    painter = painterResource(id = R.drawable.dr_3),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -221,7 +222,7 @@ fun DaftarScreen(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.dr_4),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -258,7 +259,7 @@ fun DaftarScreen(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_2),
+                                    painter = painterResource(id = R.drawable.dr_5),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -299,7 +300,7 @@ fun DaftarScreen(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.daftar_obat),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -336,7 +337,7 @@ fun DaftarScreen(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_2),
+                                    painter = painterResource(id = R.drawable.daftar_syarat),
                                     contentDescription = null,
                                     modifier = a4
                                 )
@@ -377,7 +378,7 @@ fun DaftarScreen(){
                                     .fillMaxWidth()
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.other_bed),
+                                    painter = painterResource(id = R.drawable.daftar_virus),
                                     contentDescription = null,
                                     modifier = a4
                                 )

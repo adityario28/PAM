@@ -149,7 +149,8 @@ fun InformasiKlinikScreen(){
                             ) {
                                 Row (modifier = Modifier.align(Alignment.CenterStart)) {
                                     Icon(
-                                        imageVector = Icons.Rounded.Face,
+                                        painter = painterResource(id = R.drawable.klinik_nama),
+                                        modifier = Modifier.size(25.dp),
                                         contentDescription = "icon email"
                                     )
                                 }
@@ -225,7 +226,8 @@ fun InformasiKlinikScreen(){
                             ) {
                                 Row (modifier = Modifier.align(Alignment.CenterStart)) {
                                     Icon(
-                                        imageVector = Icons.Rounded.Face,
+                                        painter = painterResource(id = R.drawable.klinik_jam),
+                                        modifier = Modifier.size(25.dp),
                                         contentDescription = "icon email"
                                     )
                                 }
@@ -263,7 +265,8 @@ fun InformasiKlinikScreen(){
                             ) {
                                 Row (modifier = Modifier.align(Alignment.CenterStart)) {
                                     Icon(
-                                        painter = painterResource(id = R.drawable.key_form),
+                                        painter = painterResource(id = R.drawable.klinik_call),
+                                        modifier = Modifier.size(25.dp),
                                         contentDescription = "Key password"
                                     )
                                 }
