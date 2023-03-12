@@ -1,6 +1,7 @@
 package com.example.project3activity.ui.screens
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -93,7 +94,9 @@ fun Ambulance(){
 
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
 
-            Button(onClick = { /*TODO*/ }, shape = CircleShape, modifier = Modifier.size(325.dp), colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(
+            Button(onClick = {
+                Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
+            }, shape = CircleShape, modifier = Modifier.size(325.dp), colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(
                 id = R.color.red_ambulance
             ))) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {

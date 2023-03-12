@@ -126,7 +126,7 @@ fun OtherPage(){
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
                             },
                             modifier = button_big,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -166,7 +166,7 @@ fun OtherPage(){
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
                             },
                             modifier = button_big,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -207,7 +207,7 @@ fun OtherPage(){
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -243,7 +243,7 @@ fun OtherPage(){
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -284,7 +284,7 @@ fun OtherPage(){
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
@@ -322,7 +322,7 @@ fun OtherPage(){
                             .size(50.dp)
                         Button(
                             onClick = {
-                                Toast.makeText(lContext, "Fitur Sedang Dalam Perbaikan", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lContext, lContext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
                             },
                             modifier = button,
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
