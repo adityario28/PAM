@@ -8,24 +8,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.project3activity.models.ArticleViewModel
 import com.example.project3activity.models.JknUserViewModel
 
 @Composable
 fun MainScreenView(
-    vm: JknUserViewModel
+    vm: ArticleViewModel
 ){
     LaunchedEffect(
         Unit,
         block = {
-            vm.getJknUserList()
+            vm.getArticleList()
         }
     )
 
     Column() {
         if (vm.errorMessage.isEmpty()) {
             LazyColumn(modifier = Modifier.padding(18.dp)){
-                items(vm.jknUserList.size) {index ->
-                    Text(text = vm.jknUserList[index].firstname)
+                items(vm.articleList.size) {index ->
+                    Text(text = vm.articleList[index].content)
 //                    if(vm.toDoList[index].username == "Cool") {
 //                        Text(text = vm.toDoList[index].username)
 //                    }
