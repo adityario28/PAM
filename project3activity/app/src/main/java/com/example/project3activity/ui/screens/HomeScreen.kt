@@ -711,7 +711,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
 //            .fillMaxWidth()
-            .padding(start = 16.dp, top = 575.dp, end = 16.dp, bottom = 70.dp)
+            .padding(start = 16.dp, top = 575.dp, end = 16.dp)
             .verticalScroll(rememberScrollState())
     ) {
 
@@ -835,7 +835,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
             )
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(6.dp))
 
         Button(
             onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
@@ -954,7 +954,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
             )
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(6.dp))
 
         Button(
             onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
@@ -964,6 +964,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                 .shadow(4.dp, shape = RoundedCornerShape(8.dp))
                 .fillMaxWidth()
                 .height(108.dp),
+
             elevation = ButtonDefaults.elevation(
                 defaultElevation = 20.dp,
                 pressedElevation = 15.dp,
@@ -1072,6 +1073,8 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     .size(250.dp)
             )
         }
+
+        Spacer(modifier = Modifier.height(50.dp))
 
 
 
