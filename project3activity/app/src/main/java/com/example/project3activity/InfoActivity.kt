@@ -11,6 +11,7 @@ import com.example.project3activity.ui.theme.Project3activityTheme
 
 class InfoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContent {
             Project3activityTheme {

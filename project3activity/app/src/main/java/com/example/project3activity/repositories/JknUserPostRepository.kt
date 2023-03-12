@@ -7,5 +7,5 @@ import retrofit2.http.POST
 
 interface JknUserPostRepository {
     @POST("jkn")
-    fun addUser(@Body JknUser : JknUserModel): Call<JknUserModel>
+    fun addJknUser(@Body JknUser : JknUserModel): Call<JknUserModel>
 }
