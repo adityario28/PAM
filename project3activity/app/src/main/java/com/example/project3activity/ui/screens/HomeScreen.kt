@@ -691,6 +691,15 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                 }
             }
         }
+        Text(
+            text = stringResource(id = R.string.History),
+            color = Color.Black,
+            style = TextStyle(
+                fontSize = 22.sp,
+                fontWeight = FontWeight.SemiBold,
+                textAlign = TextAlign.Start
+            )
+        )
     }
 
 
@@ -702,23 +711,15 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
 //            .fillMaxWidth()
-            .padding(start = 16.dp, top = 535.dp, end = 16.dp)
+            .padding(start = 16.dp, top = 575.dp, end = 16.dp, bottom = 70.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        Text(
-            text = stringResource(id = R.string.History),
-            color = Color.Black,
-            style = TextStyle(
-                fontSize = 22.sp,
-                fontWeight = FontWeight.SemiBold,
-                textAlign = TextAlign.Start
-            )
-        )
+
 
 //        Box(modifier = Modifier.background(Image(asset = ImageAsset)))
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF4ECB71)),
             shape = RoundedCornerShape(8.dp),
             modifier = Modifier
@@ -734,34 +735,26 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
             )
         )
         {
-//                Image(painter = painterResource(id = R.drawable.pattern_recent_button),
-//                    contentDescription = null,
-//                    modifier = Modifier
-//                    .matchParentSize(),
-//                    contentScale = ContentScale.Crop)
-            Row(modifier = Modifier
-                .padding(end = 79.dp),
-//                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
+
+            Row(
+                modifier = Modifier
+                    .width(275.dp)
             ) {
-                Column(
-                ) {
+                Column(horizontalAlignment = Alignment.Start) {
                     Text(
-                        text = stringResource(id = R.string.History_Button_1_title),
+                        text = stringResource(id = R.string.History_Button_2_dr),
                         color = Color.White,
                         textAlign = TextAlign.Left,
-//                        lineHeight = 12.sp,
                         style = TextStyle(
-                            fontSize = 18.sp,
-                            fontWeight = FontWeight.SemiBold
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
-//                            .weight(weight = 0.25f)
-//                            .height(10.dp)
-//                            .padding(bottom = .dp)
+                            .padding(start = 2.dp)
                     )
-                    Spacer(modifier = Modifier.height(2.dp))
+
+                    Spacer(modifier = Modifier.height(3.dp))
                     Row(
                         modifier = Modifier
                             .padding(top = 2.dp)
@@ -772,15 +765,13 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                         )
 
                         Text(
-                            text = stringResource(id = R.string.History_Button_1_dr),
+                            text = stringResource(id = R.string.Spec_2),
                             color = Color.White,
-//                    lineHeight = 95.sp,
                             style = TextStyle(
                                 fontSize = 12.sp
                             ),
                             modifier = Modifier
-                                .padding(start = 6.dp)
-//                            .fillMaxWidth()
+                                .padding(start = 6.dp, top = 3.dp)
 
                         )
                     }
@@ -797,7 +788,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                         )
 
                         Text(
-                            text = stringResource(id = R.string.History_Button_1_loc),
+                            text = stringResource(id = R.string.Loc_2),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -809,7 +800,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
                         )
                     }
-                    Spacer(modifier = Modifier.height(2.dp))
+                    Spacer(modifier = Modifier.height(3.dp))
                     Row(
                         modifier = Modifier
                             .padding(top = 2.dp, start = 2.dp)
@@ -820,7 +811,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                         )
 
                         Text(
-                            text = stringResource(id = R.string.History_Button_1_time),
+                            text = stringResource(id = R.string.WorkDay_2),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -834,32 +825,20 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                     }
 
                 }
-
             }
 
-//                Image(
-//                    painter = painterResource(id = R.drawable.character_1),
-//                    contentDescription = "Character-icon",
-//                    modifier = Modifier
-//                        .width(width = 12.dp)
-//                        .height(height = 12.dp)
-//                )
-//                Row(modifier = Modifier
-//                    .padding(start = 2.dp, top = 4.dp, bottom = 2.dp, end = 2.dp)
-//                ) {
-//                    Image(
-//                        painter = painterResource(id = R.drawable.character_1),
-//                        contentDescription = "Character-icon",
-//                        modifier = Modifier
-//                            .width(width = 12.dp)
-//                            .height(height = 12.dp)
-//                    )
-//                }
+            Image(
+                painter = painterResource(id = R.drawable.dr_2),
+                contentDescription = "Character-icon",
+                modifier = Modifier
+                    .size(250.dp)
+            )
         }
 
+        Spacer(modifier = Modifier.height(12.dp))
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF4ECB71)),
             shape = RoundedCornerShape(8.dp),
             modifier = Modifier
@@ -875,33 +854,26 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
             )
         )
         {
-//                Image(painter = painterResource(id = R.drawable.pattern_recent_button),
-//                    contentDescription = null,
-//                    modifier = Modifier
-//                    .matchParentSize(),
-//                    contentScale = ContentScale.Crop)
-            Row(modifier = Modifier
-                .padding(end = 79.dp)) {
 
-
-                Column(
-                ) {
+            Row(
+                modifier = Modifier
+                    .width(275.dp)
+            ) {
+                Column(horizontalAlignment = Alignment.Start) {
                     Text(
-                        text = stringResource(id = R.string.History_Button_2_title),
+                        text = stringResource(id = R.string.dr_3),
                         color = Color.White,
                         textAlign = TextAlign.Left,
-//                        lineHeight = 12.sp,
                         style = TextStyle(
-                            fontSize = 18.sp,
-                            fontWeight = FontWeight.SemiBold
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
-//                            .weight(weight = 0.25f)
-//                            .height(10.dp)
-//                            .padding(bottom = .dp)
+                            .padding(start = 2.dp)
                     )
-                    Spacer(modifier = Modifier.height(2.dp))
+
+                    Spacer(modifier = Modifier.height(3.dp))
                     Row(
                         modifier = Modifier
                             .padding(top = 2.dp)
@@ -912,15 +884,13 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                         )
 
                         Text(
-                            text = stringResource(id = R.string.History_Button_2_dr),
+                            text = stringResource(id = R.string.Spec_3),
                             color = Color.White,
-//                    lineHeight = 95.sp,
                             style = TextStyle(
                                 fontSize = 12.sp
                             ),
                             modifier = Modifier
-                                .padding(start = 6.dp)
-//                            .fillMaxWidth()
+                                .padding(start = 6.dp, top = 3.dp)
 
                         )
                     }
@@ -937,7 +907,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                         )
 
                         Text(
-                            text = stringResource(id = R.string.History_Button_2_loc),
+                            text = stringResource(id = R.string.Loc_3),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -949,7 +919,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
                         )
                     }
-                    Spacer(modifier = Modifier.height(2.dp))
+                    Spacer(modifier = Modifier.height(3.dp))
                     Row(
                         modifier = Modifier
                             .padding(top = 2.dp, start = 2.dp)
@@ -960,7 +930,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                         )
 
                         Text(
-                            text = stringResource(id = R.string.History_Button_2_time),
+                            text = stringResource(id = R.string.WorkDay_3),
                             color = Color.White,
 //                    lineHeight = 95.sp,
                             style = TextStyle(
@@ -972,55 +942,141 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
                         )
                     }
+
                 }
             }
-//                Image(
-//                    painter = painterResource(id = R.drawable.character_1),
-//                    contentDescription = "Character-icon",
-//                    modifier = Modifier
-//                        .width(width = 12.dp)
-//                        .height(height = 12.dp)
-//                )
-            Row(modifier = Modifier
-                .padding(start = 2.dp, top = 4.dp, bottom = 2.dp, end = 2.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.character_1),
-                    contentDescription = "Character-icon",
-                    modifier = Modifier
-                        .width(width = 12.dp)
-                        .height(height = 12.dp)
-                )
-            }
+
+            Image(
+                painter = painterResource(id = R.drawable.character_2),
+                contentDescription = "Character-icon",
+                modifier = Modifier
+                    .size(250.dp)
+            )
         }
+
+        Spacer(modifier = Modifier.height(12.dp))
+
+        Button(
+            onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF4ECB71)),
+            shape = RoundedCornerShape(8.dp),
+            modifier = Modifier
+                .shadow(4.dp, shape = RoundedCornerShape(8.dp))
+                .fillMaxWidth()
+                .height(108.dp),
+            elevation = ButtonDefaults.elevation(
+                defaultElevation = 20.dp,
+                pressedElevation = 15.dp,
+                disabledElevation = 0.dp,
+                hoveredElevation = 15.dp,
+                focusedElevation = 10.dp
+            )
+        )
+        {
+
+            Row(
+                modifier = Modifier
+                    .width(275.dp)
+            ) {
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = stringResource(id = R.string.dr_4),
+                        color = Color.White,
+                        textAlign = TextAlign.Left,
+                        style = TextStyle(
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 2.dp)
+                    )
+
+                    Spacer(modifier = Modifier.height(3.dp))
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 2.dp)
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.dr_icon_recent),
+                            contentDescription = "Vector", tint = Color.White
+                        )
+
+                        Text(
+                            text = stringResource(id = R.string.Spec_4),
+                            color = Color.White,
+                            style = TextStyle(
+                                fontSize = 12.sp
+                            ),
+                            modifier = Modifier
+                                .padding(start = 6.dp, top = 3.dp)
+
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(2.dp))
+
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 2.dp, start = 3.dp)
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.location_icon_recent),
+                            contentDescription = "Location", tint = Color.White
+                        )
+
+                        Text(
+                            text = stringResource(id = R.string.Loc_4),
+                            color = Color.White,
+//                    lineHeight = 95.sp,
+                            style = TextStyle(
+                                fontSize = 12.sp
+                            ),
+                            modifier = Modifier
+                                .padding(start = 6.dp)
+//                            .fillMaxWidth()
+
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(3.dp))
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 2.dp, start = 2.dp)
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.time_icon_recent),
+                            contentDescription = "Time", tint = Color.White
+                        )
+
+                        Text(
+                            text = stringResource(id = R.string.WorkDay_4),
+                            color = Color.White,
+//                    lineHeight = 95.sp,
+                            style = TextStyle(
+                                fontSize = 12.sp
+                            ),
+                            modifier = Modifier
+                                .padding(start = 5.dp)
+//                            .fillMaxWidth()
+
+                        )
+                    }
+
+                }
+            }
+
+            Image(
+                painter = painterResource(id = R.drawable.dr_3),
+                contentDescription = "Character-icon",
+                modifier = Modifier
+                    .size(250.dp)
+            )
+        }
+
+
+
     }
 
-    Column(modifier = Modifier
-        .padding(start = 16.dp, top = 562.dp)
-        .fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        horizontalAlignment = Alignment.End
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.character_1),
-            contentDescription = "Character-icon",
-            modifier = Modifier
-                .padding(end = 8.dp)
-                .size(120.dp)
-        )
-
-        Image(
-            painter = painterResource(id = R.drawable.character_2),
-            contentDescription = "Character-icon-2",
-            modifier = Modifier
-//                .padding(end= 5.dp)
-                .offset(x = 10.dp)
-                .size(120.dp)
-
-        )
-
-
-    }
 
 
 
