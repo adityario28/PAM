@@ -209,6 +209,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
         }
     }
 
+
     //dot indicator
 //    Column(modifier = Modifier
 //        .padding(top = 325.dp)) {

@@ -158,9 +158,9 @@ fun Ambulance(vm : JknUserViewModel, userId : String){
                         style = TextStyle(fontWeight = FontWeight.SemiBold)
                     )
                 }
-        }
+            }
             Spacer(modifier = Modifier.height(12.dp))
-            
+
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 TextButton(onClick = { /*TODO*/ }, ) {
                     Icon(imageVector = Icons.Rounded.LocationOn, contentDescription = "Loc", tint = Color.Black, modifier = Modifier.size(ButtonDefaults.IconSize))
