@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -27,9 +29,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.*
 import com.example.project3activity.R
+import com.example.project3activity.models.Constants
 import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
+import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.pager.HorizontalPagerIndicator
+import com.google.accompanist.pager.rememberPagerState
 
 
 @Composable
@@ -49,45 +56,48 @@ fun Greeting(name: String) {
             .padding(start = 18.dp, top = 104.dp))
 }
 
-@Composable
-fun DotsIndicator(
-    totalDots: Int,
-    selectedIndex: Int
-) {
+//@Composable
+//fun DotsIndicator(
+//    totalDots: Int,
+//    selectedIndex: Int
+//) {
+//
+//    LazyRow(
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .wrapContentHeight(), horizontalArrangement = Arrangement.Center
+//    ) {
+//
+//        items(totalDots) { index ->
+//            if (index == selectedIndex) {
+//                Box(
+//                    modifier = Modifier
+//                        .size(12.dp)
+//                        .clip(CircleShape)
+//                        .background(color = Color(0xFF00CBA9))
+//                )
+//            } else {
+//                Box(
+//                    modifier = Modifier
+//                        .size(10.dp)
+//                        .clip(CircleShape)
+//                        .background(color = Color(0xFFA1A1A1))
+//                )
+//            }
+//
+//            if (index != totalDots - 1) {
+//                Spacer(modifier = Modifier.padding(horizontal = 2.dp))
+//            }
+//        }
+//    }
+//}
 
-    LazyRow(
-        modifier = Modifier
-            .fillMaxWidth()
-            .wrapContentHeight(), horizontalArrangement = Arrangement.Center
-    ) {
 
-        items(totalDots) { index ->
-            if (index == selectedIndex) {
-                Box(
-                    modifier = Modifier
-                        .size(12.dp)
-                        .clip(CircleShape)
-                        .background(color = Color(0xFF00CBA9))
-                )
-            } else {
-                Box(
-                    modifier = Modifier
-                        .size(10.dp)
-                        .clip(CircleShape)
-                        .background(color = Color(0xFFA1A1A1))
-                )
-            }
-
-            if (index != totalDots - 1) {
-                Spacer(modifier = Modifier.padding(horizontal = 2.dp))
-            }
-        }
-    }
-}
-
-
+@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
+
+
     val lCOntext = LocalContext.current
     val ctx = LocalContext.current
 
@@ -181,38 +191,29 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
             .fillMaxWidth()
             .padding(top = 130.dp)
     ) {
-        Box(
-            modifier = Modifier
-                .width(width = 400.dp)
-                .height(height = 300.dp)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.hero_news),
-                contentDescription = "Hero-news-img",
-                contentScale = ContentScale.Crop,
+        val imageList = Constants.imageList
+        val pagerState = rememberPagerState()
+
+        Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 400.dp)) {
+            HorizontalPager(count = imageList.size, state = pagerState, modifier = Modifier.fillMaxSize()) {page ->
+                PagerItemScreen(imageUrl = imageList[page])
+            }
+            HorizontalPagerIndicator(
+                pagerState = pagerState,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(height = 190.dp)
-                    .clip(shape = RoundedCornerShape(30.dp))
-            )
-            Text(
-                text = stringResource(id = R.string.News_Headline),
-                color = Color.White,
-                style = TextStyle(
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.SemiBold
-                ),
-                modifier = Modifier
-                    .padding(start = 19.dp, top = 157.dp)
+                    .align(Alignment.CenterHorizontally)
+                    .clip(CircleShape),
+                activeColor = Color.Green,
+                inactiveColor = Color.LightGray
             )
         }
     }
 
     //dot indicator
-    Column(modifier = Modifier
-        .padding(top = 325.dp)) {
-        DotsIndicator(totalDots = 5, selectedIndex = 0)
-    }
+//    Column(modifier = Modifier
+//        .padding(top = 325.dp)) {
+//        DotsIndicator(totalDots = 5, selectedIndex = 0)
+//    }
 
 
 //    LazyRow(modifier = Modifier
@@ -688,11 +689,14 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
 
     //Next part start here
+
+
     Column(
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
 //            .fillMaxWidth()
             .padding(start = 16.dp, top = 535.dp, end = 16.dp)
+            .verticalScroll(rememberScrollState())
     ) {
         Text(
             text = stringResource(id = R.string.History),
