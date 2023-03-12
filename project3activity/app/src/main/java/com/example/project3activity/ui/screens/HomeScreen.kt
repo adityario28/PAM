@@ -359,11 +359,9 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
                 Button(
                     onClick = {
-                        Toast.makeText(
-                            ctx,
-                            "Menu Location belum dibuat juga gann",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        lCOntext.startActivity(
+                            Intent(lCOntext, FaskesLocActivity::class.java)
+                        )
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
@@ -412,11 +410,9 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
                 Button(
                     onClick = {
-                        Toast.makeText(
-                            ctx,
-                            "Menu Reg-JKN belum dibuat juga gann",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        lCOntext.startActivity(
+                            Intent(lCOntext, RegJKNActivity::class.java)
+                        )
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
