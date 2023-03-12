@@ -23,22 +23,17 @@
       "password": "1",
       "userId": 3,
       "username": "Bima"
-    },
+    }
+  ],
+
+  "jkn": [
     {
-      "firstname": "a",
-      "id": 7,
-      "lastname": "b",
-      "password": "ab",
-      "userId": 7,
-      "username": "ab"
-    },
-    {
-      "firstname": "coba",
-      "id": 5,
-      "lastname": "cobi",
-      "password": "tis",
-      "userId": 5,
-      "username": "tes"
+      "id" : 1,
+      "firstname" : "Finda",
+      "lastname" : "Affandi",
+      "nik" : "7777",
+      "lahir" : "3 Januari 2090",
+      "alamat" : "Ambarawa"
     }
   ]
 }

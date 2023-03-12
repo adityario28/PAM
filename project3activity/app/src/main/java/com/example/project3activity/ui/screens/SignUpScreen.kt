@@ -21,13 +21,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.MainActivity
-import com.example.project3activity.ui.theme.Project3activityTheme
 import com.example.project3activity.R
-import com.example.project3activity.models.ServiceBuilder
+import com.example.project3activity.models.UserServiceBuilder
 import com.example.project3activity.models.UserModel
 import com.example.project3activity.models.UserViewModel
 import retrofit2.Call
@@ -272,7 +270,7 @@ fun Signup(
                     if (checkUser) {
                         val newUser = UserModel(id, userId, usernameInput, passwordInput, firstnameInput, lastnameInput)
 
-                        ServiceBuilder.api.addUser(newUser).enqueue(object : Callback<UserModel> {
+                        UserServiceBuilder.api.addUser(newUser).enqueue(object : Callback<UserModel> {
                             override fun onResponse(
                                 call: Call<UserModel>,
                                 response: Response<UserModel>
