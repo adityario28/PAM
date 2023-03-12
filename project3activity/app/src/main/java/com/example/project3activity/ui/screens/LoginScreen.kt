@@ -2,6 +2,7 @@ package com.example.project3activity.ui.screens
 
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -37,6 +38,9 @@ import com.example.project3activity.ui.theme.Project3activityTheme
 fun LoginForm(vm : UserViewModel) {
     val lContext = LocalContext.current
 
+    var userId by remember {
+        mutableStateOf("")
+    }
 
     var usernameInput by remember {
         mutableStateOf("")
@@ -166,11 +170,11 @@ fun LoginForm(vm : UserViewModel) {
 
 //                .align(alignment = Alignment.CenterHorizontally)
             ) {
-
                 var auth = false
                 for (index in vm.userList) {
                     if (index.username == usernameInput && index.password == passwordInput) {
                         auth = true
+                        userId = index.userId.toString()
                     }
                 }
 
@@ -186,7 +190,11 @@ fun LoginForm(vm : UserViewModel) {
                         if (auth) {
                             lContext.startActivity(
                                 Intent(lContext, HomeActivity::class.java)
+                                    .putExtra("userId", userId.toString())
                             )
+                        }
+                        else {
+                            Toast.makeText(lContext, "Password atau Username salah", Toast.LENGTH_SHORT).show()
                         }
                     }
                 ) {

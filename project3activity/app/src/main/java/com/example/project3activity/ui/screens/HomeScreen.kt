@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.*
 import com.example.project3activity.R
+import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 
@@ -85,9 +86,26 @@ fun DotsIndicator(
 
 
 @Composable
-fun Hero() {
+fun Hero(vm :UserViewModel, userId : String) {
     val lCOntext = LocalContext.current
     val ctx = LocalContext.current
+
+    var username by remember {
+        mutableStateOf("")
+    }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getUserList()
+        }
+    )
+
+    for (index in vm.userList) {
+        if (index.userId.toString() == userId) {
+            username = index.username
+        }
+    }
 
 //Pattern
     Image(
@@ -128,7 +146,7 @@ fun Hero() {
     Column(modifier = Modifier.padding(start = 16.dp, top = 57.dp)) {
 
         Text(
-            text = "username",
+            text = username,
             color = Color.Black,
             style = TextStyle(
                 fontSize = 20.sp,
@@ -1053,12 +1071,12 @@ fun Hero() {
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    Project3activityTheme {
-//        Greeting("admin")
-        Hero()
-//        BottomNavbar()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    Project3activityTheme {
+////        Greeting("admin")
+//        Hero()
+////        BottomNavbar()
+//    }
+//}

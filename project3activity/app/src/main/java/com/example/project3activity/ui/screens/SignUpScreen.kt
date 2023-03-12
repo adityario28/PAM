@@ -1,6 +1,8 @@
 package com.example.project3activity.ui.screens
 
 import android.content.Intent
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -25,24 +27,27 @@ import androidx.compose.ui.unit.sp
 import com.example.project3activity.MainActivity
 import com.example.project3activity.ui.theme.Project3activityTheme
 import com.example.project3activity.R
+import com.example.project3activity.models.ServiceBuilder
+import com.example.project3activity.models.UserModel
+import com.example.project3activity.models.UserViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
+internal fun checkPass(pass : String, confPass : String) : Boolean {
+    return(pass == confPass)
+}
 
 @Composable
 fun Signup(
-    btnOnClickAction: (String) -> Unit
+    btnOnClickAction: (String) -> Unit, vm : UserViewModel
 ){
     val lContext = LocalContext.current
 
+    var id : Int
+    id = 0
 
-
-
-    var firstnameInput by remember {
-        mutableStateOf("")
-    }
-
-    var lastnameInput by remember {
-        mutableStateOf("")
-    }
+    var userId : Int
 
     var usernameInput by remember {
         mutableStateOf("")
@@ -52,9 +57,32 @@ fun Signup(
         mutableStateOf("")
     }
 
+    var firstnameInput by remember {
+        mutableStateOf("")
+    }
+
+    var lastnameInput by remember {
+        mutableStateOf("")
+    }
+
     var confpasswordInput by remember {
         mutableStateOf("")
     }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vm.getUserList()
+        }
+    )
+
+    for (index in vm.userList) {
+        id = id + 1
+    }
+
+    id = id + 1
+
+    userId = id
 
     Column(
         modifier = Modifier
@@ -222,18 +250,33 @@ fun Signup(
 //                .fillMaxWidth(),
 //                .padding(25.dp),
             onClick = {
-//                val isAuthenticated = doAuth(usernameInput, passwordInput)
-//                if (isAuthenticated) {
-//                    lCOntext.startActivity(
-//                        Intent(lCOntext, HomeActivity::class.java)
-//                            .apply {
-//                                putExtra("username", usernameInput)
-//                            }
-//                    )
-//                }
-                lContext.startActivity(
-                    Intent(lContext, MainActivity::class.java))
-                btnOnClickAction(usernameInput)
+                val confPass = checkPass(passwordInput, confpasswordInput)
+                if (confPass) {
+                    val newUser = UserModel(id, userId, usernameInput, passwordInput, firstnameInput, lastnameInput)
+
+                    ServiceBuilder.api.addUser(newUser).enqueue(object : Callback<UserModel> {
+                        override fun onResponse(
+                            call: Call<UserModel>,
+                            response: Response<UserModel>
+                        ) {
+                            val addedUser = response.body()
+                            Log.d("POST_SUCCESS", "User ${addedUser?.username} has been posted.")
+                            lContext.startActivity(
+                                Intent(lContext, MainActivity::class.java)
+                            )
+                        }
+
+                        override fun onFailure(call: Call<UserModel>, t: Throwable) {
+                            Log.e("POST_FAILURE", "Error add user: ${t.message}")
+                        }
+                    })
+                }
+                else {
+                    Toast.makeText(lContext, "Password yang anda masukan tidak sama", Toast.LENGTH_SHORT).show()
+                }
+//                lContext.startActivity(
+//                    Intent(lContext, MainActivity::class.java))
+//                btnOnClickAction(usernameInput)
             }
         ) {
             Text(text = stringResource(id = R.string.label_signup),

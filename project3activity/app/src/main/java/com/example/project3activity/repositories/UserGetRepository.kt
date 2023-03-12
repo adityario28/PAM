@@ -15,7 +15,7 @@ interface UserGetRepository {
         fun getClient(): UserGetRepository {
             if(_apiClient == null) {
                 _apiClient = Retrofit.Builder()
-                    .baseUrl("http://192.168.52.198:3000")
+                    .baseUrl("http://192.168.0.104:3000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(UserGetRepository::class.java)

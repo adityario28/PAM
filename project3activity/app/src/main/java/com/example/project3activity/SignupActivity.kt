@@ -15,11 +15,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.screens.Signup
 import com.example.project3activity.ui.theme.Project3activityTheme
 
 class SignupActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val vm = UserViewModel()
         super.onCreate(savedInstanceState)
         setContent {
             Project3activityTheme {
@@ -30,7 +32,7 @@ class SignupActivity : ComponentActivity() {
                 ) {
 
 //                    Greeting2("Android")
-                    Signup(::sendUsernameBackToLogin)
+                    Signup(::sendUsernameBackToLogin, vm)
                 }
             }
         }
