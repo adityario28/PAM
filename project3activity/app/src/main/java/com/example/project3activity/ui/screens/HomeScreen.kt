@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.*
 import com.example.project3activity.R
+import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.theme.Project3activityTheme
 
@@ -86,9 +87,11 @@ fun DotsIndicator(
 
 
 @Composable
-fun Hero(vm :UserViewModel, userId : String) {
+fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
     val lCOntext = LocalContext.current
     val ctx = LocalContext.current
+
+    var hasJkn : Boolean = false
 
     var username by remember {
         mutableStateOf("")
@@ -104,6 +107,19 @@ fun Hero(vm :UserViewModel, userId : String) {
     for (index in vm.userList) {
         if (index.userId.toString() == userId) {
             username = index.username
+        }
+    }
+
+    LaunchedEffect(
+        Unit,
+        block = {
+            vj.getJknUserList()
+        }
+    )
+
+    for (index in vj.jknUserList) {
+        if (index.id.toString() == userId) {
+            hasJkn = true
         }
     }
 
@@ -460,10 +476,15 @@ fun Hero(vm :UserViewModel, userId : String) {
             ) {
                 Button(
                     onClick = {
-                            lCOntext.startActivity(
-                                Intent(lCOntext, InfoActivity::class.java)
-                                    .putExtra("userId", userId)
-                            )
+                            if (hasJkn) {
+                                lCOntext.startActivity(
+                                    Intent(lCOntext, InfoActivity::class.java)
+                                        .putExtra("userId", userId)
+                                )
+                            }
+                            else {
+                                Toast.makeText(lCOntext, "Akun anda belum terdaftar", Toast.LENGTH_SHORT).show()
+                            }
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),

@@ -23,6 +23,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.project3activity.R
+import com.example.project3activity.models.JknUserViewModel
 import com.example.project3activity.models.UserViewModel
 import com.example.project3activity.ui.BottomNavItems
 
@@ -31,6 +32,7 @@ import com.example.project3activity.ui.BottomNavItems
 fun NavigationGraph(
     navController: NavHostController,
     vm : UserViewModel,
+    vj : JknUserViewModel,
     userId: String
 ) {
     NavHost(
@@ -38,7 +40,7 @@ fun NavigationGraph(
         startDestination = BottomNavItems.Home.screen_route
     ) {
         composable(BottomNavItems.Home.screen_route) {
-            Hero(vm, userId)
+            Hero(vm, vj, userId)
         }
         composable(BottomNavItems.Article.screen_route) {
             ArticleScreen()
@@ -107,7 +109,7 @@ fun BottomNavigation(
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun BottomNavigationMainScreenView(vm : UserViewModel, userId: String){
+fun BottomNavigationMainScreenView(vm : UserViewModel, vj : JknUserViewModel, userId: String){
     val navController = rememberNavController()
     Scaffold(
         bottomBar = {
@@ -116,6 +118,6 @@ fun BottomNavigationMainScreenView(vm : UserViewModel, userId: String){
             )
         }
     ) {
-        NavigationGraph(navController = navController, vm,  userId)
+        NavigationGraph(navController = navController, vm, vj,  userId)
     }
 }
