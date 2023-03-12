@@ -33,7 +33,6 @@ import com.example.project3activity.ui.theme.Project3activityTheme
 @Composable
 fun InfoPeserta(){
     val lCOntext = LocalContext.current
-    val ctx = LocalContext.current
 
 
     Column (

@@ -27,7 +27,6 @@ import com.example.project3activity.ui.theme.Project3activityTheme
 
 @Composable
 fun OtherPage(){
-    val ctx = LocalContext.current
     val lContext = LocalContext.current
 
 

@@ -32,7 +32,6 @@ import com.example.project3activity.R
 @Composable
 fun DaftarScreen(){
     val lContext = LocalContext.current
-    val ctx = LocalContext.current
 
 
     Column (
