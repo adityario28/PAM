@@ -29,7 +29,7 @@ import com.example.project3activity.R
 import com.example.project3activity.models.JknUserViewModel
 
 @Composable
-fun Ambulance(vm : JknUserViewModel, userId : String){
+fun Ambulance(vm : JknUserViewModel, userId : String) {
 
     LaunchedEffect(
         Unit,
@@ -70,12 +70,12 @@ fun Ambulance(vm : JknUserViewModel, userId : String){
 
     val lCOntext = LocalContext.current
 
-    Column (
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .fillMaxHeight()
             .fillMaxWidth()
-    ){
+    ) {
         Image(
             painter = painterResource(id = R.drawable.pattern),
             contentDescription = "pattern",
@@ -105,10 +105,12 @@ fun Ambulance(vm : JknUserViewModel, userId : String){
         )
     }
 
-    Column(modifier = Modifier
-        .padding(top = 100.dp)
-        .fillMaxSize()
-        .fillMaxHeight()) {
+    Column(
+        modifier = Modifier
+            .padding(top = 100.dp)
+            .fillMaxSize()
+            .fillMaxHeight()
+    ) {
 
         /*tombol kembali*/
         TextButton(
@@ -132,45 +134,72 @@ fun Ambulance(vm : JknUserViewModel, userId : String){
 
         Spacer(modifier = Modifier.height(64.dp))
 
-        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
-
-            Button(onClick = {
-                Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()
-            }, shape = CircleShape, modifier = Modifier.size(325.dp), colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(
-                id = R.color.red_ambulance
-            ))) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ambulancce_icon_1),
-                        contentDescription = stringResource(
-                            id = R.string.ambulance
-                        ),
-                        tint = Color.White,
-                        modifier = Modifier.size(96.dp)
-                    )
-
-                    Spacer(modifier = Modifier.height(1.dp))
-
-                    Text(
-                        text = stringResource(id = R.string.SOS),
-                        color = Color.White,
-                        fontSize = 42.sp,
-                        style = TextStyle(fontWeight = FontWeight.SemiBold)
-                    )
-                }
-            }
-            Spacer(modifier = Modifier.height(12.dp))
-
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                TextButton(onClick = { /*TODO*/ }, ) {
-                    Icon(imageVector = Icons.Rounded.LocationOn, contentDescription = "Loc", tint = Color.Black, modifier = Modifier.size(ButtonDefaults.IconSize))
-                    Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
-                    Text(text = stringResource(id = R.string.Amb_loc), style = TextStyle(textDecoration = TextDecoration.None, fontWeight = FontWeight.SemiBold), color = Color.Black, fontSize = 16.sp)
-
-                }
-
-            }
-        }
+//        Column(
+//            horizontalAlignment = Alignment.CenterHorizontally,
+//            modifier = Modifier.fillMaxWidth()
+//        ) {
+//
+//            Button(
+//                onClick = {
+//                    Toast.makeText(
+//                        lCOntext,
+//                        lCOntext.getResources().getString(R.string.under_developing),
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                },
+//                shape = CircleShape,
+//                modifier = Modifier.size(325.dp),
+//                colors = ButtonDefaults.buttonColors(
+//                    backgroundColor = colorResource(
+//                        id = R.color.red_ambulance
+//                    )
+//                )
+//            ) {
+//                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+//                    Icon(
+//                        painter = painterResource(id = R.drawable.ambulancce_icon_1),
+//                        contentDescription = stringResource(
+//                            id = R.string.ambulance
+//                        ),
+//                        tint = Color.White,
+//                        modifier = Modifier.size(96.dp)
+//                    )
+//
+//                    Spacer(modifier = Modifier.height(1.dp))
+//
+//                    Text(
+//                        text = stringResource(id = R.string.SOS),
+//                        color = Color.White,
+//                        fontSize = 42.sp,
+//                        style = TextStyle(fontWeight = FontWeight.SemiBold)
+//                    )
+//                }
+//            }
+//            Spacer(modifier = Modifier.height(12.dp))
+//
+//            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+//                TextButton(onClick = { /*TODO*/ },) {
+//                    Icon(
+//                        imageVector = Icons.Rounded.LocationOn,
+//                        contentDescription = "Loc",
+//                        tint = Color.Black,
+//                        modifier = Modifier.size(ButtonDefaults.IconSize)
+//                    )
+//                    Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
+//                    Text(
+//                        text = stringResource(id = R.string.Amb_loc),
+//                        style = TextStyle(
+//                            textDecoration = TextDecoration.None,
+//                            fontWeight = FontWeight.SemiBold
+//                        ),
+//                        color = Color.Black,
+//                        fontSize = 16.sp
+//                    )
+//
+//                }
+//
+//            }
+//        }
     }
 }
 
