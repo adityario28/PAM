@@ -126,5 +126,10 @@
     <string name="Other4">Complaint</string>
     <string name="Other5">Registration Auto Debit</string>
     <string name="Other6">Payment History</string>
+    <string name="dupe_username">Username has been taken</string>
+    <string name="same_password">The password you entered isn\'t same</string>
+    <string name="Account_not_found">Account isn\'t registered</string>
+    <string name="Account_registered">Looks like you already have an account</string>
+    <string name="Wrong_cred">Wrong Username or Password</string>
 
 </resources>

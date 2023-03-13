@@ -79,4 +79,9 @@
     <string name="Other4">Pengaduan Keluhan</string>
     <string name="Other5">Pendtaftaran Auto Debit</string>
     <string name="Other6">Info Riwayat Pembayaran</string>
+    <string name="dupe_username">Username telah digunakan</string>
+    <string name="same_password">Password yang anda masukan tidak sama</string>
+    <string name="Account_not_found">Akun anda belum terdaftar</string>
+    <string name="Account_registered">Akun telah terdaftar</string>
+    <string name="Wrong_cred">Password atau Username salah</string>
 </resources>

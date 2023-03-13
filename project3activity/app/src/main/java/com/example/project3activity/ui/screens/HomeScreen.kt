@@ -270,7 +270,6 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                             Intent(lCOntext, AmbulanceActivity::class.java)
                                 .putExtra("userId", userId)
                         )
-//                        Toast.makeText(ctx, "Belum dibuat gann", Toast.LENGTH_SHORT).show()
                     },
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffd0342c)),
@@ -425,7 +424,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
 
 
                         if (hasJkn) {
-                            Toast.makeText(lCOntext, "Anda telah terdaftar", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.Account_registered), Toast.LENGTH_SHORT).show()
                         }
                         else {
                             lCOntext.startActivity(
@@ -499,7 +498,7 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
                                 )
                             }
                             else {
-                                Toast.makeText(lCOntext, "Akun anda belum terdaftar", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.Account_not_found), Toast.LENGTH_SHORT).show()
                             }
                     },
                     shape = RoundedCornerShape(8.dp),

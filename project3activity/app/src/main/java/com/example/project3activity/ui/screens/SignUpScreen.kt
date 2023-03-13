@@ -288,11 +288,11 @@ fun Signup(
                         })
                     }
                     else {
-                        Toast.makeText(lContext, "Username telah digunakan", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(lContext, lContext.getResources().getString(R.string.dupe_username), Toast.LENGTH_SHORT).show()
                     }
                 }
                 else {
-                    Toast.makeText(lContext, "Password yang anda masukan tidak sama", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(lContext, lContext.getResources().getString(R.string.same_password), Toast.LENGTH_SHORT).show()
                 }
 //                lContext.startActivity(
 //                    Intent(lContext, MainActivity::class.java))

@@ -2,16 +2,11 @@ package com.example.project3activity.ui.screens
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Paint.Align
 import android.widget.Toast
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowForward
@@ -22,14 +17,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.FaskesLocActivity
@@ -37,9 +28,7 @@ import com.example.project3activity.InfoActivity
 import com.example.project3activity.InformasiKlinikActivity
 import com.example.project3activity.R
 import com.example.project3activity.models.JknUserViewModel
-import com.example.project3activity.models.UserModel
 import com.example.project3activity.models.UserViewModel
-import com.example.project3activity.ui.theme.Project3activityTheme
 
 @SuppressLint("UnrememberedMutableState")
 @Composable
@@ -192,7 +181,7 @@ fun ProfileScreen(vm : UserViewModel, vj : JknUserViewModel, userId : String, ){
                         )
                     }
                     else {
-                        Toast.makeText(lCOntext, "Akun anda belum terdaftar", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.Account_not_found), Toast.LENGTH_SHORT).show()
                     }
                 },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),

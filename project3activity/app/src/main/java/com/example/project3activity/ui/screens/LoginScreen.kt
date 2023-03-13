@@ -194,7 +194,7 @@ fun LoginForm(vm : UserViewModel) {
                             )
                         }
                         else {
-                            Toast.makeText(lContext, "Password atau Username salah", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(lContext, lContext.getResources().getString(R.string.Wrong_cred), Toast.LENGTH_SHORT).show()
                         }
                     }
                 ) {
