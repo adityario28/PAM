@@ -87,7 +87,7 @@ fun InformasiKlinikScreen(vm : JknUserViewModel, userId : String){
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .padding(bottom = 80.dp)
-                .width(width = 314.dp)
+                .width(width = 400.dp)
                 .height(height = 85.dp)
         )
     }

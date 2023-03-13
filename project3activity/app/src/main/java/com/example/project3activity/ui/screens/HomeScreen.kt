@@ -134,17 +134,22 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
     }
 
 //Pattern
-    Image(
-        painter = painterResource(id = R.drawable.pattern),
-        contentDescription = "pattern",
-        contentScale = ContentScale.Crop,
+    Column (
         modifier = Modifier
-            .padding(bottom = 80.dp)
-//            .width(width = 400.dp)
+            .fillMaxSize()
+            .fillMaxHeight()
             .fillMaxWidth()
-            .height(height = 85.dp)
-    )
-
+    ){
+        Image(
+            painter = painterResource(id = R.drawable.pattern),
+            contentDescription = "pattern",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .padding(bottom = 80.dp)
+                .width(width = 400.dp)
+                .height(height = 85.dp)
+        )
+    }
 
     //Avatar
     Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
