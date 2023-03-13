@@ -129,21 +129,21 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
         }
 
 
-        if (vf.errorMessage.isEmpty()) {
-            LazyColumn(modifier = Modifier.padding(18.dp)){
-                items(vf.faskesList.size) {index ->
-                    Text(text = vf.faskesList[index].nama)
-
-
-
-                }
-            }
-        }
-
-
-        else {
-            Text(text = vf.errorMessage)
-        }
+//        if (vf.errorMessage.isEmpty()) {
+//            LazyColumn(modifier = Modifier.padding(18.dp)){
+//                items(vf.faskesList.size) {index ->
+//                    Text(text = vf.faskesList[index].nama)
+//
+//
+//
+//                }
+//            }
+//        }
+//
+//
+//        else {
+//            Text(text = vf.errorMessage)
+//        }
 
 
         Spacer(modifier = Modifier.height(24.dp))
