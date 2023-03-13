@@ -215,8 +215,10 @@ fun ProfileScreen(vm : UserViewModel, vj : JknUserViewModel, userId : String, ){
 
             Button(
                 onClick = {
-                    Intent(lCOntext, InformasiKlinikActivity::class.java)
-                        .putExtra("userId", userId)
+                    lCOntext.startActivity(
+                        Intent(lCOntext, InformasiKlinikActivity::class.java)
+                            .putExtra("userId", userId)
+                    )
                 },
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffffffff)),
 
