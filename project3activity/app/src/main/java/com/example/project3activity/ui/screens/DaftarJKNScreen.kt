@@ -115,6 +115,7 @@ fun RegJKN(vj : JknUserViewModel, userId : String) {
             onClick = {
                 lCOntext.startActivity(
                     Intent(lCOntext, HomeActivity::class.java)
+                        .putExtra("userId", userId),
                 )
             },
             modifier = Modifier.padding(start = 20.dp)
