@@ -4,6 +4,7 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -27,25 +28,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
+import com.example.project3activity.models.FaskesViewModel
 import com.example.project3activity.models.JknUserViewModel
 
 @Composable
-fun FaskesLoc(vm : JknUserViewModel, userId : String) {
+fun FaskesLoc(vf : FaskesViewModel, userId : String) {
+
     val lCOntext = LocalContext.current
 
-    var firstname by remember {
-        mutableStateOf("")
-    }
-
-    var lastname by remember {
-        mutableStateOf("")
-    }
-
-    var nik by remember {
-        mutableStateOf("")
-    }
-
-    var lahir by remember {
+    var nama by remember {
         mutableStateOf("")
     }
 
@@ -53,22 +44,26 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
         mutableStateOf("")
     }
 
+    var image by remember {
+        mutableStateOf("")
+    }
+
     LaunchedEffect(
         Unit,
         block = {
-            vm.getJknUserList()
+            vf.getFaskesList()
         }
     )
 
-    for (index in vm.jknUserList) {
-        if (index.id.toString() == userId) {
-            firstname = index.firstname
-            lastname = index.lastname
-            nik = index.nik
-            lahir = index.lahir
-            alamat = index.alamat
-        }
-    }
+//    for (index in vm.jknUserList) {
+//        if (index.id.toString() == userId) {
+//            firstname = index.firstname
+//            lastname = index.lastname
+//            nik = index.nik
+//            lahir = index.lahir
+//            alamat = index.alamat
+//        }
+//    }
 
     Column(
         modifier = Modifier
@@ -132,6 +127,24 @@ fun FaskesLoc(vm : JknUserViewModel, userId : String) {
 
             )
         }
+
+
+        if (vf.errorMessage.isEmpty()) {
+            LazyColumn(modifier = Modifier.padding(18.dp)){
+                items(vf.faskesList.size) {index ->
+                    Text(text = vf.faskesList[index].nama)
+
+
+
+                }
+            }
+        }
+
+
+        else {
+            Text(text = vf.errorMessage)
+        }
+
 
         Spacer(modifier = Modifier.height(24.dp))
 

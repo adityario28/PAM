@@ -1,25 +1,25 @@
 package com.example.project3activity.repositories
 
 import com.example.project3activity.models.ArticleModel
-import com.example.project3activity.models.UserModel
+import com.example.project3activity.models.FaskesModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
-interface ArticleGetRepository {
-    @GET("article")
-    suspend fun getArticle(): List<ArticleModel>
+interface FaskesGetRepository {
+    @GET("faskes")
+    suspend fun getFaskes(): List<FaskesModel>
 
     companion object{
-        var _apiClient: ArticleGetRepository? = null
+        var _apiClient: FaskesGetRepository? = null
 
-        fun getClient(): ArticleGetRepository {
+        fun getClient(): FaskesGetRepository {
             if(_apiClient == null) {
                 _apiClient = Retrofit.Builder()
                     .baseUrl("http://103.131.18.183:3000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
-                    .create(ArticleGetRepository::class.java)
+                    .create(FaskesGetRepository::class.java)
             }
             return _apiClient!!
         }
