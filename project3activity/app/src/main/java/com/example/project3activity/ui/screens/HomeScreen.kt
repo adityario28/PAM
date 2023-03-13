@@ -5,13 +5,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import android.widget.Toast
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.foundation.*
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -152,10 +149,15 @@ fun Hero(vm :UserViewModel, vj : JknUserViewModel, userId : String) {
     }
 
     //Avatar
-    Column(modifier = Modifier.padding(start = 320.dp, top = 26.dp)) {
-        Image(painter = painterResource(id = R.drawable.ava), contentDescription = "avatar",
+    Column(modifier = Modifier.padding(start = 280.dp, top = 26.dp)) {
+        Image(
+            painter = painterResource(R.drawable.other_2),
+            contentDescription = "avatar",
+            contentScale = ContentScale.Fit,            // crop the image if it's not a square
             modifier = Modifier
-                .size(58.dp)
+                .size(55.dp)
+                .clip(CircleShape)                       // clip to the circle shape
+                .border(3.dp, Color.Gray, CircleShape)   // add a border (optional)
         )
 
     }
