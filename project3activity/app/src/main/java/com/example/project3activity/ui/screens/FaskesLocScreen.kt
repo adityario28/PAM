@@ -171,15 +171,15 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                 )
             ){
 
-                Column() {
-                    Row(horizontalArrangement = Arrangement.Start, ) {
+                Column(verticalArrangement = Arrangement.Center) {
+                    Row(horizontalArrangement = Arrangement.Start ) {
                             Image(painter = painterResource(id = R.drawable.puskesmas_1), contentDescription = null, modifier = Modifier
                                 .shadow(4.dp, shape = RoundedCornerShape(6.dp))
                                 .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = stringResource(id = R.string.FaskesName1), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = stringResource(id = R.string.FaskesLoc1), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName1), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 14.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc1), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 12.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -198,7 +198,7 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -226,15 +226,15 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                 )
             ){
 
-                Column() {
+                Column(verticalArrangement = Arrangement.Center) {
                     Row(horizontalArrangement = Arrangement.Start, ) {
                         Image(painter = painterResource(id = R.drawable.puskesmas_2), contentDescription = null, modifier = Modifier
                             .shadow(4.dp, shape = RoundedCornerShape(6.dp))
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = stringResource(id = R.string.FaskesName2), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = stringResource(id = R.string.FaskesLoc2), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName2), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 14.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc2), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 12.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -253,7 +253,7 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -281,15 +281,15 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                 )
             ){
 
-                Column() {
+                Column(verticalArrangement = Arrangement.Center) {
                     Row(horizontalArrangement = Arrangement.Start, ) {
                         Image(painter = painterResource(id = R.drawable.puskesmas_3), contentDescription = null, modifier = Modifier
                             .shadow(4.dp, shape = RoundedCornerShape(6.dp))
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = stringResource(id = R.string.FaskesName3), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = stringResource(id = R.string.FaskesLoc3), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName3), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 14.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc3), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 12.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -308,7 +308,7 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -336,15 +336,15 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                 )
             ){
 
-                Column() {
+                Column(verticalArrangement = Arrangement.Center) {
                     Row(horizontalArrangement = Arrangement.Start, ) {
                         Image(painter = painterResource(id = R.drawable.klinik), contentDescription = null, modifier = Modifier
                             .shadow(4.dp, shape = RoundedCornerShape(6.dp))
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = stringResource(id = R.string.FaskesName4), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = stringResource(id = R.string.FaskesLoc4), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName4), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 14.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc4), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 12.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -363,7 +363,7 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color.White)
                                     }
                                 }
                             }
@@ -391,15 +391,15 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                 )
             ){
 
-                Column() {
+                Column(verticalArrangement = Arrangement.Center) {
                     Row(horizontalArrangement = Arrangement.Start, ) {
                         Image(painter = painterResource(id = R.drawable.puskesmas_4), contentDescription = null, modifier = Modifier
                             .shadow(4.dp, shape = RoundedCornerShape(6.dp))
                             .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
-                            Text(text = stringResource(id = R.string.FaskesName5), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp))
-                            Text(text = stringResource(id = R.string.FaskesLoc5), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 13.sp)
+                            Text(text = stringResource(id = R.string.FaskesName5), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 14.sp))
+                            Text(text = stringResource(id = R.string.FaskesLoc5), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 12.sp)
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
@@ -418,7 +418,7 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
-                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 16.sp, color = Color.White)
+                                        Text(text = stringResource(id = R.string.FaskesKontak), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color.White)
                                     }
                                 }
                             }
