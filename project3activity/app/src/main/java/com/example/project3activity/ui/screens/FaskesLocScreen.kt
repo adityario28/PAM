@@ -30,6 +30,7 @@ import com.example.project3activity.HomeActivity
 import com.example.project3activity.R
 import com.example.project3activity.models.FaskesViewModel
 import com.example.project3activity.models.JknUserViewModel
+import com.example.project3activity.ui.ImageLoader
 
 @Composable
 fun FaskesLoc(vf : FaskesViewModel, userId : String) {
@@ -80,6 +81,8 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                 .width(width = 400.dp)
                 .height(height = 85.dp)
         )
+
+
     }
 
 
@@ -173,9 +176,9 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
 
                 Column(verticalArrangement = Arrangement.Center) {
                     Row(horizontalArrangement = Arrangement.Start ) {
-                            Image(painter = painterResource(id = R.drawable.puskesmas_1), contentDescription = null, modifier = Modifier
-                                .shadow(4.dp, shape = RoundedCornerShape(6.dp))
-                                .size(124.dp), contentScale = ContentScale.Crop)
+//                            Image(painter = painterResource(id = R.drawable.puskesmas_1), contentDescription = null, modifier = Modifier
+//                                .shadow(4.dp, shape = RoundedCornerShape(6.dp))
+//                                .size(124.dp), contentScale = ContentScale.Crop)
                         Spacer(modifier = Modifier.width(16.dp))
                         Column(horizontalAlignment = Alignment.Start) {
                             Text(text = stringResource(id = R.string.FaskesName1), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 14.sp))
