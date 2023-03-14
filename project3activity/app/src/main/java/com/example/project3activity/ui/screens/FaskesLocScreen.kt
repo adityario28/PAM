@@ -152,7 +152,6 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
             .verticalScroll(
                 rememberScrollState()
             )) {
-
             Button(
                 onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show()},
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
@@ -168,9 +167,7 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                     hoveredElevation = 15.dp,
                     focusedElevation = 10.dp
                 )
-            ){
-
-                Column(verticalArrangement = Arrangement.Center) {
+            ){ Column(verticalArrangement = Arrangement.Center) {
                     Row(horizontalArrangement = Arrangement.Start ) {
                             Image(painter = painterResource(id = R.drawable.puskesmas_1), contentDescription = null, modifier = Modifier
                                 .shadow(4.dp, shape = RoundedCornerShape(6.dp))
@@ -179,10 +176,8 @@ fun FaskesLoc(vf : FaskesViewModel, userId : String) {
                         Column(horizontalAlignment = Alignment.Start) {
                             Text(text = stringResource(id = R.string.FaskesName1), style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 14.sp))
                             Text(text = stringResource(id = R.string.FaskesLoc1), style = TextStyle(fontWeight = FontWeight.Normal), fontSize = 12.sp)
-
                             Spacer(modifier = Modifier.height(4.dp))
                             Column(verticalArrangement = Arrangement.Bottom) {
-
                                 Button(onClick = { Toast.makeText(lCOntext, lCOntext.getResources().getString(R.string.under_developing), Toast.LENGTH_SHORT).show() }, modifier = Modifier
                                     .fillMaxWidth()
                                     .height(42.dp), colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF4ECB71)), elevation = ButtonDefaults.elevation(
