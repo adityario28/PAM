@@ -357,7 +357,7 @@ fun RegJKN(vj : JknUserViewModel, userId : String) {
                     }
                 ) {
                     Text(
-                        text = stringResource(id = R.string.label_login),
+                        text = stringResource(id = R.string.label_regjkn),
                         style = TextStyle(
                             fontSize = 20.sp,
                             fontWeight = FontWeight.SemiBold

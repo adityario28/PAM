@@ -131,5 +131,6 @@
     <string name="Account_not_found">Account isn\'t registered</string>
     <string name="Account_registered">Looks like you already have an account</string>
     <string name="Wrong_cred">Wrong Username or Password</string>
+    <string name="label_regjkn">Register</string>
 
 </resources>
