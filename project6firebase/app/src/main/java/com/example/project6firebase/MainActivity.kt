@@ -108,7 +108,7 @@ fun MainScreen (
                         takePictureContract.launch()
                     })
             Column(modifier = Modifier.fillMaxWidth()) {
-                TextField(value = captionText, onValueChange = {})
+                TextField(value = captionText, onValueChange = { captionText = it})
                 Button(onClick = { onSubmitActionEvent(takenImage) }) {
                     Text(text = "Submit")
                 }

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">project7firebaseAuth</string>
+    <string name="title_activity_sign_up">SIgnUpActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+</resources>
