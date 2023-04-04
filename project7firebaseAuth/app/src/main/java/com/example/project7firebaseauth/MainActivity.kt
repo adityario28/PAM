@@ -47,7 +47,6 @@ class MainActivity : ComponentActivity() {
                 startActivity(
                     Intent(this, HomeActivity::class.java)
                 )
-
                 finish()
             }
             else {
